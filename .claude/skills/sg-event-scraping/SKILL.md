@@ -1,6 +1,6 @@
 ---
 name: sg-event-scraping
-description: How to collect Singapore event listings from Eventbrite, Luma, onePA, visitsingapore/STB TIH, university sites (NUS, NTU, SMU, SUTD, SIT, SUSS, polytechnics), news outlets (CNA, Straits Times), and community/religious/non-profit sites like Tzu Chi. Use this skill whenever writing, fixing, or debugging a scraper or source adapter, adding a new event source, dealing with blocked requests, JS-rendered pages, robots.txt, rate limiting, RSS/ICS feeds, or scheduling crawls — even if the user just says "add X as a source" or "the Luma scraper broke".
+description: How to collect Singapore event listings from Eventbrite, Luma, onePA, visitsingapore, university sites (NUS, NTU, SMU, SUTD, SIT, SUSS, polytechnics), news outlets (CNA, Straits Times), and community/religious/non-profit sites like Tzu Chi. Use this skill whenever writing, fixing, or debugging a scraper or source adapter, adding a new event source, dealing with blocked requests, JS-rendered pages, robots.txt, rate limiting, RSS/ICS feeds, or scheduling crawls — even if the user just says "add X as a source" or "the Luma scraper broke".
 ---
 
 # SG Event Scraping
@@ -18,7 +18,8 @@ access method and known quirks.
 Cheaper, more stable, and more polite methods first. Only drop down a level when the one
 above doesn't exist for that source.
 
-1. **Official API** (STB TIH, Eventbrite org/venue endpoints, OneMap for geo)
+1. **Official API** (Eventbrite org/venue endpoints, OneMap for geo; STB TIH was
+   discontinued on 31 Jul 2025)
 2. **Structured feeds**: ICS calendars, RSS/Atom, sitemaps with `lastmod`
 3. **Embedded structured data** in HTML: JSON-LD `@type: Event`, microdata, `__NEXT_DATA__`
    JSON. Extract with `extruct`; this survives redesigns far better than CSS selectors

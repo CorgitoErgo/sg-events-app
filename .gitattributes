@@ -6,6 +6,9 @@
 *.cmd eol=crlf
 *.ps1 eol=crlf
 
+# Saved source responses must stay byte-for-byte as fetched (e.g. CRLF in ICS feeds)
+backend/tests/fixtures/** -text
+
 # Binary fixtures and assets
 *.png binary
 *.jpg binary

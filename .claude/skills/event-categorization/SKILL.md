@@ -22,12 +22,12 @@ hard-codes it.
 | `volunteering` | Volunteering | volunteer drives, donation drives, befriending, clean-ups | Tzu Chi, Giving.sg |
 | `workshop_class` | Workshops & classes | courses, hands-on classes, skill workshops | onePA, Peatix, NLB |
 | `talks` | Talks & seminars | public lectures, panels, book talks | universities, NLB |
-| `arts_culture` | Arts & culture | exhibitions, theatre, heritage walks, cultural festivals | Esplanade, TIH |
+| `arts_culture` | Arts & culture | exhibitions, theatre, heritage walks, cultural festivals | Esplanade, visitsingapore |
 | `music` | Music & performances | concerts, gigs, free performances | Esplanade, SISTIC |
 | `family_kids` | Family & kids | children's programmes, school-holiday activities | NLB, Science Centre |
 | `sports_fitness` | Sports & fitness | runs, group workouts, tournaments | ActiveSG, onePA |
 | `nature_outdoors` | Nature & outdoors | guided walks, gardening, park events | NParks |
-| `food_markets` | Food & markets | bazaars, flea markets, food festivals | TIH, news |
+| `food_markets` | Food & markets | bazaars, flea markets, food festivals | visitsingapore, news |
 | `health_wellness` | Health & wellness | health screenings, mental wellness, mindfulness | onePA, community orgs |
 | `faith_festivals` | Religious & festive | festival celebrations, open houses, religious community programmes | community sites |
 | `education_open_house` | Open houses & education fairs | uni/poly open houses, education fairs | universities, polys |

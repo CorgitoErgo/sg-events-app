@@ -7,6 +7,11 @@ from app.main import app
 
 
 @pytest.fixture
+def anyio_backend() -> str:
+    return "asyncio"
+
+
+@pytest.fixture
 def client() -> Iterator[TestClient]:
     with TestClient(app) as c:
         yield c

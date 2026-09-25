@@ -24,7 +24,6 @@ class Settings(BaseSettings):
     voyage_api_key: SecretStr | None = None
     onemap_email: str | None = None
     onemap_password: SecretStr | None = None
-    tih_api_key: SecretStr | None = None
     eventbrite_token: SecretStr | None = None
 
 

@@ -1,0 +1,1080 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//B71 Singapore//EN
+X-WR-CALNAME:B71 Singapore
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20241030T113000Z
+DTEND:20241030T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-m5uX0daqi4Cjwjj@events.lu.ma
+SUMMARY:AFTER-DINNER DRINKS WITH THE LIBRARIAN
+DESCRIPTION:Get up-to-date information at: https://luma.com/4wumk8as\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-m5uX0daqi4Cjwjj
+GEO:1.286766433936362;103.8515889488592
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250108T020000Z
+DTEND:20250108T024500Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-DatqqzaELetAEpN@events.lu.ma
+SUMMARY:Lean, Mean, Research Machine: How to solve user needs, fast
+DESCRIPTION:Get up-to-date information at: https://luma.com/di77pkrf\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by BLOCK71 Global & B
+ 71 Singapore
+LOCATION:https://luma.com/event/evt-DatqqzaELetAEpN
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250108T030000Z
+DTEND:20250108T040000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-jfMXBFbvXHnwqT6@events.lu.ma
+SUMMARY:Interactive Design Thinking Workshop
+DESCRIPTION:Get up-to-date information at: https://luma.com/t7spqloq\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by BLOCK71 Global & B
+ 71 Singapore
+LOCATION:https://luma.com/event/evt-jfMXBFbvXHnwqT6
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250206T100000Z
+DTEND:20250206T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Siti Nurain":MAILTO:calendar-invite@lu.ma
+UID:evt-ATwcEF8EiPbM2G2@events.lu.ma
+SUMMARY:BLOCK71 CNY Get Together!
+DESCRIPTION:Get up-to-date information at: https://luma.com/k6qt5b3b\n\nAd
+ dress:\nBLOCK71 Singapore\nSingapore\n\nHosted by Siti Nurain & Felicia Yo
+ ng
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.296793;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250207T040000Z
+DTEND:20250207T053000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="ACE.SG":MAILTO:calendar-invite@lu.ma
+UID:evt-x0RVD4x3SVI3lMB@events.lu.ma
+SUMMARY:CNY Gathering & Lo Hei 2025
+DESCRIPTION:Get up-to-date information at: https://luma.com/6y89hiaf\n\nAd
+ dress:\nTHE MEETING POINT\nSingapore\n\nHosted by ACE.SG
+LOCATION:THE MEETING POINT, 73B Ayer Rajah Crescent, Singapore 139966
+GEO:1.297666;103.7868
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250210T090000Z
+DTEND:20250210T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-FCIP0CEXE67eXrw@events.lu.ma
+SUMMARY:BLOCK71 Spring Cohort 2025 Roadshow
+DESCRIPTION:Get up-to-date information at: https://luma.com/BLOCK71Singapo
+ reSpringCohort2025\n\nAddress:\nTHE MEETING POINT\nSingapore\n\nHosted by 
+ B71 Singapore & BLOCK71 Global
+LOCATION:THE MEETING POINT, 73B Ayer Rajah Crescent, Singapore 139966
+GEO:1.297666;103.7868
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250211T093000Z
+DTEND:20250211T110000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-IHtE8MVRLwW1zSX@events.lu.ma
+SUMMARY:Founders Vault: Navigating GenAI in 2025
+DESCRIPTION:Get up-to-date information at: https://luma.com/03qc50gp\n\nAd
+ dress:\nBLOCK71 Singapore\nSingapore\n\nHosted by BLOCK71 Global
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.296793;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250305T030000Z
+DTEND:20250305T040000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-6cZvXvb85v5c6fO@events.lu.ma
+SUMMARY:Getting to Product-Market Fit
+DESCRIPTION:Get up-to-date information at: https://luma.com/h6d26mt0\n\nAd
+ dress:\nBLOCK71 Seminar Room\n\nHosted by BLOCK71 Global & B71 Singapore
+LOCATION:BLOCK71 Seminar Room
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250308T080000Z
+DTEND:20250308T090000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 ":MAILTO:calendar-invite@lu.ma
+UID:calev-exOXne5npddXsqr@events.lu.ma
+SUMMARY:BLOCK71 at NUS Open House 2025
+DESCRIPTION:Find more information on https://luma.com/b71singapore
+LOCATION:https://bit.ly/41cVYdA
+GEO:1.305202;103.773905
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250315T010000Z
+DTEND:20250315T090000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Asia Startup Network":MAILTO:calendar-invite@lu.ma
+UID:evt-hJ03FF6s3AFhspU@events.lu.ma
+SUMMARY:Remarkable Day - Celebrating the Remarkable You
+DESCRIPTION:Get up-to-date information at: https://luma.com/rwday2025\n\nA
+ ddress:\nIOI Central Boulevard Towers\nAmazon Web Services Office\nMain ev
+ ent hall: East Tower, take the 1st lift at the lobby to level 5\nDirection
+ s from Downtown MRT Station (nearest MRT Station):\n1. Come up from Exit E
+ \n2. Cross the street & walk straight past UNWINE\n3. Walk straight and ta
+ ke the first escalator up\nYou will see the entrance of IOI Central Boulev
+ ard Towers East Tower on the left.\nSingapore\n\nHosted by Asia Startup Ne
+ twork & 11 others
+LOCATION:IOI Central Boulevard Towers, 2 Central Blvd, Singapore 018916
+GEO:1.279885;103.851486
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250319T103000Z
+DTEND:20250319T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="The 100 Club":MAILTO:calendar-invite@lu.ma
+UID:evt-FXXgMqBKXlqwi2m@events.lu.ma
+SUMMARY:[THE 100 CLUB x BLOCK71 Singapore] Strike Night — A Founders Net
+ working Event
+DESCRIPTION:Get up-to-date information at: https://luma.com/46v2kcsf\n\nAd
+ dress:\nSonic Bowl @ SAFRA Choa Chu Kang\nSingapore\n\nHosted by The 100 C
+ lub & B71 Singapore
+LOCATION:Sonic Bowl @ SAFRA Choa Chu Kang, 28 Choa Chu Kang Dr, Singapore 
+ 689964
+GEO:1.388204;103.747084
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250320T093000Z
+DTEND:20250320T123000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="ACE.SG":MAILTO:calendar-invite@lu.ma
+UID:calev-anuxrEA0mkALIAd@events.lu.ma
+SUMMARY:Kampung Spirit by ACE.SG
+DESCRIPTION:Find more information on https://luma.com/b71singapore
+LOCATION:https://bit.ly/KampungSpirit-20Mar
+GEO:1.297641;103.786752
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250321T103000Z
+DTEND:20250321T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="NUS Alumni Ventures (NAV)":MAILTO:calendar-invite@lu.ma
+UID:evt-YFDEdyc7ZoajxhG@events.lu.ma
+SUMMARY:NAV x BLOCK71 Demo Day
+DESCRIPTION:Get up-to-date information at: https://luma.com/o4ip5uc8\n\nAd
+ dress:\n71 Ayer Rajah Ave, #02 18\nSingapore\n\nHosted by NUS Alumni Ventu
+ res (NAV) & B71 Singapore
+LOCATION:71 Ayer Rajah Ave, #02 18, Singapore
+GEO:1.298689;103.786886
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250411T003000Z
+DTEND:20250411T030000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Silicon Valley":MAILTO:calendar-invite@lu.ma
+UID:evt-2NTUnTgAgs9JtkG@events.lu.ma
+SUMMARY:HealthTech & AI Startup Pitch Night – Silicon Valley
+DESCRIPTION:Get up-to-date information at: https://luma.com/6yn8cyil\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by BLOCK71 Silicon Va
+ lley & 5 others
+LOCATION:https://luma.com/event/evt-2NTUnTgAgs9JtkG
+GEO:37.56858646463944;-122.32194156918668
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250411T093000Z
+DTEND:20250411T123000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-TTUlwRcyWQ6ckbt@events.lu.ma
+SUMMARY:SEC Startup Shuffle: Connect, Collaborate, Kickstart
+DESCRIPTION:Get up-to-date information at: https://luma.com/nhk6fgym\n\nAd
+ dress:\nCyberSG TIG Collaboration Centre (formerly ICE71)\nTIG Seminar roo
+ m\nSingapore\n\nHosted by B71 Singapore
+LOCATION:CyberSG TIG Collaboration Centre (formerly ICE71), 71 Ayer Rajah 
+ Crescent, #02-18, Singapore 139951
+GEO:1.296793;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250428T100000Z
+DTEND:20250428T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-gtTnAVf8lfvfwLK@events.lu.ma
+SUMMARY:Kopi Under the BLOCK - Off-Grid, On Track: Green Energy Innovation
+  for Social Impact
+DESCRIPTION:Get up-to-date information at: https://luma.com/y2t08v8k\n\nAd
+ dress:\nBLOCK71 Singapore\nSingapore\n\nHosted by B71 Singapore & NUS ISI
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.296793;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250507T093000Z
+DTEND:20250507T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-clQ2oZr6gR1VJ6Q@events.lu.ma
+SUMMARY:Kopi Under the BLOCK - Scaling Smarter: Strategic Moves That Defin
+ e Startup Success
+DESCRIPTION:Get up-to-date information at: https://luma.com/4ib3d5nr\n\nAd
+ dress:\nAspire\nSingapore\n\nHosted by B71 Singapore & 3 others
+LOCATION:Aspire, 158 Cecil St, #09-01, Singapore 069545
+GEO:1.279821;103.848115
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250514T080000Z
+DTEND:20250514T100000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-hIv3trdfeoCerGZ@events.lu.ma
+SUMMARY:Pilots and Beyond: Building HealthTech for a Complex World
+DESCRIPTION:Get up-to-date information at: https://luma.com/kq37r7dz\n\nAd
+ dress:\nBLOCK71 Singapore\nSingapore\n\nHosted by B71 Singapore & 3 others
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.296793;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250514T140000Z
+DTEND:20250514T150000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-4CJxWfzrG6ONjM1@events.lu.ma
+SUMMARY:Deep SAGE Info Session - BLOCK71 SG x TIS [US & Canada Startups]
+DESCRIPTION:Get up-to-date information at: https://luma.com/wllrp1jz\n\nHo
+ sted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-4CJxWfzrG6ONjM1
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250519T020000Z
+DTEND:20250519T033000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-w5ANoGrKeDG6b5z@events.lu.ma
+SUMMARY:The Missing Piece in Scaling: Startups Need More Than Just Money |
+  Panel + Deep SAGE Info Session
+DESCRIPTION:Get up-to-date information at: https://luma.com/cqt5dnsj\n\nHo
+ sted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-w5ANoGrKeDG6b5z
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250521T080000Z
+DTEND:20250521T090000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-QJ2TUm4wcHyB2xY@events.lu.ma
+SUMMARY:Deep SAGE Info Session - BLOCK71 SG x TIS [Europe & UK Startups]
+DESCRIPTION:Get up-to-date information at: https://luma.com/u4rffl2f\n\nHo
+ sted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-QJ2TUm4wcHyB2xY
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250523T080000Z
+DTEND:20250523T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="ACE.SG":MAILTO:calendar-invite@lu.ma
+UID:evt-9lcBghQITAsvepq@events.lu.ma
+SUMMARY:DEMO DAY,CODE Tech Founders, Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/uqeysdi4\n\nAd
+ dress:\nAscentium\nAscentium, #39-06/10, Ocean Financial Centre, 10 Collye
+ r Quay, Singapore 049315\nSingapore\n\nHosted by ACE.SG & 11 others
+LOCATION:Ascentium, #39-06/10 Ocean Financial Center, Singapore 049315
+GEO:1.283028;103.852016
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250526T100000Z
+DTEND:20250526T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="ACE.SG":MAILTO:calendar-invite@lu.ma
+UID:evt-tDO6G1FpMxQqfTT@events.lu.ma
+SUMMARY:Tech Founders and Investors Flagship Mixer: Connecting Saudi Arabi
+ a, Vision 2030 & Singapore for Global Growth & Soft Landing Opportunities
+DESCRIPTION:Get up-to-date information at: https://luma.com/nytcbsc6\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by ACE.SG & 17 others
+LOCATION:https://luma.com/event/evt-tDO6G1FpMxQqfTT
+GEO:1.2937893476692204;103.85304867129005
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250527T103000Z
+DTEND:20250527T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Miguel Vera-Cruz":MAILTO:calendar-invite@lu.ma
+UID:evt-2smB9LtF4VsErgE@events.lu.ma
+SUMMARY:FSO 3-in-1 ATxSG Afterparty: Know Thyself, Thy Team, Thy User
+DESCRIPTION:Get up-to-date information at: https://luma.com/1e5ainm3\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Miguel Vera-Cruz &
+  3 others
+LOCATION:https://luma.com/event/evt-2smB9LtF4VsErgE
+GEO:1.2928335366060606;103.83914683011328
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250528T100000Z
+DTEND:20250528T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Iterative":MAILTO:calendar-invite@lu.ma
+UID:evt-qHgWHKrww1Koynf@events.lu.ma
+SUMMARY:​Tell Me Your Startup Idea, and I’ll Help You Validate It
+DESCRIPTION:Get up-to-date information at: https://luma.com/n559dmhi\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by Iterative & B71 Si
+ ngapore
+LOCATION:https://luma.com/event/evt-qHgWHKrww1Koynf
+GEO:1.2975568839728207;103.78501389579083
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250529T060000Z
+DTEND:20250529T100000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:calev-2N9HKhA89VIefHC@events.lu.ma
+SUMMARY:Singapore-Chongqing Digitalisation Cross Border Business Networkin
+ g Event
+DESCRIPTION:Find more information on https://luma.com/b71singapore
+LOCATION:https://bit.ly/4k3rbqk
+GEO:1.296793;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250602T021500Z
+DTEND:20250602T043000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-gbql6J6padtFGLE@events.lu.ma
+SUMMARY:BLOCK71 Breakfast Club: Real Talk with Jason Calacanis
+DESCRIPTION:Get up-to-date information at: https://luma.com/ja6lr898\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & BL
+ OCK71 Global
+LOCATION:https://luma.com/event/evt-gbql6J6padtFGLE
+GEO:1.2805213074126254;103.84922186975243
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250618T093000Z
+DTEND:20250618T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-pjqPxTaV7KqK8MY@events.lu.ma
+SUMMARY:Ctrl–AI–Connect - An AI Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/umtcye4t\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & 5 
+ others
+LOCATION:https://luma.com/event/evt-pjqPxTaV7KqK8MY
+GEO:1.2802299699335429;103.84928432619388
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250626T100000Z
+DTEND:20250626T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-K7qRWIDTIsYGmrH@events.lu.ma
+SUMMARY:SG ROS @ BLOCK71 Meetup: Humanoids Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/297oglj1\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & Ar
+ jo Chakravarty
+LOCATION:https://luma.com/event/evt-K7qRWIDTIsYGmrH
+GEO:1.2974684202528586;103.78492657043851
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250709T040000Z
+DTEND:20250709T060000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-9TLEv8HMq1qbAGG@events.lu.ma
+SUMMARY:Regional Expansion: Why, When and Tradeoffs
+DESCRIPTION:Get up-to-date information at: https://luma.com/4dsepyp8\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-9TLEv8HMq1qbAGG
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250709T060000Z
+DTEND:20250709T070000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-8JAOrAPYBA3spNl@events.lu.ma
+SUMMARY:Regional Growth & Expansion Strategy with Stephen Lim
+DESCRIPTION:Get up-to-date information at: https://luma.com/kl68670i\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-8JAOrAPYBA3spNl
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250715T100000Z
+DTEND:20250715T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="FTC NUS":MAILTO:calendar-invite@lu.ma
+UID:evt-5RY7CsMnPW1WAHA@events.lu.ma
+SUMMARY:NUS FoodTech Challenge 2025 Post-Event Networking Dinner
+DESCRIPTION:Get up-to-date information at: https://luma.com/f7uq29ka\n\nAd
+ dress:\nAscent\nSingapore\n\nHosted by FTC NUS & B71 Singapore
+LOCATION:Ascent, 2 Science Park Dr, Singapore 118222
+GEO:1.2904662;103.7852686
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250723T104500Z
+DTEND:20250723T131500Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Shilpa":MAILTO:calendar-invite@lu.ma
+UID:evt-uOTmp2kSojNCWCk@events.lu.ma
+SUMMARY:7x7x7 Express: 7 women, 7 concepts in AI, 7 mins each
+DESCRIPTION:Get up-to-date information at: https://luma.com/lndrvf4r\n\nAd
+ dress:\nHubspot Asia Pte. Ltd.\nSingapore\n\nHosted by Shilpa
+LOCATION:Hubspot Asia Pte. Ltd., 60, #10-03 Anson Rd, Mapletree Anson, Sin
+ gapore 079914
+GEO:1.274907;103.8454991
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250724T093000Z
+DTEND:20250724T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-FKY34xmtBryTYKc@events.lu.ma
+SUMMARY:BLOCK71 Founders and Funders: Meet Ventures Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/ol579u76\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & Te
+ rrence Hoon
+LOCATION:https://luma.com/event/evt-FKY34xmtBryTYKc
+GEO:1.2944862996780946;103.78660290552925
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250729T100000Z
+DTEND:20250729T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-9IC668B4vmINsXH@events.lu.ma
+SUMMARY:B2B: Beyond Borders by BLOCK71 Singapore - Vietnam Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/3pnmyaua\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & 5 
+ others
+LOCATION:https://luma.com/event/evt-9IC668B4vmINsXH
+GEO:1.2944574470843568;103.78610207215758
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250827T100000Z
+DTEND:20250827T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-bNqLYhJZgiOXZ3C@events.lu.ma
+SUMMARY:The HANGAR Take-Off 2.0
+DESCRIPTION:Get up-to-date information at: https://luma.com/ye919im5\n\nAd
+ dress:\n21 Heng Mui Keng Ter\nSingapore\n\nHosted by B71 Singapore
+LOCATION:21 Heng Mui Keng Ter, Singapore
+GEO:1.2924913;103.7756582
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250829T100000Z
+DTEND:20250829T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-Ij1Rg7afd6yWV9t@events.lu.ma
+SUMMARY:BLOCK71 Startup Shuffle: Meet startups. Find internships.
+DESCRIPTION:Get up-to-date information at: https://luma.com/b37793kl\n\nAd
+ dress:\n21 Heng Mui Keng Ter\nLevel 3\nSingapore\n\nHosted by B71 Singapor
+ e
+LOCATION:21 Heng Mui Keng Ter, Singapore
+GEO:1.2924913;103.7756582
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251001T110000Z
+DTEND:20251001T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Shilpa":MAILTO:calendar-invite@lu.ma
+UID:evt-MhXU5AoZLsWBMjC@events.lu.ma
+SUMMARY:7x7x7 Express (Agentic AI edition): 7 women, 7 concepts in AI, 7 m
+ ins
+DESCRIPTION:Get up-to-date information at: https://luma.com/63thbfun\n\nAd
+ dress:\nAirwallex (Singapore)\nSingapore\n\nHosted by Shilpa, B71 Singapor
+ e & Airwallex for Startups
+LOCATION:Airwallex (Singapore), 1 Wallich St, #20-01 Guoco Tower, Singapor
+ e 078881
+GEO:1.276951;103.8458291
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251007T080000Z
+DTEND:20251007T100000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-JxcHo5lBuc9JsHA@events.lu.ma
+SUMMARY:Scaling to Hong Kong & Greater Bay Area - Market Opportunities for
+  Digital Tech Enterprises
+DESCRIPTION:Get up-to-date information at: https://luma.com/3hgpsj8h\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore, Jas
+ mine Ng & Philip Woo
+LOCATION:https://luma.com/event/evt-JxcHo5lBuc9JsHA
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251008T040000Z
+DTEND:20251008T060000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-hRLPj348vNLGS5i@events.lu.ma
+SUMMARY:Community Lunch + Mooncakes with JJ Chai
+DESCRIPTION:Get up-to-date information at: https://luma.com/3erawglm\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-hRLPj348vNLGS5i
+GEO:1.2971528296379484;103.78469396172072
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251014T100000Z
+DTEND:20251014T120000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-Qllo4CRCxIQTcPm@events.lu.ma
+SUMMARY:Kopi Under the Block - AI Funding: Hype vs. Reality
+DESCRIPTION:Get up-to-date information at: https://luma.com/0y4uqiep\n\nAd
+ dress:\nBLOCK71 Singapore\nSeminar Room\nSingapore\n\nHosted by B71 Singap
+ ore
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.2967925999999999;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251027T093000Z
+DTEND:20251027T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-ENJJ0mpwI03JIeh@events.lu.ma
+SUMMARY:Founders and Funders - Cocoon Capital & Openspace Capital Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/gv3ur5p9\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-ENJJ0mpwI03JIeh
+GEO:1.2802136869365153;103.84645439852676
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251029T043000Z
+DTEND:20251029T063000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-e5mTrPCsthvL4HR@events.lu.ma
+SUMMARY:AI Accelerate: Supercharging Growth For The Brave | SWITCH 2025 Da
+ y 1
+DESCRIPTION:Get up-to-date information at: https://luma.com/4txsffl8\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-e5mTrPCsthvL4HR
+GEO:1.2812996732206414;103.85741013718867
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251029T100000Z
+DTEND:20251029T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Nate Padgett":MAILTO:calendar-invite@lu.ma
+UID:evt-WybkLN5eQJIcmIE@events.lu.ma
+SUMMARY:1st Singapore Hardware Meetup | SWITCH
+DESCRIPTION:Get up-to-date information at: https://luma.com/ykgciw2n\n\nAd
+ dress:\nGuoco Midtown Network Hub\nSingapore\n\nHosted by Nate Padgett, Jo
+ celin Zheng & Loh Guan Hong
+LOCATION:Guoco Midtown Network Hub, 126 Beach Rd, Singapore 189773
+GEO:1.2967471;103.8576698
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251030T020000Z
+DTEND:20251030T030000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-271O7M7P9D9poAO@events.lu.ma
+SUMMARY:Funding Winter or Selective Optimism? Navigating the AI Investment
+  Landscape in 2025 | SWITCH Day 2
+DESCRIPTION:Get up-to-date information at: https://luma.com/3hfqdtra\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-271O7M7P9D9poAO
+GEO:1.2820955156647542;103.8605030114886
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251030T100000Z
+DTEND:20251030T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-HDyaWAxXufnadrc@events.lu.ma
+SUMMARY:🎃 AI-LLOWEEN - Partners x AI Startup Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/1kkyc7se\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & 3 
+ others
+LOCATION:https://luma.com/event/evt-HDyaWAxXufnadrc
+GEO:1.2744768517912186;103.84594815893199
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251104T083000Z
+DTEND:20251104T100000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-H7bweEKslKC6faK@events.lu.ma
+SUMMARY:BLOCK71 Online Info Session: Special Growth Track – AI Accelerat
+ e
+DESCRIPTION:Get up-to-date information at: https://luma.com/ti0c5qlb\n\nHo
+ sted by B71 Singapore
+LOCATION:https://luma.com/event/evt-H7bweEKslKC6faK
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251209T033000Z
+DTEND:20251209T050000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-XvnvZPou7P9ZGHS@events.lu.ma
+SUMMARY:BLOCK71 Lunch Club: Epic Disruptions with Scott D. Anthony
+DESCRIPTION:Get up-to-date information at: https://luma.com/xdxn49ob\n\nAd
+ dress:\nBLOCK71 Singapore\nSingapore\n\nHosted by B71 Singapore
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.2967925999999999;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251210T103000Z
+DTEND:20251210T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-CGOJoLzASgTZyHj@events.lu.ma
+SUMMARY:🎁 Christmas BLOCK Party - A Year-End Celebration
+DESCRIPTION:Get up-to-date information at: https://luma.com/1pgvb9c3\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & Je
+ ene New
+LOCATION:https://luma.com/event/evt-CGOJoLzASgTZyHj
+GEO:1.2966883774309856;103.78450515024834
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260114T030000Z
+DTEND:20260114T040000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-tI4tCZcO8efJTkP@events.lu.ma
+SUMMARY:Growth Hacking & Early-Stage Customer Acquisition for B2C Startups
+DESCRIPTION:Get up-to-date information at: https://luma.com/lrelushb\n\nHo
+ sted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-tI4tCZcO8efJTkP
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260116T100000Z
+DTEND:20260116T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="lythelabs":MAILTO:calendar-invite@lu.ma
+UID:evt-9KvHswnrW5D4kpk@events.lu.ma
+SUMMARY:Student Founder Pitch Night
+DESCRIPTION:Get up-to-date information at: https://luma.com/6kh14jwj\n\nAd
+ dress:\nBLOCK71 Singapore\nBLOCK71 Singapore, LaunchPad @ One-North\n71 Ay
+ er Rajah Crescent, Singapore 139951, #02-01\nSingapore\n\nHosted by lythel
+ abs & 8 others
+LOCATION:BLOCK71 Singapore, 71 Ayer Rajah Crescent, #02-01, Singapore 1399
+ 51
+GEO:1.2967925999999999;103.786762
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260128T103000Z
+DTEND:20260128T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="Shilpa":MAILTO:calendar-invite@lu.ma
+UID:evt-002JiF1VxsXUirG@events.lu.ma
+SUMMARY:7x7x7 Express: 7 women, 7 concepts in AI, 7 mins productivity edit
+ ion
+DESCRIPTION:Get up-to-date information at: https://luma.com/h8180t6u\n\nAd
+ dress:\nAspire\nSingapore\n\nHosted by Shilpa & B71 Singapore
+LOCATION:Aspire, 158 Cecil St, #09-01, Singapore 069545
+GEO:1.2798208;103.8481151
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260209T020000Z
+DTEND:20260209T053000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-OgcpmOSaA8MCD9m@events.lu.ma
+SUMMARY:Fix Your Pitch Deck: Live Workshop with Investors
+DESCRIPTION:Get up-to-date information at: https://luma.com/6drlmcc5\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & BL
+ OCK71 Global
+LOCATION:https://luma.com/event/evt-OgcpmOSaA8MCD9m
+GEO:1.2939744907080086;103.77728030804045
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260211T030000Z
+DTEND:20260211T040000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="BLOCK71 Global":MAILTO:calendar-invite@lu.ma
+UID:evt-XjnYVDoeUc0hfFo@events.lu.ma
+SUMMARY:Pricing Strategy: Finding the Sweet Spot
+DESCRIPTION:Get up-to-date information at: https://luma.com/rf096xc8\n\nHo
+ sted by BLOCK71 Global
+LOCATION:https://luma.com/event/evt-XjnYVDoeUc0hfFo
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260226T103000Z
+DTEND:20260226T133000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-OyYJ37wV0NxiFvI@events.lu.ma
+SUMMARY:Lunar New Year Gathering 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/yz3t08ax\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & 4 
+ others
+LOCATION:https://luma.com/event/evt-OyYJ37wV0NxiFvI
+GEO:1.2923746357079697;103.77804472561812
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260302T040000Z
+DTEND:20260302T060000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-btAAvoennA2oXGB@events.lu.ma
+SUMMARY:Founders' Roundtable Lunch: Shaping the APAC Green Energy Narrativ
+ e
+DESCRIPTION:Get up-to-date information at: https://luma.com/ypo6ps0o\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & BL
+ OCK71 Global
+LOCATION:https://luma.com/event/evt-btAAvoennA2oXGB
+GEO:1.2943784450617408;103.79456173382914
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260312T020000Z
+DTEND:20260312T040000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-lmmM4ygpLTLF3fr@events.lu.ma
+SUMMARY:BLOCK71 Circuit: Powering the APAC Green Energy Ecosystem
+DESCRIPTION:Get up-to-date information at: https://luma.com/ofhm75wb\n\nHo
+ sted by B71 Singapore, BLOCK71 Global & Aquila Event
+LOCATION:https://luma.com/event/evt-lmmM4ygpLTLF3fr
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260323T080000Z
+DTEND:20260323T093000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-eWAB1Uw03usK7kv@events.lu.ma
+SUMMARY:BLOCK71 Online Info Session: Asia Green Energy Innovation Challeng
+ e 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/lgklc7pp\n\nHo
+ sted by B71 Singapore & BLOCK71 Global
+LOCATION:https://luma.com/event/evt-eWAB1Uw03usK7kv
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260325T090000Z
+DTEND:20260325T110000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-KmbvXkYvaG6TP0e@events.lu.ma
+SUMMARY:Taking Flight: The Future of Aviation Innovation
+DESCRIPTION:Get up-to-date information at: https://luma.com/k1z3z6fi\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & 4 
+ others
+LOCATION:https://luma.com/event/evt-KmbvXkYvaG6TP0e
+GEO:1.2933612990254113;103.77467058535994
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260409T083000Z
+DTEND:20260409T110000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-ECo7yFj6NIsG2Wi@events.lu.ma
+SUMMARY:BLOCK71 Circuit: The Private Nodes (Founders + Investors Mixer)
+DESCRIPTION:Get up-to-date information at: https://luma.com/ipty5ogh\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-ECo7yFj6NIsG2Wi
+GEO:1.2790466930893891;103.85341830117387
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260423T110000Z
+DTEND:20260423T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-hYeEGNbeBHkuPeY@events.lu.ma
+SUMMARY:BLOCK71 Fractions: The Brutal Truth (Fractional vs. Full-Time)
+DESCRIPTION:Get up-to-date information at: https://luma.com/noq6l7co\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & 3 
+ others
+LOCATION:https://luma.com/event/evt-hYeEGNbeBHkuPeY
+GEO:1.2804710588602886;103.84576370356561
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260511T040000Z
+DTEND:20260511T060000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-XbUiaMJ3qfrwLK2@events.lu.ma
+SUMMARY:Founders' Roundtable Lunch: The Growth Calculus
+DESCRIPTION:Get up-to-date information at: https://luma.com/200ei1qy\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-XbUiaMJ3qfrwLK2
+GEO:1.2932123839430025;103.77203314560994
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260513T030000Z
+DTEND:20260513T040000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-yvr0uUm0lE3Nwkt@events.lu.ma
+SUMMARY:How to Get Your First 1,000 Customers and Scale to a Million
+DESCRIPTION:Get up-to-date information at: https://luma.com/sqdnd1jf\n\nHo
+ sted by B71 Singapore
+LOCATION:https://luma.com/event/evt-yvr0uUm0lE3Nwkt
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260521T100000Z
+DTEND:20260521T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-mZJDB3j2pcN6jZt@events.lu.ma
+SUMMARY:BLOCK71 FRACTIONS: Validate Your Pitch (Panel & Pitch with VCs)
+DESCRIPTION:Get up-to-date information at: https://luma.com/py7bieob\n\nAd
+ dress:\nAlibaba Cloud (Singapore)\nSingapore\n\nHosted by B71 Singapore & 
+ Jason Lin
+LOCATION:Alibaba Cloud (Singapore), 51 Bras Basah Rd, #03 06, Singapore 18
+ 9554
+GEO:1.2978394;103.8501519
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260525T090000Z
+DTEND:20260525T103000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-HtjAqdI1rQEAvT7@events.lu.ma
+SUMMARY:BLOCK71 x Maria 01: Validate Your Pitch with VCs
+DESCRIPTION:Get up-to-date information at: https://luma.com/x18ztqte\n\nHo
+ sted by B71 Singapore & Camilla Mikama
+LOCATION:https://luma.com/event/evt-HtjAqdI1rQEAvT7
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260529T070000Z
+DTEND:20260529T073000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-oZeHaMNzRnSuo4d@events.lu.ma
+SUMMARY:Online Info Session: BLOCK71's Deep SAGE 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/vs87dpel\n\nHo
+ sted by B71 Singapore
+LOCATION:https://luma.com/event/evt-oZeHaMNzRnSuo4d
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260611T100000Z
+DTEND:20260611T140000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="EpicConnector":MAILTO:calendar-invite@lu.ma
+UID:evt-zeJhfJgopSWc3vO@events.lu.ma
+SUMMARY:Singapore SuperAI Demo Night & Afterparty：Bridging Silicon Valle
+ y and Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/superai2026\n
+ \nAddress:\nCapital Tower\nCapital Tower 15F\nSingapore\n\nHosted by EpicC
+ onnector & 4 others
+LOCATION:Capital Tower, 168 Robinson Rd, Singapore 068912
+GEO:1.2775522;103.8475172
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260627T060000Z
+DTEND:20260627T090000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-k7DSA6MzTQ6db4j@events.lu.ma
+SUMMARY:BLOCK71 x 微软：助力中国 AI 原生初创企业出海
+DESCRIPTION:Get up-to-date information at: https://luma.com/6ajx3drm\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-k7DSA6MzTQ6db4j
+GEO:39.98420694104238;116.30522961087956
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260714T040000Z
+DTEND:20260714T060000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-Oxd0mdCCwcZABWF@events.lu.ma
+SUMMARY:Founders' Roundtable Lunch: Managing Finances at the Growth Stage
+DESCRIPTION:Get up-to-date information at: https://luma.com/anb17xpi\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & Sa
+ hana Vendar Kon
+LOCATION:https://luma.com/event/evt-Oxd0mdCCwcZABWF
+GEO:1.2799127831231791;103.85245320083143
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260720T060000Z
+DTEND:20260720T100000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-IR61Aadq470Nq3b@events.lu.ma
+SUMMARY:WAVE'S UP · EP02 — Ecosystem, Capital, and Compliance Amid AI G
+ lobalization
+DESCRIPTION:Get up-to-date information at: https://luma.com/72byhk17\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & WA
+ VE
+LOCATION:https://luma.com/event/evt-IR61Aadq470Nq3b
+GEO:31.18347262008987;121.45013970542954
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260727T070000Z
+DTEND:20260727T073000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-LYLGlbuSgrblLau@events.lu.ma
+SUMMARY:Online Info Session: BLOCK71's AI Accelerate 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/9xdnu3c6\n\nHo
+ sted by B71 Singapore
+LOCATION:https://luma.com/event/evt-LYLGlbuSgrblLau
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T100000Z
+DTEND:20260929T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-fqp1NSy7zCSmYCn@events.lu.ma
+SUMMARY:B71 Global: From One Block to a Global Impact
+DESCRIPTION:Get up-to-date information at: https://luma.com/20untjoo\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore & BL
+ OCK71 Global
+LOCATION:https://luma.com/event/evt-fqp1NSy7zCSmYCn
+GEO:1.2982590080715088;103.78461893034111
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261026T010000Z
+DTEND:20261026T130000Z
+DTSTAMP:20260925T144703Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-M5zvnKZB2G6AOlc@events.lu.ma
+SUMMARY:SWITCH Day 0: From One Block to a Global Impact
+DESCRIPTION:Get up-to-date information at: https://luma.com/1ufebat0\n\nAd
+ dress:\nCheck event page for more details.\n\nHosted by B71 Singapore
+LOCATION:https://luma.com/event/evt-M5zvnKZB2G6AOlc
+GEO:1.2927499957166009;103.7744683618276
+SEQUENCE:212510823
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR

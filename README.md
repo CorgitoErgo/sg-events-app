@@ -11,15 +11,14 @@ proximity search + Expo mobile app) with Claude Code in VS Code.
    `.claude/skills/` load automatically; you can also call them by name, e.g.
    `/sg-event-scraping`.
 4. Create `.env` (and add it to `.gitignore`) with:
-   `ANTHROPIC_API_KEY, VOYAGE_API_KEY, ONEMAP_EMAIL, ONEMAP_PASSWORD, TIH_API_KEY,
-   EVENTBRITE_TOKEN, DATABASE_URL`.
+   `ANTHROPIC_API_KEY, VOYAGE_API_KEY, ONEMAP_EMAIL, ONEMAP_PASSWORD,
+   EVENTBRITE_TOKEN, DATABASE_URL` (see `.env.example`).
 
 ## Accounts to register first
 
 - Anthropic API key (Claude)
 - Voyage AI API key (embeddings)
 - OneMap developer account (geocoding)
-- STB Tourism Information & Services Hub (TIH) API access (official events data)
 - Eventbrite API token (only for organiser/venue lookups)
 - Postgres with PostGIS + pgvector (local Docker `postgis/postgis` + pgvector, or Supabase)
 
@@ -28,7 +27,8 @@ proximity search + Expo mobile app) with Claude Code in VS Code.
 1. "Scaffold the backend per CLAUDE.md: FastAPI app, Docker Compose with Postgres +
    PostGIS + pgvector, and the migrations from the event-schema skill."
 2. "Build the PoliteClient and the base adapter, then a Luma ICS adapter with fixture tests."
-3. "Add the STB TIH adapter. Check the TIH docs first and tell me which endpoints you'll use."
+3. "Pick a second source from references/sources.md. Check its terms and robots.txt first
+   and tell me the access method you'll use." (STB TIH was discontinued on 31 Jul 2025.)
 4. "Implement the normalizer, classifier, OneMap geocoder and dedup, and run the Luma
    fixtures through end to end."
 5. "Add GET /events with category, date and radius filters."

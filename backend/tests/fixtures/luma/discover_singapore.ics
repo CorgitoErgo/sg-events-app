@@ -1,0 +1,1031 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//What‘s Happening in Singapore//EN
+X-WR-CALNAME:What‘s Happening in Singapore
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260928
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="EDTH":MAILTO:calendar-invite@lu.ma
+UID:evt-GEzYcX1i5FjiSGT@events.lu.ma
+SUMMARY:Singapore Defense Tech Hackathon
+DESCRIPTION:Get up-to-date information at: https://luma.com/sdth-2026\n\nA
+ ddress:\nCheck event page for more details.\n\nCo-organized with NUS Enter
+ prise and TUM Venture Labs\nTime to Accelerate Global Defense Innovation:
+ \nJoin 120+ of the world’s most driven engineers, founders, and operator
+ s at the Singapore Defense Tech Hackathon (SDTH) on September 25–27, 202
+ 6.\nThis isn’t a typical hackathon. It’s a premier global launchpad fo
+ r defense technology. Work alongside  international talent, defense innova
+ tors, and industry leaders to tackle real-world security challenges togeth
+ er.\nMeet potential co-founders. Build something that actually matters.\nO
+ ur Mission\nReadying the Little Red Dome -\nThe future of attritable…\n
+ \nHosted by EDTH & 8 others
+LOCATION:https://luma.com/event/evt-GEzYcX1i5FjiSGT
+GEO:1.2942794490903218;103.77598786778266
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260925T223000Z
+DTEND:20260926T030000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Plussantai":MAILTO:calendar-invite@lu.ma
+UID:evt-GQQAAtTsSCr0OuD@events.lu.ma
+SUMMARY:EMO PATTY RUN
+DESCRIPTION:Get up-to-date information at: https://luma.com/vv56ss6f\n\nAd
+ dress:\nBurgs Singapore\nSingapore\n\nEMO PATTY RUN\nPowered by Burgs\nRun
+  your feelings out. End up at Burgs.\nAn easy-going community run for peop
+ le who like their cardio with a side of burgers, music and questionable em
+ otional decisions.\nWe start together, hit the route, and make our way bac
+ k to Burgs where the real morning begins.\nTHE RUN\n⏰ Time: Meeting 7AM,
+  Flag-Off 8AM\n🏃 Distance: 5KM\n🎟️ Entry: $11.90 per runner\nThe l
+ ouder you scream the faster you can eat the burgers.\nJust show up, scream
+  some songs, earn your burger and mosh it all away\n\nYOUR $11.90 GETS YOU
+ \n🍔 Burgs Breakfast Burger\nA breakfast burger made for post-run…\n\n
+ Hosted by Plussantai
+LOCATION:Burgs Singapore, 16 Bussorah St, Singapore 199437
+GEO:1.3011955;103.8599488
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260926T060000Z
+DTEND:20260926T080000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Michelle":MAILTO:calendar-invite@lu.ma
+UID:evt-z2hqgViXH6kYaQ8@events.lu.ma
+SUMMARY:From Concept to Sculpt - Artist Talk
+DESCRIPTION:Get up-to-date information at: https://luma.com/concept-to-scu
+ lpt\n\nAddress:\nMAGES Institute of Excellence\nMILE 3\nSingapore\n\nEver 
+ wondered about the artists behind your favourite collectible sculptures?\n
+ \nStep behind the scenes with the artists who bring your favourite collect
+ ibles to life with a rare look at the process from concept to sculpt. Led 
+ by Marthin Agusta and Tze Wei Foo, they will share deeper insights into th
+ e collectible industry.\n\nMarthin Agusta is a Creative Director, Art Dire
+ ctor, and Digital Sculptor who has spent 17 years specializing in premium 
+ collectibles. As a Senior 3D Artist at Ubisoft Singapore, he created high-
+ quality game assets before turning his talents to sculpting. Since then, h
+ e has…\n\nHosted by Michelle
+LOCATION:MAGES Institute of Excellence, 2 Orchard Link SCAPE, #05 - 11 Nea
+ r Somerset MRT, Singapore 237978
+GEO:1.3010542999999999;103.83584599999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260926T070000Z
+DTEND:20260926T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="jo+kapi ✦︎":MAILTO:calendar-invite@lu.ma
+UID:evt-TbiOTrwEorBfDRF@events.lu.ma
+SUMMARY:field:work Drawing With Code
+DESCRIPTION:Get up-to-date information at: https://luma.com/mdkzw4jk\n\nAd
+ dress:\nArts x Tech Lab\nPlease bring along a laptop (preferred) or a tabl
+ et.\nSingapore\n\nAn afternoon translating the oldest art-school exercise.
+ .. sitting in front of a still life and drawing what you see, but with cod
+ e.\nWe'll set up an arrangement of physical objects in the Lab, then spend
+  the session writing code-based responses to it. Instead of pencil and pap
+ er, you'll have a tool that we've created for you. The question becomes: h
+ ow can we see the world through algorithms? What does this medium abstract
+  or exaggerate? What kind of picture emerges when a scene is described in 
+ loops, coordinates, and rules rather than lines?\nThe workshop is less abo
+ ut producing polished…\n\nHosted by jo+kapi ✦︎, Jo Ho & Kapilan Naid
+ u
+LOCATION:Arts x Tech Lab, 28 Aliwal St, #02-05 Aliwal Arts Centre, Singapo
+ re 199918
+GEO:1.3027035;103.86098179999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260926T070000Z
+DTEND:20260926T093000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="TEDxSingapore":MAILTO:calendar-invite@lu.ma
+UID:evt-FT59Wl8rL5S3R3o@events.lu.ma
+SUMMARY:TEDxSingapore Play
+DESCRIPTION:Get up-to-date information at: https://luma.com/tedxplay2026\n
+ \nAddress:\nEsplanade - Theatres on the Bay, Singapore\nSingapore\n\nTEDxS
+ ingaporePlay explores the power of play in learning, creativity, connectio
+ n, and everyday life.\nCreated with youth in mind, it's a space for young 
+ people to think, make, and play together, and everyone young at heart is w
+ elcome.\nFor one afternoon, the Esplanade Recital Studio becomes a space t
+ o think, make, and play together. Through a fireside chat, an interactive 
+ music and play segment, and hands-on activities, we explore why play matte
+ rs just as much in adulthood as it does in childhood, and how it shapes th
+ e way we learn, create, and connect as a community.\nThe programme brings
+ …\n\nHosted by TEDxSingapore & TEDxSingapore Community
+LOCATION:Esplanade - Theatres on the Bay, Singapore, 1 Esplanade Dr, Singa
+ pore 038981
+GEO:1.2897934;103.8558166
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260926T100000Z
+DTEND:20260926T140000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="BW Monastery":MAILTO:calendar-invite@lu.ma
+UID:evt-7CttfKwDxZu5Crt@events.lu.ma
+SUMMARY:Mid Autumn Festival Celebrations @BW Monastery
+DESCRIPTION:Get up-to-date information at: https://luma.com/ub7zyzpf\n\nAd
+ dress:\nBW Monastery\nSingapore\n\n🌕 Come Gather Under the Moon\nThis M
+ id-Autumn, leave the hustle behind and come celebrate beneath the glow of 
+ the full moon.\nMid-Autumn is more than mooncakes and lanterns — it is a
+  time for reunion, gratitude, joy, and creating memories together.\nThis y
+ ear, step into a night where tradition meets fun at BW Monastery. Bring yo
+ ur family and friends, slow down from the everyday rush, and enjoy an even
+ ing filled with cultural experiences, interactive games, hands-on activiti
+ es, performances, and moments of togetherness.\nWhether you're here to red
+ iscover a familiar tradition or experience…\n\nHosted by BW Monastery
+LOCATION:BW Monastery, 1 Woodlands Drive 16, No. 1, Singapore 737764
+GEO:1.4305788;103.7988553
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260926T110000Z
+DTEND:20260926T230000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="After Hours Slow House":MAILTO:calendar-invite@lu.ma
+UID:evt-8tAqNBNPAuy4xd8@events.lu.ma
+SUMMARY:AFTER HOURS, SLOW HOUSE X TANGLED: SÀI GÒN IN SG
+DESCRIPTION:Get up-to-date information at: https://luma.com/k1ul55vx\n\nAd
+ dress:\nAcoustics Coffee Bar - Farrer Park\nSingapore\n\nInspired by slow 
+ nights on the streets of Sài Gòn. 🇻🇳\nA few picnic chairs 🪑by t
+ he roadside, people sitting around talking, watching the streets go by and
+  somehow ending up there much longer than planned.\nFor one night, we’re
+  bringing that feeling to SG. 🌙\nThis time, After Hours, Slow House & T
+ angled are taking over Acoustics Coffee Bar after hours, bringing our take
+  on that laid-back street-side culture across its indoor and outdoor space
+ s. 🧺\nWhat to expect\n🎲 Board Games (coup, codenames & more) + craft
+ s (canvas painting + jewelry making + journaling)\n🪑 Sit indoors or out
+ \n🧺 Carpets +…\n\nHosted by After Hours Slow House & Tangled Social
+LOCATION:Acoustics Coffee Bar - Farrer Park, 2 Owen Rd, #01-02, Singapore 
+ 218842
+GEO:1.3117237;103.85499349999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T100000Z
+DTEND:20260929T130000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="B71 Singapore":MAILTO:calendar-invite@lu.ma
+UID:evt-fqp1NSy7zCSmYCn@events.lu.ma
+SUMMARY:B71 Global: From One Block to a Global Impact
+DESCRIPTION:Get up-to-date information at: https://luma.com/20untjoo\n\nAd
+ dress:\nCheck event page for more details.\n\nFive cities. One network. On
+ e evening to find your way in.\nFor one week in September, the people who 
+ run B71 across Singapore, Indonesia, Vietnam, Japan and China are all in t
+ he same room — and we're opening the doors.\nIf you're a founder eyeing 
+ a new market, an investor tracking deal flow across Southeast and Northeas
+ t Asia, or a corporate looking for partners on the ground somewhere unfami
+ liar, this is the shortcut. Instead of cold emails and six months of figur
+ ing out who to talk to, you'll meet the teams who can actually make the in
+ troduction.\nWhat's happening\nEach node takes the mic for…\n\nHosted by
+  B71 Singapore & BLOCK71 Global
+LOCATION:https://luma.com/event/evt-fqp1NSy7zCSmYCn
+GEO:1.2982590080715088;103.78461893034111
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T100000Z
+DTEND:20260929T130000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Lionel Sim":MAILTO:calendar-invite@lu.ma
+UID:evt-G1YgaWKvmoGbnNz@events.lu.ma
+SUMMARY:Hermes AI Agent Night - The AI Capitol & Amazon Web Services
+DESCRIPTION:Get up-to-date information at: https://luma.com/25wslkcw\n\nAd
+ dress:\nCheck event page for more details.\n\nAmazon Web Services and The 
+ AI Capitol invite you to Hermes AI Agent Night — an evening of live demo
+ s, architecture deep dives, and real talk on what it takes to get AI agent
+ s into production on AWS.\nHermes is one of the most exciting open agent f
+ rameworks gaining traction across enterprise teams, startups and developer
+ s. This session puts live demos front and center so you can see agents in 
+ action, powered by services like Amazon Bedrock, not just on a slide deck.
+ \nWhat to expect:\n🚀 Demonstrations of Hermes AI agents running real wo
+ rkflows on AWS\n🏗️ Walkthrough of the agent architecture on…\n\nHos
+ ted by Lionel Sim, Mark Tay & Sheena
+LOCATION:https://luma.com/event/evt-G1YgaWKvmoGbnNz
+GEO:1.2811703924011888;103.84988389960702
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T103000Z
+DTEND:20260929T133000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="GMI Cloud":MAILTO:calendar-invite@lu.ma
+UID:evt-ZEUyYJfKkoa0DzA@events.lu.ma
+SUMMARY:The AI Native Night: Singapore | GMI Cloud & NVIDIA
+DESCRIPTION:Get up-to-date information at: https://luma.com/dseud3av\n\nAd
+ dress:\nCheck event page for more details.\n\nWe're bringing together the 
+ founders and core leaders of AI-native companies building in or entering S
+ ingapore, and the talent that makes those companies work — from research
+  and engineering to go-to-market and operations. The evening is capped at 
+ a size where every conversation can be a real one — lightning talks, fir
+ eside conversation, and a long, well-fed networking session. No panels, no
+  pitches, no badge-scanning.\nWho this is for\nAttendance is by approval o
+ nly. We're curating the room for:\nFounders, CTOs, and Heads of AI/Researc
+ h at AI-native companies building in or expanding into…\n\nHosted by GMI
+  Cloud & Lillian Ma
+LOCATION:https://luma.com/event/evt-ZEUyYJfKkoa0DzA
+GEO:1.284778618684974;103.84977414286432
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T104500Z
+DTEND:20260929T124500Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Community@AISG":MAILTO:calendar-invite@lu.ma
+UID:evt-KDpunFDkNytMafj@events.lu.ma
+SUMMARY:AI-GENERATED CODE == CODE YOU CAN TRUST?
+DESCRIPTION:Get up-to-date information at: https://luma.com/kp37wlnu\n\nAd
+ dress:\nSingapore Economic Development Board (EDB)\n#21-00, 250 North Brid
+ ge Road\nSingapore\n\nClick here to follow AI Singapore's online community
+  on Discord for updates\nThe hard part about AI-generated code is making i
+ t reliable. How do you create agents that hold up in production, and produ
+ ce code you can trust when a machine wrote it?\nWe'll look at it from two 
+ fronts:\nHarness engineering — the scaffolding that turns a model into a
+ n agent. Only one layer of an AI agent is the model; the rest is the harne
+ ss — orchestration, memory, tool design, evaluation, retries, observabil
+ ity. The scaffolding that turns a capable model into a dependable autonomo
+ us agent + a look at DeepSeek's…\n\nHosted by Community@AISG & hector
+LOCATION:Singapore Economic Development Board (EDB), 250 N Bridge Rd, #28-
+ 00 Raffles City Tower, Singapore 179101
+GEO:1.2937868;103.8527761
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261005T013000Z
+DTEND:20261005T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="0G Foundation":MAILTO:calendar-invite@lu.ma
+UID:evt-M3FPmamE8VhEllB@events.lu.ma
+SUMMARY:0G Dev Day: ZERO TO INFINITY
+DESCRIPTION:Get up-to-date information at: https://luma.com/0g-devday-2026
+ \n\nAddress:\nNational Gallery Singapore\nSingapore\n\n0G DevDay: ZERO TO 
+ INFINITY\nNational Gallery Singapore — where history was made. Now we bu
+ ild what's next.\n0G DevDay takes over the Supreme Court Terrace & Glass R
+ oom at National Gallery Singapore, in the heart of the city's historic Civ
+ ic District. Housed within the former Supreme Court and City Hall — two 
+ national monuments that witnessed some of the defining moments in Singapor
+ e's history — the Gallery is a place where the past is preserved and new
+  ideas continue to take shape.\nUnder the iconic Rotunda dome, historic ar
+ chitecture meets a soaring contemporary glass canopy — a fitting home…
+ \n\nHosted by 0G Foundation
+LOCATION:National Gallery Singapore, Singapore 178957
+GEO:1.2902217;103.85151669999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261005T230000Z
+DTEND:20261006T010000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Utila .io":MAILTO:calendar-invite@lu.ma
+UID:evt-bGWgAlfUqt19gq7@events.lu.ma
+SUMMARY:Utila Run Club: TOKEN2049
+DESCRIPTION:Get up-to-date information at: https://luma.com/utila-run-club
+ \n\nAddress:\nCheck event page for more details.\n\nTOKEN2049 is a maratho
+ n. So warm up with a shorter one 👟\nJoin us for the first edition of th
+ e Utila Run Club. \n\nAn easy 5K morning run around Gardens by the Bay on 
+ the day before the conference kicks off. No pressure to set a PB, just som
+ e good people sharing a run, laugh and some coffee to start the week on th
+ e right foot.\nWe'll finish at a specialty coffee place for your daily dos
+ e of caffeine and sweets. There will also be an option to leave small pers
+ onal items at the starting point.\nEveryone is welcome but spots are limit
+ ed and first come first served. \n\nSo don't forget to pack your…\n\nHos
+ ted by Utila .io & Paz
+LOCATION:https://luma.com/event/evt-bGWgAlfUqt19gq7
+GEO:1.280518566997583;103.86210638391299
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T010000Z
+DTEND:20261006T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Monad Foundation":MAILTO:calendar-invite@lu.ma
+UID:evt-IGztSDDXceq3tZI@events.lu.ma
+SUMMARY:Open
+DESCRIPTION:Get up-to-date information at: https://luma.com/open-2026\n\nA
+ ddress:\nCheck event page for more details.\n\nIntroducing: Open\nOne year
+  of mainnet. One open economy.\nOn October 6, during Token2049 week, Monad
+  Foundation brings founders, builders, VCs, and institutions to Singapore.
+  One year after mainnet, Monad's onchain economy is on public display.\nTh
+ e internet was built to be open. We believe finance should be, too.\nMonad
+  is a living economy secured by ~200 validators across 30+ countries, powe
+ ring 150+ applications spanning payments, real-world assets, trading, and 
+ much more. EVM compatibility provides familiarity and composability, while
+  near-instant finality and 10,000+ TPS unlock the…\n\nHosted by Monad Fo
+ undation
+LOCATION:https://luma.com/event/evt-IGztSDDXceq3tZI
+GEO:1.2903089206308032;103.8334668070163
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T010000Z
+DTEND:20261006T100000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Solana Summit":MAILTO:calendar-invite@lu.ma
+UID:evt-ZCBBee6GdXTsBeZ@events.lu.ma
+SUMMARY:Solana Summit Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/solana-summit-
+ singapore-2026\n\nAddress:\nThe Ritz-Carlton, Millenia Singapore\nSingapor
+ e\n\nSolana Summit Singapore 2026\nThe team behind Solana Summit APAC, Sol
+ ana's largest Founder and Developer Summit by and for the ecosystem, is br
+ inging the Solana Summit experience to Singapore ahead of Token2049, the w
+ orld's largest crypto event.\nThe summit skips the generic high-level talk
+  to focus entirely on three core pillars: Consumer Applications, Trading &
+  Markets, and Capital Formation.\nCore Pillars\nConsumer Apps: How founder
+ s are scaling real-world products across payments, AI, social, gaming, and
+  commerce to millions of users.\nTrading & Markets: A deep dive into oncha
+ in liquidity,…\n\nHosted by Solana Summit, Superteam SG & Superteam Aust
+ ralia
+LOCATION:The Ritz-Carlton, Millenia Singapore, 7 Raffles Ave., Marina Bay,
+  Singapore 039799
+GEO:1.2909392;103.8599895
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T043000Z
+DTEND:20261006T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Jared Chin | Mantle":MAILTO:calendar-invite@lu.ma
+UID:evt-jiGJMBdTA2yLQEN@events.lu.ma
+SUMMARY:Mantle RWA Day (Token2049 SG Edition)
+DESCRIPTION:Get up-to-date information at: https://luma.com/mantle-2pek\n
+ \nAddress:\nThe Exchange (Singapore Land Tower)\nSingapore\n\nSpots are li
+ mited! RSVP now to secure your seat!\n---------------------\nThe real-worl
+ d asset economy is here, and it's being built on-chain.\nJoin us for a hal
+ f-day deep dive into the infrastructure, capital, and teams powering the n
+ ext era of institutional finance on-chain.\nThis event brings together bui
+ lders, allocators, and issuers at the center of the RWA movement for an af
+ ternoon of keynotes, panels, and high-value networking during TOKEN2049 we
+ ek.\nExpectations:\n--------------\n~1,000 attendees: audience concentrati
+ on in DeFi, institutional finance, trading, RWA and more.\n~57% of approve
+ d…\n\nHosted by Jared Chin | Mantle, Gemma | Mantle & Mantle Events
+LOCATION:The Exchange (Singapore Land Tower), 50 Raffles Pl, Level 4 Singa
+ pore Land Tower, Singapore 048623
+GEO:1.2847487;103.85199229999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T060000Z
+DTEND:20261006T120000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Ethena Labs":MAILTO:calendar-invite@lu.ma
+UID:evt-esywU88BBY7HfEx@events.lu.ma
+SUMMARY:Ethena Padel & Wellness Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/qim2vicq\n\nAd
+ dress:\nCheck event page for more details.\n\nEthena is challenging you to
+  a day of exercise and relaxation before the crazy conference ahead.\nNo t
+ alks. No panels. No keynotes. Just a chance to move and recharge.\nTogethe
+ r with MoonPay and Jupiter, we're hosting a padel tournament for those not
+  afraid to sweat in the blistering heat.\n* Due to the high number of sign
+ -ups, we’ve now closed applications for the padel tournament. If you’v
+ e already applied, you’ll hear from us soon to find out whether you’ve
+  secured a spot in the tournament! Please note that submitting the form do
+ es not guarantee a spot in the tournament.\nNot playing? There’s…\n\nH
+ osted by Ethena Labs, MoonPay & Jupiter
+LOCATION:https://luma.com/event/evt-esywU88BBY7HfEx
+GEO:1.306301280046161;103.81749200956376
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T073000Z
+DTEND:20261006T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Optimism Events":MAILTO:calendar-invite@lu.ma
+UID:evt-YUPq5A3ohjPREcv@events.lu.ma
+SUMMARY:Onchain at Scale — IBM × Optimism
+DESCRIPTION:Get up-to-date information at: https://luma.com/r6tsx6hr\n\nAd
+ dress:\nCheck event page for more details.\n\nPrivate TOKEN2049 Week gathe
+ ring for crypto-native companies, exchanges, and financial institutions\n
+ \nIBM and Optimism are bringing together 70 senior leaders across crypto
+ -native companies, exchanges, and financial institutions to discuss how on
+ chain products move from build to distribution to production at scale.\n\n
+ What does it take to build, distribute, and operate onchain products at sc
+ ale?\n\nWe’ll explore the intersection of crypto-native infrastructure, 
+ exchange distribution and liquidity, and the security, governance, and ope
+ rational requirements of financial institutions.\n\nJoin us for a…\n\nHo
+ sted by Optimism Events
+LOCATION:https://luma.com/event/evt-YUPq5A3ohjPREcv
+GEO:1.2814860142160267;103.852264046984
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T080000Z
+DTEND:20261006T140000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="TokenizeThis":MAILTO:calendar-invite@lu.ma
+UID:evt-b6043GGltQOzJWN@events.lu.ma
+SUMMARY:TokenizeThis 2026 by RedStone Singapore | Token2049
+DESCRIPTION:Get up-to-date information at: https://luma.com/sk9weqs5\n\nAd
+ dress:\nThe Masons Table\nSingapore\n\nTokenizeThis by RedStone is the fla
+ gship conference for real world assets. This time brought by RedStone and 
+ Alchemy.\nAfter three days in New York with Securitize, Apollo, Superstate
+ , and DTCC on stage, we are bringing a one-day edition to TOKEN2049 in Sin
+ gapore.\nWith Technical panels and practical deep-dives on the parts of to
+ kenized finance that are already live, and the ones coming next: RWAs, sta
+ blecoins, onchain credit, and the infrastructure underneath and so on.\n\n
+ Hosted by:\nRedStone is the data layer for institutional DeFi, delivering 
+ secure, low-latency price feeds for digital assets,…\n\nHosted by Tokeni
+ zeThis, RedStone & Alchemy
+LOCATION:The Masons Table, 23A Coleman St, Singapore 179806
+GEO:1.2926923;103.8489567
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T083000Z
+DTEND:20261006T110000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="NEAR Foundation":MAILTO:calendar-invite@lu.ma
+UID:evt-lt0WbNw6gENsUVZ@events.lu.ma
+SUMMARY:NEAR Happy Hour @ Token2049 SG
+DESCRIPTION:Get up-to-date information at: https://luma.com/yvo094xl\n\nAd
+ dress:\nCheck event page for more details.\n\nNEAR is building the infrast
+ ructure where users, not platforms, stay in control, and that bet is alrea
+ dy live. NEAR AI Cloud and Private Chat are running inside Brave, OpenMind
+  AGI, and Phala Network today, reaching more than 100 million users with v
+ erifiable, hardware-backed privacy.\nCome talk about it over drinks. Join 
+ NEAR for a relaxed evening with the builders, investors, and partners shap
+ ing the agentic economy, no panels, no pitch decks, just good conversation
+ .\nSpots are limited, RSVP to secure yours.\n\nHosted by NEAR Foundation
+LOCATION:https://luma.com/event/evt-lt0WbNw6gENsUVZ
+GEO:1.28411811401048;103.8482855785177
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T090000Z
+DTEND:20261006T120000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Monad Foundation":MAILTO:calendar-invite@lu.ma
+UID:evt-klPLzf7RhYE1q9O@events.lu.ma
+SUMMARY:Burning Mon
+DESCRIPTION:Get up-to-date information at: https://luma.com/burningmon\n\n
+ Address:\nCheck event page for more details.\n\nLoud. Communal. Chaotic.\n
+ Burning Mon is the inaugural Open afterparty ritual. The moment the floor 
+ clears, the bar opens, and the builder community takes over.\nSurprise and
+  delight awaits you.\nOpen to everyone.\nCome as you are.\n\nComplimentary
+  admission will be granted on a first come, first serve basis with Luma re
+ gistration. Venue capacity will be enforced at the door.\nYour Burning Mon
+  ticket does not include Open itself, 9am to 5pm. To join for the day, gra
+ b a ticket.\n\n***\nDisclaimer\nBy attending an event organized by Monad F
+ oundation, you are entering an area where photography, audio and…\n\nHos
+ ted by Monad Foundation
+LOCATION:https://luma.com/event/evt-klPLzf7RhYE1q9O
+GEO:1.2925549023017435;103.83376180537708
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T100000Z
+DTEND:20261006T130000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Gabriel Chua":MAILTO:calendar-invite@lu.ma
+UID:evt-xBgnU6MHbWTQGqv@events.lu.ma
+SUMMARY:OpenAI DevDay Recap Party
+DESCRIPTION:Get up-to-date information at: https://luma.com/8q80l11c\n\nAd
+ dress:\nCheck event page for more details.\n\nDevDay is OpenAI’s annual 
+ developer conference, where we celebrate builders and explore OpenAI’s l
+ atest announcements.\nWe’re bringing a little of that back to Singapore.
+ \nTogether with our friends at Singtel, QED Enterprise and the Singapore C
+ odex Ambassadors, we’re hosting a community recap party with talks, and 
+ demos.\nCome catch up on the announcements, see what people are making, an
+ d meet others building with AI.\n📺 Want to follow the DevDay keynote? S
+ ign up for a livestream reminder here ahead of 29 September.\n\n🗓️ Ag
+ enda\n6.15pm: Doors open\n7pm: Kick-off, DevDay recap, and demos\n9pm:…
+ \n\nHosted by Gabriel Chua & 6 others
+LOCATION:https://luma.com/event/evt-xBgnU6MHbWTQGqv
+GEO:1.2847373795852621;103.8597234343091
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T100000Z
+DTEND:20261006T130000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Midas RWA":MAILTO:calendar-invite@lu.ma
+UID:evt-FycQu9ya4W8AHKz@events.lu.ma
+SUMMARY:The Clearing House II: Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/nz1g1prw\n\nAd
+ dress:\nCheck event page for more details.\n\n🔷 Welcome to the Second E
+ dition of The Clearing House\nAfter a successful inaugural event in Cannes
+  that introduced The Clearing House experience, we are looking forward to 
+ hosting the second edition on October 6th, 2026 in Singapore, during Token
+ 2049. The premise stays the same:\nEvents and summits have become too nois
+ y for the people actually building.\nThis is why Midas created The Clearin
+ g House, a curated event series for the architects of onchain financial ma
+ rkets. We bring together the primary sources for an invite-only session fo
+ cused on the real advancement of tokenisation, lending and…\n\nHosted by
+  Midas RWA & Quinn Papworth
+LOCATION:https://luma.com/event/evt-FycQu9ya4W8AHKz
+GEO:1.2807455808747439;103.85414649677311
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T110000Z
+DTEND:20261006T140000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Toobit":MAILTO:calendar-invite@lu.ma
+UID:evt-6tXjIx5vEq00XKl@events.lu.ma
+SUMMARY:The Blue Party
+DESCRIPTION:Get up-to-date information at: https://luma.com/lu1shpjk\n\nAd
+ dress:\nCheck event page for more details.\n\nThe Blue Party | Toobit  X  
+ TOKEN2049 Singapore\nAs the sun sets over Singapore, join us for The Blue 
+ Party—an exclusive rooftop gathering during TOKEN2049 Singapore.\nSet ag
+ ainst the breathtaking Marina Bay Sands, El Chido offers one of the city's
+  most vibrant rooftop venues, featuring a stunning poolside setting, food/
+ drink, great music, and an electric party atmosphere.\nConnect with founde
+ rs, investors, and industry leaders in a relaxed yet energetic environment
+  designed for meaningful conversations and unforgettable moments.\nEvent D
+ etails\n📅 Date: Tuesday, 6 October 2026\n🕖 Time: 7:00 PM –…\n\nH
+ osted by Toobit, Coin Bureau & Cloudflare_Youjin W
+LOCATION:https://luma.com/event/evt-6tXjIx5vEq00XKl
+GEO:1.2942607736445333;103.85172503468331
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T230000Z
+DTEND:20261007T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Carolyn Wyatt":MAILTO:calendar-invite@lu.ma
+UID:evt-EIeXOplHoF0mz7E@events.lu.ma
+SUMMARY:Digital Asset Summit Asia 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/dasasia2026\n
+ \nAddress:\nMarina Bay Sands Singapore\nSingapore\n\nBlockworks' Digital A
+ sset Summit (DAS) is headed to Singapore this October 7th, 2026. DAS is cr
+ ypto's premier institutional event.\n\nStablecoins, tokenization, onchain 
+ infrastructure, and AI are rapidly reshaping the global financial system. 
+ DAS Asia will bring together the leading institutional leaders, allocators
+ , builders, and policy makers from Asia, North America, and other key fina
+ ncial centers to discuss how the next chapter of global finance will be wr
+ itten.\nIf you have any questions, please reach out to registration@blockw
+ orks.co\n\nHosted by Carolyn Wyatt
+LOCATION:Marina Bay Sands Singapore, 10 Bayfront Ave, Singapore 018956
+GEO:1.2837574999999999;103.8591065
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261006T233000Z
+DTEND:20261007T013000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Min":MAILTO:calendar-invite@lu.ma
+UID:evt-QMI8ZVlsQHaG8no@events.lu.ma
+SUMMARY:Stablecoin Morning 5K Run
+DESCRIPTION:Get up-to-date information at: https://luma.com/a3dvp6r5\n\nAd
+ dress:\nGuzman y Gomez - Ocean Financial Centre\nSingapore\n\nA morning ru
+ n with the Island Fintech x Codex team 🏃\nHosted by Island Fintech & th
+ e Codex team, we're hoping to bring folks together in the Stablecoin space
+  for good mid-week energy &  conversations along the iconic Singapore skyl
+ ine.\nWhether you're a seasoned runner or just looking for a reason to get
+  outside, all paces are welcome. We will run an easy-paced 5K along the wa
+ terfront and finish with coffee and breakfast on us.\nProgramme\n🕖 07:3
+ 0 — Assemble at meeting point (Guzman y Gomez @ Ocean Financial Centre)
+ \n🏃 07:40–08:30 — 5K run (Hybrid: Health electrolytes provided)\n
+ ☕ 08:30–09:30 —…\n\nHosted by Min
+LOCATION:Guzman y Gomez - Ocean Financial Centre, 10 Collyer Quay, B1-06 O
+ cean Financial Centre Public Space, Singapore 049315
+GEO:1.283188;103.852014
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T020000Z
+DTEND:20261007T040000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Dion Guillaume":MAILTO:calendar-invite@lu.ma
+UID:evt-q2d3rNyeBNrqk1s@events.lu.ma
+SUMMARY:Stablecoin Sessions @ Token2049 Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/2m5vkueq\n\nAd
+ dress:\nForeword Coffee @ Esplanade Mall\nSingapore\n\nJoin us for our Sta
+ blecoin Sessions during Token2049 Singapore brought to you by:\nHack VC: H
+ ack VC is a web3 venture capital firm. We partner on- and off-chain at the
+  earliest stages with hackers building the future of the Internet.\nSushi.
+ com: Trade crypto effortlessly with SushiSwap, supporting over 30 chains a
+ nd featuring a powerful aggregator for the best rates across DeFi.\n\nTheo
+ riq: Theoriq is building AI-powered asset management for onchain markets. 
+ It designs systems that make fragmented DeFi opportunities easier to acces
+ s through a single, risk-aware experience, starting with…\n\nHosted by D
+ ion Guillaume & 17 others
+LOCATION:Foreword Coffee @ Esplanade Mall, 8 Raffles Ave., #03-02, Singapo
+ re 039802
+GEO:1.2895968;103.85617069999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T033000Z
+DTEND:20261007T070000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Altitude":MAILTO:calendar-invite@lu.ma
+UID:evt-AxvuEgt2SBXjO1I@events.lu.ma
+SUMMARY:Affogato Pop-up, with Altitude and Optimism
+DESCRIPTION:Get up-to-date information at: https://luma.com/altitude-OPLab
+ s-affogato\n\nAddress:\nMondo\nSingapore\n\nAltitude and Optimism are co-h
+ osting an Affogato Pop-up during Token2049!\nOur Affogato Pop-Up will be h
+ eld in one of Singapore's best gelato spots, Mondo, on Amoy Street.\nFrom 
+ 11:30am to 3:00pm, we'll be serving fantastic house-specialty cold brews a
+ nd a delicious selection of gelato. Hot coffees are of course available to
+ o — and even better when poured on top of ice cream to create an affogat
+ o!\nWhy are we cohosting?\nAltitude is the global operating account optimi
+ zed for your onchain business operations. Since launching in Q3 2025, Alti
+ tude has processed more than $500M in payment volume and…\n\nHosted by A
+ ltitude & Optimism Events
+LOCATION:Mondo, 92A Amoy St, Singapore 069911
+GEO:1.2812032;103.8471495
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T070000Z
+DTEND:20261007T120000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Arbitrum":MAILTO:calendar-invite@lu.ma
+UID:evt-b3lVXFICeH7gcdo@events.lu.ma
+SUMMARY:Arbitrum Founders Eve and Pitch Competition, Singapore 🇸🇬
+DESCRIPTION:Get up-to-date information at: https://luma.com/arbitrum-found
+ ers-eve-sgp\n\nAddress:\nCheck event page for more details.\n\nArbitrum Fo
+ unders Eve and Pitch Competition, Singapore 🇸🇬\nJoin us for Arbitrum
+  Founders Eve and Pitch Competition, a dedicated founder-focused gathering
+  hosted by Arbitrum during TOKEN2049 Singapore.\n\nIf you're interested in
+  pitching your startup, APPLY HERE\nDesigned for founders, developers, and
+  teams exploring or already building on Arbitrum, the event connects atten
+ dees directly with the Arbitrum Foundation team, ecosystem partners, spons
+ ors, and operators, while providing access to the programs, opportunities,
+  and capital needed to launch and scale their projects in the programmable
+ …\n\nHosted by Arbitrum & Aditi Chopra
+LOCATION:https://luma.com/event/evt-b3lVXFICeH7gcdo
+GEO:1.2794614839093554;103.85230935433641
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T080000Z
+DTEND:20261007T110000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Myosin.xyz":MAILTO:calendar-invite@lu.ma
+UID:evt-XEwL2ZQxOZw7UKP@events.lu.ma
+SUMMARY:Allium x Figure Happy Hour
+DESCRIPTION:Get up-to-date information at: https://luma.com/92o31236\n\nAd
+ dress:\nCheck event page for more details.\n\nFigure and Allium are teamin
+ g up for an intimate, invite-only happy hour during Token 2049, a curated 
+ evening built for TradFi institutions, crypto-native leaders, and DeFi bui
+ lders to connect over drinks, not panels.\nThis is a quality-over-quantity
+  gathering: no talks, no pitches, just senior decision-makers from asset m
+ anagement, capital allocation, and enterprise crypto in a well-designed sp
+ ace.\nWho Should Attend\nLPs & Allocators — family offices, funds, and t
+ reasuries evaluating on-chain yield and real-world asset exposure\nFintech
+  & Digital Asset Executives — leaders building the next…\n\nHosted by 
+ Myosin.xyz & 4 others
+LOCATION:https://luma.com/event/evt-XEwL2ZQxOZw7UKP
+GEO:1.2792983011501584;103.85246491455149
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T090000Z
+DTEND:20261007T140000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="528 Collective":MAILTO:calendar-invite@lu.ma
+UID:evt-C4yIcTMlVkY4xxZ@events.lu.ma
+SUMMARY:Polymarket Singapore Kick-Off: Token 2049
+DESCRIPTION:Get up-to-date information at: https://luma.com/polymarketsing
+ apore\n\nAddress:\nCheck event page for more details.\n\nPolymarket's firs
+ t ever exclusive event in Singapore. About time.\nToken2049 has begun and 
+ we're opening the doors to the official Polymarket kick-off. One night at 
+ High House, built for the people who trade on what happens next.\nExpect a
+  curated, invitation-only room. Handcrafted cocktails, considered company,
+  and the conversations that don't happen on a conference floor. The early 
+ evening is for connection and as the night turns, music takes over.\n📍 
+ High House, Raffles Place\n📅 October 7, 2026\n🕗 5:00 PM – 10:00 PM
+ \nStrictly Invitation-only. Limited capacity.\nThe odds of a night like th
+ is…\n\nHosted by 528 Collective
+LOCATION:https://luma.com/event/evt-C4yIcTMlVkY4xxZ
+GEO:1.2832013622438148;103.85124556881632
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T103000Z
+DTEND:20261007T133000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Hangouts With Her":MAILTO:calendar-invite@lu.ma
+UID:evt-ugG45AgUzqewke5@events.lu.ma
+SUMMARY:Hot Girl Jog & Trek + Dinner & Drinks: TOKEN2049 Edition - For wom
+ en in crypto, finance, tech & Web3.
+DESCRIPTION:Get up-to-date information at: https://luma.com/as504pew\n\nAd
+ dress:\nCheck event page for more details.\n\nA jog through the city, a tr
+ ek up the steps at Pearl’s Hill Park, and drinks with new friends after.
+  Join women in tech, finance, Web3 and crypto for a little movement and a 
+ lot of conversation.\nCome at your own pace. Afterwards, we’ll return to
+  ORUS bar for drinks, dinner and more time to connect. Alcoholic and non-a
+ lcoholic drinks will be available; food and drinks are at your own expense
+ .\nProgramme:\n6.30pm: Bag drop @ ORUS Singapore, 59 Duxton Road\n6.40pm: 
+ Briefing and introductions\n6.50pm: Group photo\n6.55pm: Jog & Trek begin
+ \n7.30pm till late: Post-run drinks and bites at ORUS…\n\nHosted by Hang
+ outs With Her, Alexis Ng & Joy Li
+LOCATION:https://luma.com/event/evt-ugG45AgUzqewke5
+GEO:1.276135727058774;103.8425775837013
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T120000Z
+DTEND:20261007T180000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Kraken":MAILTO:calendar-invite@lu.ma
+UID:evt-KD6jLHimnBO4KxZ@events.lu.ma
+SUMMARY:Kraken Pro After Dark: Token2049 Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/krakenafterdar
+ k-singapore2026\n\nAddress:\nCÉ LA VI Singapore\nSingapore\n\nAfter a ful
+ l day of meetings and conversations at TOKEN2049, join Kraken Pro for an e
+ xclusive evening at CÉ LA VI Singapore, one of the city's premier rooftop
+  destinations overlooking the Marina Bay skyline.\nKraken Pro After Dark b
+ rings together a curated group of professional traders, institutional clie
+ nts, market makers, builders, and industry leaders for an evening of eleva
+ ted networking in a relaxed setting.\nEnjoy handcrafted cocktails, excepti
+ onal cuisine, and panoramic views of Singapore while connecting with the p
+ eople shaping the future of digital asset markets.\nDate: October 7, 2026
+ …\n\nHosted by Kraken
+LOCATION:CÉ LA VI Singapore, 1 Bayfront Avenue, Hotel, Tower 3 Marina Bay
+  Sands, Singapore 018971
+GEO:1.2846705;103.860986
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T120000Z
+DTEND:20261007T160000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="ChangeNOW":MAILTO:calendar-invite@lu.ma
+UID:evt-bOryYZfE4vV8wAz@events.lu.ma
+SUMMARY:Retrofuture Soiree by ChangeNOW: Singapore Edition
+DESCRIPTION:Get up-to-date information at: https://luma.com/1phznwy6\n\nAd
+ dress:\nCheck event page for more details.\n\nChangeNOW After 2049\n\nDay 
+ 1 ends here.\nWhen TOKEN2049 winds down for the day, we're taking things u
+ pstairs.\nJoin ChangeNOW at one of Singapore’s celebrated cocktail bars,
+  known for drinks that turn the stories and cultural moments of the 1960s 
+ into a menu, for a late-night hangout after Day 1.\n\nDrinks, music you ca
+ n still talk over, familiar faces and a little more time with the people y
+ ou didn't get enough of on the conference floor.\nFor one night, ChangeNOW
+  brings its retro-future world to life through 1960s-inspired interiors, c
+ apsule geometry and a few details made just for the…\n\nHosted by Change
+ NOW
+LOCATION:https://luma.com/event/evt-bOryYZfE4vV8wAz
+GEO:1.2929770490477435;103.85949745921918
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T233000Z
+DTEND:20261008T013000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Laurent Stieger":MAILTO:calendar-invite@lu.ma
+UID:evt-1vMPCKsGTGq54i7@events.lu.ma
+SUMMARY:Solana Strider Run & Breakfast
+DESCRIPTION:Get up-to-date information at: https://luma.com/hn4u80ws\n\nAd
+ dress:\nCheck event page for more details.\n\nStart your morning right wit
+ h steps, food, and good company! 👟✨\nConnect with Strider, Moonwalk F
+ itness, Superteam SG, and Web3 friends for a relaxed 3KM morning run along
+  the Singapore River, ending with breakfast at PlaySpace!\nSchedule\n7:30 
+ – 8:00 AM: Meetup PlaySpace for photos & hellos.\n8:00 – 8:30 AM: Easy
+ -paced 3KM run/walk along the riverfront and Fort Canning.\n8:30 – 9:30 
+ AM: Return to PlaySpace for breakfast & networking (Sponsored by Superteam
+  SG).\nHighlights\nNetwork with the Strider & Solana Web3 community.\nCatc
+ h scenic riverfront views while it's nice and cool.\nExclusive merch…\n
+ \nHosted by Laurent Stieger & Superteam SG
+LOCATION:https://luma.com/event/evt-1vMPCKsGTGq54i7
+GEO:1.2934523567990968;103.84427429726324
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261008T050000Z
+DTEND:20261008T120000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="NEAR Foundation":MAILTO:calendar-invite@lu.ma
+UID:evt-He5fkoBxzNhGHyS@events.lu.ma
+SUMMARY:Quantum & Privacy Day: at Token2049 Singapore
+DESCRIPTION:Get up-to-date information at: https://luma.com/jtof4o9b\n\nAd
+ dress:\nCheck event page for more details.\n\n📅 Tuesday, 8th October 2
+ 026. \n\nThe Quantum + Privacy side event of Token2049 Singapore.\n📍 Ve
+ nue: Register for more information\nQuantum computing threatens the crypto
+ graphy that protects blockchain security and privacy.\nJoin industry exper
+ ts in discussing how we secure the crypto industry in the post-quantum era
+ .\nTopics include:\nWhich signature schemes win?\nWhat does migration actu
+ ally look like?\nWhen quantum arrives, who is exposed?\nRoadmaps, technica
+ l tradeoffs, and user impact.\nAfter the talks there will be drinks, food,
+  networking, and a casual Super Smash bros tournament.\n\nWho this is…\n
+ \nHosted by NEAR Foundation & Quantus
+LOCATION:https://luma.com/event/evt-He5fkoBxzNhGHyS
+GEO:1.2835516860607488;103.84979049976583
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261008T052000Z
+DTEND:20261008T091500Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="0xJeff":MAILTO:calendar-invite@lu.ma
+UID:evt-11BWLYcWvu8j97s@events.lu.ma
+SUMMARY:gm AI v2 by 0xJeff, BlockRun, CodecFlow, Dolphin, Kite, OpenServ, 
+ Reppo
+DESCRIPTION:Get up-to-date information at: https://luma.com/xkjrrfhe\n\nAd
+ dress:\nCheck event page for more details.\n\nJust Founders & Builders in 
+ Agentic Economy Coming Together to Share Insights, POVs, & real talks\n\n
+ \nWhat to Expect\n5-Minute Industry Briefing: Agentic Economy Outlook 2026
+  by 0xJeff, Jeff, Researcher & Investor\n6 AI Product ShowcasesOpen Source
+  Agent Router & Pay-as-you-go AI gateway by BlockRun AI, Vicky, Founder\nS
+ caling Robotics Training Through Simulation & Data by CodecFlow, Moyai, Fo
+ under & CEODecentralized Inference & Agent Harness by Dolphin, Luke, Core 
+ ContributorVerifiable Agent Identity & Adaptive Inference for Agents by Ki
+ te, Chi Zhang, Co-Founder & CEO\nReasoning and Operating…\n\nHosted by 0
+ xJeff & 6 others
+LOCATION:https://luma.com/event/evt-11BWLYcWvu8j97s
+GEO:1.289276497161289;103.84721854799254
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261008T104500Z
+DTEND:20261008T130000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Thought Partner Eco":MAILTO:calendar-invite@lu.ma
+UID:evt-GGfBplUJWWoZ8uJ@events.lu.ma
+SUMMARY:⏰ Climate Action Hour: Film Screening + Fashion Swap
+DESCRIPTION:Get up-to-date information at: https://luma.com/m907zkjh\n\nAd
+ dress:\nSingapore Sustainability Academy\nSingapore\n\nOrganised by Though
+ t Partner Eco and supported by the SG Eco Fund, Climate Action Hour is a s
+ eries of activities moving you from awareness to action.\nAll ticket sales
+  go towards supporting the cost of this event series. Thank you!\n🎬 The
+  Film:\nACTionism is a short documentary following Ellie — an 18-year-ol
+ d with climate anxiety who feels uncertain about the future. She wants to 
+ take action and do something, but she feels lonely and isolated. This is a
+  story about her finding her people and discovering her purpose.\n⏰ Acti
+ on Hour:\nThe concept of an Action Hour is simple:\nShow up —> Learn jus
+ t…\n\nHosted by Thought Partner Eco
+LOCATION:Singapore Sustainability Academy, 180 Kitchener Rd, #06-10, Singa
+ pore 208539
+GEO:1.3113982;103.8565897
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261008T110000Z
+DTEND:20261008T150000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="BTCC":MAILTO:calendar-invite@lu.ma
+UID:evt-QzIriVwBkweKaew@events.lu.ma
+SUMMARY:BTCC THE ROOFTOP AFTERS - TOKEN2049 Side Event
+DESCRIPTION:Get up-to-date information at: https://luma.com/tifs8vsq\n\nAd
+ dress:\nCheck event page for more details.\n\nBTCC THE ROOFTOP AFTERS - TO
+ KEN2049 Side Event\nWe’re celebrating 15 years of BTCC during TOKEN2049,
+  and we’d love to have you join us for the evening.\nWe’re bringing to
+ gether influencers, partners, traders, creators and people from across the
+  crypto community for a relaxed rooftop night in Singapore. It’s a chanc
+ e to catch up with familiar faces, meet new people, have good conversation
+ s and enjoy the evening outside of the conference.\n🍸 Drinks, cocktails
+  & great food There’ll be a selection of drinks, cocktails and food thro
+ ughout the night, so come by, grab a drink and stay for a while.\n\n📅
+ …\n\nHosted by BTCC
+LOCATION:https://luma.com/event/evt-QzIriVwBkweKaew
+GEO:1.279743778292227;103.84100045273617
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261009T010000Z
+DTEND:20261009T120000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Network School":MAILTO:calendar-invite@lu.ma
+UID:evt-YmTGHFb7GGjrcgp@events.lu.ma
+SUMMARY:Network State Conference: Singapore Oct 9, 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/ns2026\n\nAddr
+ ess:\nCheck event page for more details.\n\nDemocracy is about the consent
+  of the governed. In the Internet age, that now means voting not just with
+  your ballot, but your feet. So: if you’re one of the democratic capital
+ ists of the Internet, come vote with your feet for new communities by join
+ ing us at this year's Network State Conference in Singapore on October 9.
+ \nIn more detail, our conference is for those interested in founding, fund
+ ing, and finding startup societies and network states. This year's speaker
+ s include Ethereum founder Vitalik Buterin, Polychain founder Olaf Carlson
+ -Wee, Floodgate founder Mike Maples, Binance CEO…\n\nHosted by Network S
+ chool, Balaji & Zcash
+LOCATION:https://luma.com/event/evt-YmTGHFb7GGjrcgp
+GEO:1.281700445539987;103.85713843830106
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261009T100000Z
+DTEND:20261009T120000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="The Rewilding":MAILTO:calendar-invite@lu.ma
+UID:evt-lPO3KgXarFMUDzS@events.lu.ma
+SUMMARY:The Monstrous feminine - A Halloween trivia night (women-only)
+DESCRIPTION:Get up-to-date information at: https://luma.com/c8y4438s\n\nAd
+ dress:\nGoodbye, Alibi\nSingapore\n\nThe Monstrous Feminine\nA Halloween t
+ rivia night for women\nWe’re officially two months away from my absolute
+  favourite time of the year! 🎃 Since I love Halloween so much, I’m ge
+ tting a head start on the spooky season with a new gathering just for us g
+ irls - a Halloween trivia night for women.\nIf you know your final girls f
+ rom your femme fatales, can spot a jump scare from a mile away, and love a
+  good eerie legend, this one’s for you.\nAll our trivia is centered on i
+ conic women across horror, myth, and folklore.\nJoin us for a night of dri
+ nks and friendly competition with other women who love…\n\nHosted by The
+  Rewilding
+LOCATION:Goodbye, Alibi, 53A Duxton Rd, Singapore 089517
+GEO:1.2781852;103.8433393
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261011T010000Z
+DTEND:20261011T090000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="Carissa R. J.":MAILTO:calendar-invite@lu.ma
+UID:evt-UxmBkNLd0TlpR7g@events.lu.ma
+SUMMARY:Common Ground Makeathon: Design x Tech x Culture
+DESCRIPTION:Get up-to-date information at: https://luma.com/yjffwqr2\n\nAd
+ dress:\nCheck event page for more details.\n\nCOMMON GROUND — One Day Cr
+ eative Tech Makeathon\nBuild at the intersection of design × technology x
+  culture on 11th October at SQ Collective Singapore (in person) — experi
+ ment with new ways of making, interacting, expressing, and experiencing.\n
+ Choose from two tracks:Design × Tech\nCulture × Tech\nNo fixed medium or
+  outcome — build a website, visual experiment, AI experience, speculativ
+ e prototype, or something we don't have a name for yet.\nSolo or squad —
+  register individually and create or join teams up to 3.\nBuild with Codex
+ All participants will receive Codex credits\nA short onboarding will…\n
+ \nHosted by Carissa R. J. & 3 others
+LOCATION:https://luma.com/event/evt-UxmBkNLd0TlpR7g
+GEO:1.2907033216723174;103.84171398717369
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261114T080000Z
+DTEND:20261114T100000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="The Rewilding":MAILTO:calendar-invite@lu.ma
+UID:evt-3Z5HD3R4J2ERgP3@events.lu.ma
+SUMMARY:The Book Swap. Women-only.
+DESCRIPTION:Get up-to-date information at: https://luma.com/tbx99gzg\n\nAd
+ dress:\nChapters @ Maxwell\nSingapore\n\nWe're swapping the books we love 
+ !📚\nBring one fiction book you’ve read and loved. Wrap it up. Write a
+  few clues. Then swap it for a mystery book brought by someone else.\nThis
+  is a book swap, and a conversation about the books we love. A private ven
+ ue, all materials, a variety of teas and a sweet treat are all included. 
+ 🍵🤎🍪\nHow it works\nBring one fiction book you’ve already read, 
+ would genuinely recommend, and would like to give away to someone else.\nP
+ lease make sure your book is in as good a condition as possible - no stain
+ s, torn or bent pages, dog-ears, writing or highlighting, loose…\n\nHost
+ ed by The Rewilding
+LOCATION:Chapters @ Maxwell, 35 Kreta Ayer Rd, #02-01, Singapore 089000
+GEO:1.2807476;103.8422744
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261231T103000Z
+DTEND:20261231T113000Z
+DTSTAMP:20260925T144700Z
+ORGANIZER;CN="SQ Collective":MAILTO:calendar-invite@lu.ma
+UID:evt-ar37Wvus7zYdl0J@events.lu.ma
+SUMMARY:SQ micro-duck farm
+DESCRIPTION:Get up-to-date information at: https://luma.com/ai-nfa5\n\nAdd
+ ress:\nSQ Collective x Gen-AI Labs\nSingapore\n\nhi folks, if we get enoug
+ h ducks, we could do a duck gathering? \n\njeremy and i are thinking of or
+ dering a couple of micro-duck robots.\nif we can find 10 people, can get o
+ n their enterprise deal: Cheaper bulk order + better support.\nyou could o
+ rder for yourself or your kids! we could hack together and build funny use
+ -cases tgt\n\nrsvp if you want to build a duck farm together with us lol\n
+ \nHosted by SQ Collective
+LOCATION:SQ Collective x Gen-AI Labs, 65 Mohamed Sultan Rd, Singapore 2390
+ 03
+GEO:1.2913588;103.83943819999999
+SEQUENCE:212510820
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR

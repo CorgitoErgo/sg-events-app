@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//sg-events-app//synthetic test fixture//EN
+X-WR-CALNAME:Edge cases (synthetic)
+BEGIN:VEVENT
+UID:evt-postal0000001@events.lu.ma
+DTSTART:20261003T020000Z
+DTEND:20261003T080000Z
+SUMMARY:Career Fair @ Tampines 2026
+DESCRIPTION:Get up-to-date information at: https://luma.com/careerfair\n\n
+ Address:\nOur Tampines Hub\n1 Tampines Walk\nSingapore 528523\n\nMeet 40 e
+ mployers hiring now.\n\nHosted by e2i
+LOCATION:https://luma.com/event/evt-postal0000001
+GEO:1.3533;103.9404
+ORGANIZER;CN="e2i":MAILTO:calendar-invite@lu.ma
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-cancelled00001@events.lu.ma
+DTSTART:20261004T110000Z
+DTEND:20261004T130000Z
+SUMMARY:Founders Mixer
+DESCRIPTION:Get up-to-date information at: https://luma.com/mixer\n\nAddre
+ ss:\nCheck event page for more details.\n\nHosted by Mixer Club
+LOCATION:https://luma.com/event/evt-cancelled00001
+GEO:1.2800;103.8500
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-sanfrancisco01@events.lu.ma
+DTSTART:20261005T010000Z
+DTEND:20261005T030000Z
+SUMMARY:Demo Day SF
+LOCATION:https://luma.com/event/evt-sanfrancisco01
+GEO:37.7749;-122.4194
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-pastevent0001@events.lu.ma
+DTSTART:20250101T020000Z
+DTEND:20250101T040000Z
+SUMMARY:New Year Brunch
+LOCATION:https://luma.com/event/evt-pastevent0001
+GEO:1.3000;103.8500
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-external00001@events.lu.ma
+DTSTART:20261006T100000Z
+DTEND:20261006T120000Z
+SUMMARY:Kampung Spirit Networking Night
+DESCRIPTION:Find more information on https://luma.com/b71singapore
+LOCATION:https://bit.ly/example-event
+GEO:1.2988;103.7876
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-online000001@events.lu.ma
+DTSTART:20261007T120000Z
+DTEND:20261007T130000Z
+SUMMARY:Intro to Vector Databases
+DESCRIPTION:Get up-to-date information at: https://luma.com/vectordb\n\nJo
+ in us on https://zoom.us/j/123456789 for a hands-on intro.\n\nHosted by Da
+ ta Folks
+LOCATION:https://luma.com/event/evt-online000001
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-nogeosg00001@events.lu.ma
+DTSTART:20261008T020000Z
+DTEND:20261008T040000Z
+SUMMARY:Library Book Talk
+DESCRIPTION:Address:\nNLB Central Library\n100 Victoria Street\, Singapore 1
+ 88064\n\nMeet the author.
+LOCATION:https://luma.com/event/evt-nogeosg00001
+END:VEVENT
+BEGIN:VEVENT
+UID:evt-tzid00000001@events.lu.ma
+DTSTART;TZID=Asia/Singapore:20261010T190000
+DTEND;TZID=Asia/Singapore:20261010T213000
+SUMMARY:Mid-Autumn Lantern Walk
+DESCRIPTION:Address:\nGardens by the Bay\n18 Marina Gardens Drive\, Singapo
+ re 018953\n\nBring your own lantern.
+LOCATION:https://luma.com/event/evt-tzid00000001
+GEO:1.2816;103.8636
+END:VEVENT
+END:VCALENDAR

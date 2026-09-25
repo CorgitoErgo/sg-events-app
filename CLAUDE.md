@@ -54,7 +54,7 @@ mobile/           # Expo app
 - No personal data about attendees; organizer info only as published business contact.
 - Every event row keeps `source_url` and `last_seen_at` so stale events can be expired.
 - Secrets (`ANTHROPIC_API_KEY`, `VOYAGE_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD`,
-  `TIH_API_KEY`, `EVENTBRITE_TOKEN`) come from `.env`, never committed.
+  `EVENTBRITE_TOKEN`) come from `.env`, never committed.
 
 ## Skills in this repo (`.claude/skills/`)
 
@@ -71,7 +71,8 @@ mobile/           # Expo app
 
 1. DB schema + migrations (event-schema, geo-proximity-sg)
 2. Two easy adapters first: an ICS/JSON-LD source (Luma or a university calendar) and one API
-   source (STB TIH), end to end into the DB
+   source, end to end into the DB. Done: Luma ICS. STB TIH, the planned API source, was
+   discontinued on 31 Jul 2025, so the second source moved to step 7
 3. Classifier + geocoder + dedup
 4. `/events` with category + radius filters
 5. Embeddings + `/ask`
