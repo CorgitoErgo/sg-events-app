@@ -1,0 +1,20 @@
+{
+  "error": "Authentication token missing. Please create an account and generate or renew your API Token.",
+  "found": 1,
+  "totalNumPages": 1,
+  "pageNum": 1,
+  "results": [
+    {
+      "SEARCHVAL": "OUR TAMPINES HUB",
+      "BLK_NO": "1",
+      "ROAD_NAME": "TAMPINES WALK",
+      "BUILDING": "OUR TAMPINES HUB",
+      "ADDRESS": "1 TAMPINES WALK OUR TAMPINES HUB SINGAPORE 528523",
+      "POSTAL": "528523",
+      "X": "39917.85977723077",
+      "Y": "37248.41723765805",
+      "LATITUDE": "1.353133598288117",
+      "LONGITUDE": "103.9404081353108"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 """Run one source adapter end to end.
 
     uv run python -m scrapers.run luma --dry-run --limit 5   # fetch + parse + normalize, print
-    uv run python -m scrapers.run luma                       # ... and write to the DB
+    uv run python -m scrapers.run luma                       # ... write to the DB, then enrich
 """
 
 import argparse
@@ -50,25 +50,33 @@ def normalize_all(raws: list[RawEvent]) -> list[NormalizedEvent]:
     return out
 
 
-async def store_all(events: list[NormalizedEvent]) -> Counter[str]:
+async def store_all(events: list[NormalizedEvent], *, enrich: bool) -> tuple[Counter[str], Counter[str]]:
+    """Upsert every event, then (optionally) geocode, dedup and classify. Returns both tallies."""
     from db.session import SessionLocal, engine
+    from pipeline.enrich import enrich_with_configured_clients
     from pipeline.store import upsert_event
 
     counts: Counter[str] = Counter()
+    enriched: Counter[str] = Counter()
     try:
         async with SessionLocal() as session:
+            new_ids: list[int] = []
             for ev in events:
                 try:
                     async with session.begin_nested():  # one bad event doesn't sink the batch
-                        _, action = await upsert_event(session, ev)
+                        event_id, action = await upsert_event(session, ev)
                     counts[action] += 1
+                    if action == "inserted":
+                        new_ids.append(event_id)
                 except Exception:
                     logger.exception("failed to store %s", ev.source_url)
                     counts["error"] += 1
             await session.commit()
+            if enrich:
+                enriched = await enrich_with_configured_clients(session, new_ids)
     finally:
         await engine.dispose()
-    return counts
+    return counts, enriched
 
 
 def print_events(events: list[NormalizedEvent]) -> None:
@@ -88,6 +96,7 @@ async def main(argv: list[str] | None = None) -> int:
     parser.add_argument("source", choices=sorted(ADAPTERS))
     parser.add_argument("--dry-run", action="store_true", help="don't write to the database")
     parser.add_argument("--limit", type=int, default=None, help="stop after N events")
+    parser.add_argument("--no-enrich", action="store_true", help="skip geocoding, dedup and classification")
     args = parser.parse_args(argv)
 
     adapter = ADAPTERS[args.source]()
@@ -99,8 +108,10 @@ async def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         print_events(events)
         return 0
-    counts = await store_all(events)
+    counts, enriched = await store_all(events, enrich=not args.no_enrich)
     print("stored: " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
+    if not args.no_enrich:
+        print("enriched: " + (", ".join(f"{k}={v}" for k, v in sorted(enriched.items())) or "nothing to do"))
     return 1 if counts["error"] else 0
 
 

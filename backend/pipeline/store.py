@@ -22,15 +22,15 @@ logger = logging.getLogger(__name__)
 
 Action = Literal["inserted", "updated", "attached"]
 
-# Fields a source owns; `categories` and `summary` belong to later pipeline steps.
+# Fields a source owns; `categories` and `summary` belong to the classifier.
 _EVENT_FIELDS = (
     "title", "description", "starts_at", "ends_at", "all_day", "is_online",
-    "price_min_sgd", "price_max_sgd", "is_free", "audience", "language", "organizer",
+    "price_min_sgd", "price_max_sgd", "is_free", "language", "organizer",
     "image_url", "registration_url", "confidence", "status",
 )  # fmt: skip
 
 
-def _point(lat: float | None, lng: float | None) -> WKTElement | None:
+def wkt_point(lat: float | None, lng: float | None) -> WKTElement | None:
     if lat is None or lng is None:
         return None
     return WKTElement(f"POINT({lng} {lat})", srid=4326)  # WKT is (lng lat)
@@ -57,6 +57,7 @@ async def upsert_event(session: AsyncSession, ev: NormalizedEvent) -> tuple[int,
         event.last_seen_at = func.now()
         if source.source_url == ev.source_url:
             source.source_event_id = ev.source_event_id
+            source.source_tags = ev.source_tags
             source.raw_payload = ev.raw_payload
             source.last_seen_at = func.now()
         else:  # same source event, new URL: keep both links
@@ -83,8 +84,12 @@ async def upsert_event(session: AsyncSession, ev: NormalizedEvent) -> tuple[int,
 def _apply(event: Event, ev: NormalizedEvent, venue_id: int | None) -> None:
     for name in _EVENT_FIELDS:
         setattr(event, name, getattr(ev, name))
+    # The normalizer only spots explicit restrictions; "public" there means "none found",
+    # so it must not undo a restriction the classifier detected.
+    if ev.audience != "public" or event.audience is None:
+        event.audience = ev.audience
     event.venue_id = venue_id
-    event.geom = _point(ev.lat, ev.lng)
+    event.geom = wkt_point(ev.lat, ev.lng)
 
 
 def _fill_missing(event: Event, ev: NormalizedEvent, venue_id: int | None) -> None:
@@ -94,7 +99,7 @@ def _fill_missing(event: Event, ev: NormalizedEvent, venue_id: int | None) -> No
     if event.venue_id is None and venue_id is not None:
         event.venue_id = venue_id
     if event.geom is None and ev.lat is not None:
-        event.geom = _point(ev.lat, ev.lng)
+        event.geom = wkt_point(ev.lat, ev.lng)
 
 
 async def _maybe_update_fingerprint(session: AsyncSession, event: Event, new: str) -> None:
@@ -114,6 +119,7 @@ def _source_row(event_id: int, ev: NormalizedEvent) -> EventSource:
         source_id=ev.source_id,
         source_url=ev.source_url,
         source_event_id=ev.source_event_id,
+        source_tags=ev.source_tags,
         raw_payload=ev.raw_payload,
     )
 
@@ -127,7 +133,7 @@ async def _venue_id(session: AsyncSession, venue: NormalizedVenue | None) -> int
             name=venue.name,
             address=venue.address,
             postal_code=venue.postal_code,
-            geom=_point(venue.lat, venue.lng),
+            geom=wkt_point(venue.lat, venue.lng),
             geocode_source="source" if venue.lat is not None else None,
         )
         .on_conflict_do_nothing(constraint="venues_name_postal_code_key")

@@ -58,6 +58,7 @@ class NormalizedEvent:
     image_url: str | None = None
     registration_url: str | None = None
     confidence: str = "high"
+    source_tags: list[str] = field(default_factory=list)
     raw_payload: dict[str, Any] = field(default_factory=dict)
 
 
@@ -110,6 +111,7 @@ def normalize(raw: RawEvent) -> NormalizedEvent:
         organizer=(raw.organizer or "").strip() or None,
         image_url=raw.image_url,
         registration_url=raw.registration_url,
+        source_tags=list(raw.source_categories),
         raw_payload=raw.raw_payload,
     )
 

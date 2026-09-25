@@ -50,6 +50,7 @@ class Venue(Base):
     __table_args__ = (
         UniqueConstraint("name", "postal_code", postgresql_nulls_not_distinct=True),
         Index("venues_geom_gix", "geom", postgresql_using="gist"),
+        Index("venues_planning_area_idx", "planning_area"),
     )
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
@@ -60,6 +61,8 @@ class Venue(Base):
     region: Mapped[str | None] = mapped_column(Text)  # 'NORTH-EAST', 'CENTRAL', ...
     geom: Mapped[Any | None] = mapped_column(GeoPoint)
     geocode_source: Mapped[str | None] = mapped_column(Text)  # onemap | source | manual
+    # Last completed OneMap attempt (success or not); NULL = still to do.
+    geocoded_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     events: Mapped[list["Event"]] = relationship(back_populates="venue")
 
@@ -114,6 +117,8 @@ class Event(Base):
     status: Mapped[str | None] = mapped_column(Text, server_default=text("'active'"))
     embedding: Mapped[Any | None] = mapped_column(Vector(EMBEDDING_DIM))
     embedding_hash: Mapped[str | None] = mapped_column(Text)  # hash of the embedding text
+    # Hash of the classifier/summary input; NULL = not yet classified by the LLM.
+    enrichment_hash: Mapped[str | None] = mapped_column(Text)
     search_tsv: Mapped[Any | None] = mapped_column(TSVECTOR)  # maintained by trigger
     first_seen_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), server_default=text("now()")
@@ -153,6 +158,7 @@ class EventSource(Base):
     source_id: Mapped[str] = mapped_column(Text, primary_key=True)
     source_url: Mapped[str] = mapped_column(Text, primary_key=True)
     source_event_id: Mapped[str | None] = mapped_column(Text)
+    source_tags: Mapped[list[str]] = mapped_column(ARRAY(Text), server_default=text("'{}'"))
     raw_payload: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
     last_seen_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), server_default=text("now()")

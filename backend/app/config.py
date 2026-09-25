@@ -21,6 +21,8 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+asyncpg://sgevents:sgevents@127.0.0.1:5432/sgevents"
 
     anthropic_api_key: SecretStr | None = None
+    # CLAUDE.md: Haiku for extraction/classification/query parsing (cheap, high-volume).
+    anthropic_fast_model: str = "claude-haiku-4-5-20251001"
     voyage_api_key: SecretStr | None = None
     onemap_email: str | None = None
     onemap_password: SecretStr | None = None

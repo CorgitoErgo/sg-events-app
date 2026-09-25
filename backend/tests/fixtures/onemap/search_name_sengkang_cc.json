@@ -1,0 +1,19 @@
+{
+  "found": 1,
+  "totalNumPages": 1,
+  "pageNum": 1,
+  "results": [
+    {
+      "SEARCHVAL": "SENGKANG COMMUNITY CLUB",
+      "BLK_NO": "2",
+      "ROAD_NAME": "SENGKANG SQUARE",
+      "BUILDING": "SENGKANG COMMUNITY CLUB",
+      "ADDRESS": "2 SENGKANG SQUARE SENGKANG COMMUNITY CLUB",
+      "POSTAL": "NIL",
+      "X": "34769.29796362016",
+      "Y": "41623.57752438448",
+      "LATITUDE": "1.392702572859625",
+      "LONGITUDE": "103.8941460540204"
+    }
+  ]
+}
