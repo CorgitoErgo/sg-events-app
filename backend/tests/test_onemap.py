@@ -117,6 +117,42 @@ async def test_falls_back_to_bare_token_when_bearer_is_rejected():
     assert auth_headers == ["Bearer tok123", "tok123", "tok123"]  # remembered
 
 
+def fake_jwt(exp: float) -> str:
+    import base64
+
+    def part(obj) -> str:
+        return base64.urlsafe_b64encode(json.dumps(obj).encode()).decode().rstrip("=")
+
+    return f"{part({'alg': 'none'})}.{part({'exp': exp})}.sig"
+
+
+async def test_pasted_token_is_used_without_logging_in():
+    token = fake_jwt(exp=1_800_000_000 + 3600)
+    paths, auth = [], []
+
+    def handler(request):
+        paths.append(request.url.path)
+        auth.append(request.headers.get("Authorization"))
+        return httpx.Response(200, json=fixture("planning_area_synthetic.json"))
+
+    client = OneMapClient(token=token, transport=httpx.MockTransport(handler), wall_clock=lambda: 1_800_000_000.0)
+    async with client:
+        assert client.has_credentials and not client.can_renew
+        assert await client.planning_area(1.35, 103.94) == "TAMPINES"
+    assert paths == ["/api/public/popapi/getPlanningarea"] and auth == [f"Bearer {token}"]
+
+
+async def test_expired_pasted_token_explains_what_to_do():
+    client = OneMapClient(
+        token=fake_jwt(exp=1_799_999_000),
+        transport=httpx.MockTransport(lambda r: pytest.fail("no request expected")),
+        wall_clock=lambda: 1_800_000_000.0,
+    )
+    async with client:
+        with pytest.raises(OneMapError, match="ONEMAP_TOKEN expired .*ONEMAP_EMAIL"):
+            await client.planning_area(1.35, 103.94)
+
+
 async def test_planning_area_needs_credentials():
     client, _ = make_client(lambda r: pytest.fail("no request expected"), credentials=False)
     async with client:

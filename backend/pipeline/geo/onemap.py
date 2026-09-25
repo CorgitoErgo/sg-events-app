@@ -12,8 +12,11 @@ Verified 2026-09-26 by calling the API:
 """
 
 import asyncio
+import base64
+import json
 import logging
 import time
+from datetime import UTC, datetime
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any
@@ -50,6 +53,7 @@ class OneMapClient:
         email: str | None = None,
         password: str | None = None,
         *,
+        token: str | None = None,
         transport: httpx.AsyncBaseTransport | None = None,
         sleep: Callable[[float], Awaitable[None]] = asyncio.sleep,
         clock: Callable[[], float] = time.monotonic,
@@ -68,12 +72,16 @@ class OneMapClient:
         self._wall_clock = wall_clock
         self._lock = asyncio.Lock()
         self._last_request: float | None = None
-        self._token: str | None = None
-        self._token_expiry = 0.0
+        self._token = token
+        self._token_expiry = _jwt_expiry(token) if token else 0.0
         self._bearer = True  # flips to the bare token if OneMap rejects "Bearer"
 
     @property
     def has_credentials(self) -> bool:
+        return bool((self._email and self._password) or self._token)
+
+    @property
+    def can_renew(self) -> bool:
         return bool(self._email and self._password)
 
     async def __aenter__(self) -> "OneMapClient":
@@ -127,8 +135,15 @@ class OneMapClient:
         raise OneMapError(f"GET {path}: gave up after {MAX_ATTEMPTS} attempts")
 
     async def _get_token(self) -> str:
-        if self._token and self._wall_clock() < self._token_expiry - TOKEN_REFRESH_MARGIN_S:
+        margin = TOKEN_REFRESH_MARGIN_S if self.can_renew else 0
+        if self._token and self._wall_clock() < self._token_expiry - margin:
             return self._token
+        if not self.can_renew:
+            expired = datetime.fromtimestamp(self._token_expiry, UTC).isoformat(timespec="minutes")
+            raise OneMapError(
+                f"ONEMAP_TOKEN expired at {expired}; paste a new one or set "
+                "ONEMAP_EMAIL/ONEMAP_PASSWORD for automatic renewal"
+            )
         resp = await self._request(
             "POST", "/api/auth/post/getToken", json={"email": self._email, "password": self._password}
         )
@@ -155,6 +170,16 @@ class OneMapClient:
                 return await self._http.request(method, path, **kwargs)
             finally:
                 self._last_request = self._clock()
+
+
+def _jwt_expiry(token: str) -> float:
+    """The `exp` claim of a JWT (unverified; only used to know when to stop using it)."""
+    try:
+        payload = token.split(".")[1]
+        claims = json.loads(base64.urlsafe_b64decode(payload + "=" * (-len(payload) % 4)))
+        return float(claims["exp"])
+    except (IndexError, KeyError, TypeError, ValueError):
+        return float("inf")  # not a JWT we can read: use it until OneMap says otherwise
 
 
 def _parse_result(row: dict[str, Any]) -> SearchResult | None:

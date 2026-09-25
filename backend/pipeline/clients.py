@@ -21,7 +21,10 @@ def make_llm(settings: Settings) -> anthropic.AsyncAnthropic | None:
 
 
 def make_onemap(settings: Settings) -> OneMapClient | None:
-    if settings.onemap_email and settings.onemap_password is not None:
-        return OneMapClient(settings.onemap_email, settings.onemap_password.get_secret_value())
-    logger.warning("ONEMAP_EMAIL/ONEMAP_PASSWORD not set: skipping geocoding and planning areas")
+    email = settings.onemap_email
+    password = settings.onemap_password.get_secret_value() if settings.onemap_password else None
+    token = settings.onemap_token.get_secret_value() if settings.onemap_token else None
+    if (email and password) or token:
+        return OneMapClient(email, password, token=token)
+    logger.warning("No OneMap credentials (ONEMAP_TOKEN or ONEMAP_EMAIL/PASSWORD): skipping geocoding")
     return None

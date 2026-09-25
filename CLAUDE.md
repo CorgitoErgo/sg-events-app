@@ -53,8 +53,8 @@ mobile/           # Expo app
   article text; keep at most a short self-written summary.
 - No personal data about attendees; organizer info only as published business contact.
 - Every event row keeps `source_url` and `last_seen_at` so stale events can be expired.
-- Secrets (`ANTHROPIC_API_KEY`, `VOYAGE_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD`,
-  `EVENTBRITE_TOKEN`) come from `.env`, never committed.
+- Secrets (`ANTHROPIC_API_KEY`, `VOYAGE_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD` or
+  `ONEMAP_TOKEN`, `EVENTBRITE_TOKEN`) come from `.env`, never committed.
 
 ## Skills in this repo (`.claude/skills/`)
 
