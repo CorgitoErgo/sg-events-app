@@ -1,0 +1,16 @@
+# Keep LF everywhere (Docker, shell scripts and Python all expect it), even on Windows.
+* text=auto eol=lf
+
+# Windows-only scripts keep CRLF
+*.bat eol=crlf
+*.cmd eol=crlf
+*.ps1 eol=crlf
+
+# Binary fixtures and assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.ico binary

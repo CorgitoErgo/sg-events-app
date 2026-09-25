@@ -1,0 +1,41 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Crawl cache (PoliteClient raw responses) and local data
+/data/
+/backend/data/
+
+# Node / Expo
+node_modules/
+.expo/
+.expo-shared/
+web-build/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Claude Code per-machine settings (shared settings go in .claude/settings.json)
+.claude/settings.local.json
+
+# Editors / OS
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
