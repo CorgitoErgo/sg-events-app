@@ -9,7 +9,9 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app import privacy
 from app.categories import CATEGORIES
+from app.routers import events
 from db.session import engine, get_session
 
 logger = logging.getLogger(__name__)
@@ -19,11 +21,14 @@ HEALTH_DB_TIMEOUT_S = 2.0
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
+    privacy.install()  # after uvicorn has configured its loggers
     yield
     await engine.dispose()
 
 
+privacy.install()
 app = FastAPI(title="SG Events API", version="0.1.0", lifespan=lifespan)
+app.include_router(events.router)
 
 
 @app.get("/health")
