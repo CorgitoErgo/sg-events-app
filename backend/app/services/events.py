@@ -88,7 +88,7 @@ def _conditions(q: EventQuery, now: datetime) -> list[Any]:
     online_only = and_(Event.is_online.is_(True), Event.geom.is_(None))  # no physical place
     if q.online == "only":
         conds.append(Event.is_online.is_(True))
-    elif q.has_location:
+    elif q.has_location and q.radius_m is not None:
         near = func.ST_DWithin(Event.geom, _point(q), q.radius_m)
         conds.append(or_(near, online_only) if q.online == "include" else near)
     elif q.online == "exclude":
@@ -122,6 +122,36 @@ async def search_events(session: AsyncSession, q: EventQuery, now: datetime) -> 
     )
     sources = await _sources(session, [r.id for r in rows])
     return [_to_dict(r, sources[r.id]) for r in rows], total or 0
+
+
+async def candidate_ids(session: AsyncSession, q: EventQuery, now: datetime, *, limit: int) -> list[int]:
+    """Ids passing every structured filter, in q.sort order (the RAG candidate set)."""
+    distance = func.ST_Distance(Event.geom, _point(q)) if q.has_location else literal(None, Float)
+    rows = await session.scalars(
+        select(Event.id)
+        .outerjoin(Venue, Venue.id == Event.venue_id)
+        .where(*_conditions(q, now))
+        .order_by(*_order(q, distance, now))
+        .limit(limit)
+    )
+    return list(rows)
+
+
+async def fetch_events(session: AsyncSession, ids: list[int], q: EventQuery) -> list[dict]:
+    """Events by id, in the given order, with distance when q has a location."""
+    if not ids:
+        return []
+    distance = (
+        func.ST_Distance(Event.geom, _point(q)) if q.has_location else literal(None, Float)
+    ).label("distance_m")
+    rows = (
+        await session.execute(
+            select(*_LIST_COLUMNS, distance).outerjoin(Venue, Venue.id == Event.venue_id).where(Event.id.in_(ids))
+        )
+    ).all()
+    sources = await _sources(session, ids)
+    by_id = {r.id: _to_dict(r, sources[r.id]) for r in rows}
+    return [by_id[i] for i in ids if i in by_id]
 
 
 async def get_event(session: AsyncSession, event_id: int) -> dict | None:

@@ -24,6 +24,10 @@ class Settings(BaseSettings):
     # CLAUDE.md: Haiku for extraction/classification/query parsing (cheap, high-volume).
     anthropic_fast_model: str = "claude-haiku-4-5-20251001"
     voyage_api_key: SecretStr | None = None
+    # voyage-4 family embeddings are mutually compatible; 1024 dims = events.embedding.
+    voyage_model: str = "voyage-4"
+    # CLAUDE.md: Sonnet for the user-facing Ask answers.
+    anthropic_answer_model: str = "claude-sonnet-5"
     onemap_email: str | None = None
     onemap_password: SecretStr | None = None
     # A token pasted from onemap.gov.sg; lasts 3 days. Email/password renew automatically.

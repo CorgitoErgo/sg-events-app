@@ -11,8 +11,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app import privacy
 from app.categories import CATEGORIES
-from app.routers import events
+from app.clients import AppClients
+from app.config import get_settings
+from app.routers import ask, events
 from db.session import engine, get_session
+from pipeline.clients import make_llm, make_onemap, make_voyage
 
 logger = logging.getLogger(__name__)
 
@@ -20,15 +23,26 @@ HEALTH_DB_TIMEOUT_S = 2.0
 
 
 @asynccontextmanager
-async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
+async def lifespan(app_: FastAPI) -> AsyncIterator[None]:
     privacy.install()  # after uvicorn has configured its loggers
-    yield
-    await engine.dispose()
+    settings = get_settings()
+    clients = AppClients(llm=make_llm(settings), voyage=make_voyage(settings), onemap=make_onemap(settings))
+    app_.state.clients = clients
+    try:
+        yield
+    finally:
+        if clients.llm is not None:
+            await clients.llm.close()
+        for client in (clients.voyage, clients.onemap):
+            if client is not None:
+                await client.__aexit__(None, None, None)
+        await engine.dispose()
 
 
 privacy.install()
 app = FastAPI(title="SG Events API", version="0.1.0", lifespan=lifespan)
 app.include_router(events.router)
+app.include_router(ask.router)
 
 
 @app.get("/health")

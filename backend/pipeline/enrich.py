@@ -1,6 +1,7 @@
-"""Enrichment after events are stored: geocode venues -> dedup new events -> classify.
+"""Enrichment after events are stored: geocode venues -> dedup new events -> classify -> embed.
 
-Dedup runs before classification so duplicates never cost an LLM call. Each step skips
+Dedup runs before classification so duplicates never cost an LLM call; embedding runs last
+because its text includes the categories and summary. Each step skips
 itself when its credentials are missing (see pipeline.clients).
 
     uv run python -m pipeline.enrich              # everything that needs enriching
@@ -30,8 +31,9 @@ from pipeline.classify import (
     fallback_categories,
     rule_classification,
 )
-from pipeline.clients import make_llm, make_onemap
+from pipeline.clients import make_llm, make_onemap, make_voyage
 from pipeline.dedup import find_duplicate, llm_judge, merge_events
+from pipeline.embed import VoyageClient, embed_events
 from pipeline.geo.geocode import VenueQuery, geocode
 from pipeline.geo.onemap import OneMapClient, OneMapError
 from pipeline.sg import region_for
@@ -50,6 +52,7 @@ async def enrich(
     llm: anthropic.AsyncAnthropic | None,
     onemap: OneMapClient | None,
     model: str,
+    voyage: VoyageClient | None = None,
 ) -> Counter[str]:
     counts: Counter[str] = Counter()
     if onemap is not None:
@@ -59,6 +62,9 @@ async def enrich(
     await session.commit()
     await classify_events(session, llm=llm, model=model, counts=counts)
     await session.commit()
+    if voyage is not None:
+        await embed_events(session, voyage, counts)
+        await session.commit()
     return counts
 
 
@@ -71,8 +77,16 @@ async def enrich_with_configured_clients(session: AsyncSession, new_event_ids: I
         onemap = make_onemap(settings)
         if onemap is not None:
             await stack.enter_async_context(onemap)
+        voyage = make_voyage(settings)
+        if voyage is not None:
+            await stack.enter_async_context(voyage)
         return await enrich(
-            session, new_event_ids=new_event_ids, llm=llm, onemap=onemap, model=settings.anthropic_fast_model
+            session,
+            new_event_ids=new_event_ids,
+            llm=llm,
+            onemap=onemap,
+            voyage=voyage,
+            model=settings.anthropic_fast_model,
         )
 
 

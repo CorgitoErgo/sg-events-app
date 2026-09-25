@@ -115,11 +115,12 @@ class Event(Base):
     registration_url: Mapped[str | None] = mapped_column(Text)
     confidence: Mapped[str | None] = mapped_column(Text, server_default=text("'high'"))
     status: Mapped[str | None] = mapped_column(Text, server_default=text("'active'"))
-    embedding: Mapped[Any | None] = mapped_column(Vector(EMBEDDING_DIM))
+    # Deferred: read and written with explicit SQL (pipeline.embed, app.services.retrieval).
+    embedding: Mapped[Any | None] = mapped_column(Vector(EMBEDDING_DIM), deferred=True)
     embedding_hash: Mapped[str | None] = mapped_column(Text)  # hash of the embedding text
     # Hash of the classifier/summary input; NULL = not yet classified by the LLM.
     enrichment_hash: Mapped[str | None] = mapped_column(Text)
-    search_tsv: Mapped[Any | None] = mapped_column(TSVECTOR)  # maintained by trigger
+    search_tsv: Mapped[Any | None] = mapped_column(TSVECTOR, deferred=True)  # maintained by trigger
     first_seen_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), server_default=text("now()")
     )

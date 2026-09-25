@@ -1,0 +1,40 @@
+{"q": "any free career fairs near Sengkang this weekend?", "categories": ["career_fair"], "dates": "weekend", "place": "sengkang", "place_mode": "near", "free": true}
+{"q": "career fairs for fresh grads this month", "categories": ["career_fair"], "dates": "month"}
+{"q": "free things for kids near Punggol this Saturday", "categories": ["family_kids"], "dates": "saturday", "place": "punggol", "place_mode": "near", "free": true}
+{"q": "volunteering on weekends in the west", "categories": ["volunteering"], "dates": "weekend", "region": "WEST"}
+{"q": "Chinese-language community events", "categories": ["community"]}
+{"q": "AI meetups tonight", "categories": ["tech_startup"], "dates": "tonight"}
+{"q": "job fairs in Tampines", "categories": ["career_fair"], "place": "tampines", "place_mode": "in"}
+{"q": "hackathons this week", "categories": ["tech_startup"], "dates": "week"}
+{"q": "resume clinic near me", "categories": ["career_dev"], "near_me": true}
+{"q": "pottery or painting workshops this weekend", "categories": ["workshop_class", "arts_culture"], "dates": "weekend"}
+{"q": "concerts at Esplanade tomorrow", "categories": ["music"], "dates": "tomorrow", "place": "esplanade", "place_mode": "near"}
+{"q": "beach clean-ups in the east", "categories": ["volunteering"], "region": "EAST"}
+{"q": "yoga classes near 520123", "categories": ["sports_fitness"], "place": "520123", "place_mode": "near"}
+{"q": "online webinars about startups next week", "categories": ["tech_startup"], "dates": "next_week", "online_only": true}
+{"q": "what's happening near Bishan MRT today", "dates": "today", "place": "bishan mrt", "place_mode": "near"}
+{"q": "Deepavali celebrations", "categories": ["faith_festivals"]}
+{"q": "Mid-Autumn lantern walks for families", "categories": ["community", "family_kids"]}
+{"q": "poly open houses", "categories": ["education_open_house"]}
+{"q": "activities for seniors in Ang Mo Kio", "categories": ["seniors"], "place": "ang mo kio", "place_mode": "in"}
+{"q": "youth programmes this month", "categories": ["youth"], "dates": "month"}
+{"q": "free health screenings near me", "categories": ["health_wellness"], "near_me": true, "free": true}
+{"q": "flea markets this weekend", "categories": ["food_markets"], "dates": "weekend"}
+{"q": "guided nature walks on Sunday", "categories": ["nature_outdoors"], "dates": "sunday"}
+{"q": "book talks at the library", "categories": ["talks"]}
+{"q": "networking events for founders tonight", "categories": ["networking", "tech_startup"], "dates": "tonight"}
+{"q": "art exhibitions in the central area", "categories": ["arts_culture"], "region": "CENTRAL"}
+{"q": "runs and fitness events within 3 km", "categories": ["sports_fitness"], "near_me": true, "radius": 3}
+{"q": "free events in Jurong West this week", "dates": "week", "place": "jurong west", "place_mode": "in", "free": true}
+{"q": "crypto events", "categories": ["tech_startup"]}
+{"q": "mindfulness or meditation sessions", "categories": ["health_wellness"]}
+{"q": "kids coding classes this weekend", "categories": ["workshop_class", "family_kids"], "dates": "weekend"}
+{"q": "career talks about finance online", "categories": ["career_dev"], "online_only": true}
+{"q": "live music tonight near Clarke Quay", "categories": ["music"], "dates": "tonight", "place": "clarke quay", "place_mode": "near"}
+{"q": "something fun to do near me", "near_me": true}
+{"q": "events in the north-east this weekend", "dates": "weekend", "region": "NORTH-EAST"}
+{"q": "donation drives", "categories": ["volunteering"]}
+{"q": "hiring days at Jurong Point", "categories": ["career_fair"], "place": "jurong point", "place_mode": "near"}
+{"q": "free museum events for families", "categories": ["arts_culture", "family_kids"], "free": true}
+{"q": "badminton tournaments in Woodlands", "categories": ["sports_fitness"], "place": "woodlands", "place_mode": "in"}
+{"q": "tech talks this week", "categories": ["tech_startup", "talks"], "dates": "week"}

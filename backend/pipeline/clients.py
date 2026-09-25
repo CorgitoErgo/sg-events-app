@@ -6,6 +6,7 @@ import os
 import anthropic
 
 from app.config import Settings
+from pipeline.embed import VoyageClient
 from pipeline.geo.onemap import OneMapClient
 
 logger = logging.getLogger(__name__)
@@ -17,6 +18,13 @@ def make_llm(settings: Settings) -> anthropic.AsyncAnthropic | None:
     if os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN"):
         return anthropic.AsyncAnthropic()
     logger.warning("ANTHROPIC_API_KEY not set: categories from rules only, no summaries")
+    return None
+
+
+def make_voyage(settings: Settings) -> VoyageClient | None:
+    if settings.voyage_api_key is not None:
+        return VoyageClient(settings.voyage_api_key.get_secret_value(), model=settings.voyage_model)
+    logger.warning("VOYAGE_API_KEY not set: no embeddings (search falls back to full text)")
     return None
 
 
