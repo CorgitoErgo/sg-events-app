@@ -1,7 +1,6 @@
 /**
  * OneMap basemap (Singapore Land Authority): tiles and the attribution its terms require
- * (docs: onemap.gov.sg/docs/maps). Used on Android, where Expo Go (SDK 57) can't load
- * Google's base tiles (github.com/expo/expo/issues/49323).
+ * (docs: onemap.gov.sg/docs/maps). Used by the Android map (lib/leaflet-map.ts).
  */
 
 export const ONEMAP_MIN_ZOOM = 11;
