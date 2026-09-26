@@ -60,3 +60,8 @@ class SourceAdapter(Protocol):
     async def fetch_and_parse(self, client: "PoliteClient", url: str) -> list[RawEvent]:
         """Fetch one URL and return zero or more RawEvents."""
         ...
+
+    # Optional: `async def check_gone(self, client, source_url) -> bool`, True when the
+    # event's page is definitely gone (404/410). Adapters define it only when re-fetching
+    # an event page is allowed and meaningful; pipeline.freshness then cancels events the
+    # source stopped listing. Without it, such events simply expire when they end.

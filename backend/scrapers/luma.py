@@ -10,6 +10,8 @@ Verified 2026-09-25:
 - Feeds: the Singapore city feed ("What's Happening in Singapore", ~45 upcoming events)
   plus organisation calendars. Calendar feeds include past events and events in other
   cities; both are dropped here.
+- No check_gone: the city feed drops events that aren't featured any more (not cancelled),
+  and re-fetching event pages would mean crawling HTML. Luma events just expire at the end.
 - Quirks: STATUS is always TENTATIVE (meaningless). Times are UTC, all-day events use
   DATE values with an exclusive DTEND. About half of events hide the address ("Check
   event page for more details.") but still carry GEO. LOCATION is the Luma event URL,

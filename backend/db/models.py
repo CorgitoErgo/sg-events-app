@@ -115,6 +115,7 @@ class Event(Base):
     registration_url: Mapped[str | None] = mapped_column(Text)
     confidence: Mapped[str | None] = mapped_column(Text, server_default=text("'high'"))
     status: Mapped[str | None] = mapped_column(Text, server_default=text("'active'"))
+    status_reason: Mapped[str | None] = mapped_column(Text)  # e.g. "source returned 404"
     # Deferred: read and written with explicit SQL (pipeline.embed, app.services.retrieval).
     embedding: Mapped[Any | None] = mapped_column(Vector(EMBEDDING_DIM), deferred=True)
     embedding_hash: Mapped[str | None] = mapped_column(Text)  # hash of the embedding text
@@ -166,6 +167,32 @@ class EventSource(Base):
     )
 
     event: Mapped[Event] = relationship(back_populates="sources")
+
+
+CRAWL_STATUSES = ("running", "ok", "blocked", "failed")
+
+
+class CrawlRun(Base):
+    """One run of one source adapter (sg-event-scraping skill: monitoring)."""
+
+    __tablename__ = "crawl_runs"
+    __table_args__ = (
+        CheckConstraint(_in("status", CRAWL_STATUSES), name="crawl_runs_status_check"),
+        Index("crawl_runs_source_started_idx", "source_id", text("started_at DESC")),
+    )
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    source_id: Mapped[str] = mapped_column(Text)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=text("now()"))
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    status: Mapped[str] = mapped_column(Text, server_default=text("'running'"))
+    urls_fetched: Mapped[int] = mapped_column(server_default=text("0"))
+    urls_failed: Mapped[int] = mapped_column(server_default=text("0"))
+    events_found: Mapped[int] = mapped_column(server_default=text("0"))
+    normalize_errors: Mapped[int] = mapped_column(server_default=text("0"))
+    events_stored: Mapped[int] = mapped_column(server_default=text("0"))
+    store_errors: Mapped[int] = mapped_column(server_default=text("0"))
+    error: Mapped[str | None] = mapped_column(Text)
 
 
 class EventSession(Base):

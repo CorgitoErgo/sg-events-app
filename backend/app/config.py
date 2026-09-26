@@ -34,6 +34,9 @@ class Settings(BaseSettings):
     onemap_token: SecretStr | None = None
     eventbrite_token: SecretStr | None = None
 
+    # Optional incoming webhook (Slack or Discord) for crawler alerts; always logged too.
+    alert_webhook_url: SecretStr | None = None
+
 
 @lru_cache
 def get_settings() -> Settings:

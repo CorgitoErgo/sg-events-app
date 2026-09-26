@@ -13,6 +13,7 @@ import json
 import logging
 import re
 import time
+from collections import Counter
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -83,6 +84,7 @@ class PoliteClient:
         self._locks: dict[str, asyncio.Lock] = {}
         self._last_request: dict[str, float] = {}
         self._robots: dict[str, tuple[RobotFileParser, float]] = {}  # origin -> (parser, expiry)
+        self.stats: Counter[str] = Counter()  # "ok" / "failed" responses, for crawl_runs
 
     async def __aenter__(self) -> "PoliteClient":
         return self
@@ -120,10 +122,12 @@ class PoliteClient:
         resp = await self._request(parts.netloc, url, headers, delay)
 
         if resp.status_code == 304 and cached:
+            self.stats["ok"] += 1
             return FetchResult(url, 200, cached[1], resp.headers, from_cache=True)
         self._raise_if_blocked(source_id, url, resp)
         if resp.status_code == 200:
             self._cache_write(source_id, url, resp)
+        self.stats["ok" if 200 <= resp.status_code < 300 else "failed"] += 1
         return FetchResult(url, resp.status_code, resp.content, resp.headers)
 
     # --- throttling & retries ------------------------------------------------------------

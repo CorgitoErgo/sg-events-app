@@ -77,4 +77,5 @@ mobile/           # Expo app
 4. `/events` with category + radius filters
 5. Embeddings + `/ask`
 6. Mobile app against the live API
-7. Remaining adapters, scheduler, monitoring
+7. Remaining adapters, scheduler, monitoring (scheduler, crawl_runs, alerts and freshness
+   jobs done: `python -m app.worker`; more adapters and /me + push notifications to go)
