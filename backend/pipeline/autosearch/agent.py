@@ -6,12 +6,12 @@ that is logged and shown in the admin console.
 
 import re
 import time
-from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from dataclasses import dataclass, field, replace
+from datetime import UTC, datetime, timedelta
 
 from pipeline.domains import host_of
 from pipeline.normalize import NormalizedEvent
-from pipeline.sg import PLANNING_AREA_REGION, in_singapore
+from pipeline.sg import PLANNING_AREA_REGION, SGT, in_singapore
 from scrapers.base import RawEvent
 
 
@@ -91,7 +91,60 @@ def singapore_evidence(raw: RawEvent, ev: NormalizedEvent, page_url: str) -> str
     return None
 
 
+# --- time sanity for event data published on ordinary web pages ------------------------------------
+
+_ISO_TIME = re.compile(
+    r"^(\d{4}-\d{2}-\d{2})[T ](\d{2}):(\d{2})(?::(\d{2}))?(?:\.\d+)?\s*(Z|[+-]\d{2}:?\d{2})?$", re.IGNORECASE
+)
+_SGT_OFFSETS = {"+08:00", "+0800"}
+NIGHT_HOURS = range(0, 6)  # a public event starting or ending at 00:00-05:59 SGT is almost always a mislabelled zone
+
+
+def _parts(value: str | None) -> tuple[datetime, str] | None:
+    m = _ISO_TIME.match((value or "").strip())
+    if not m:
+        return None
+    naive = datetime.fromisoformat(f"{m.group(1)}T{m.group(2)}:{m.group(3)}:{m.group(4) or '00'}")
+    return naive, (m.group(5) or "").upper()
+
+
+def foreign_offset(raw: RawEvent) -> str | None:
+    """An explicit non-Singapore UTC offset on the start time, e.g. "-05:00"."""
+    parts = _parts(raw.start_raw)
+    if parts and parts[1] not in ("", "Z") and parts[1] not in _SGT_OFFSETS:
+        return parts[1]
+    return None
+
+
+def repair_times(raw: RawEvent) -> tuple[RawEvent, str | None]:
+    """Fix the two common publisher mistakes on web pages: Singapore times labelled "Z" (UTC),
+    and UTC times written without a zone. Only when the literal reading puts the event in the
+    middle of the night and the swapped reading doesn't. Explicit offsets are trusted."""
+    if raw.source_id != "web":
+        return raw, None  # APIs (Eventbrite) and feeds label zones correctly
+    parsed = [(key, _parts(getattr(raw, key))) for key in ("start_raw", "end_raw") if getattr(raw, key)]
+    parsed = [(key, p) for key, p in parsed if p is not None]
+    if not parsed or any(marker not in ("", "Z") for _, (_, marker) in parsed):
+        return raw, None
+
+    def read(naive: datetime, marker: str, swap: bool) -> datetime:
+        as_utc = (marker == "Z") != swap
+        return naive.replace(tzinfo=UTC if as_utc else SGT).astimezone(SGT)
+
+    literal = [read(n, m, False) for _, (n, m) in parsed]
+    swapped = [read(n, m, True) for _, (n, m) in parsed]
+    at_night = lambda times: any(t.hour in NIGHT_HOURS for t in times)  # noqa: E731
+    if not at_night(literal) or at_night(swapped):
+        return raw, None
+    fixed = replace(raw, **{key: t.isoformat() for (key, _), t in zip(parsed, swapped, strict=True)})
+    if parsed[0][1][1] == "Z":
+        return fixed, "times corrected (the page labelled Singapore times as UTC)"
+    return fixed, "times corrected (the page gave UTC times with no time zone)"
+
+
 def judge(raw: RawEvent, ev: NormalizedEvent, page_url: str, *, now: datetime, limits: Limits) -> Verdict:
+    if offset := foreign_offset(raw):
+        return Verdict(False, f"published in another time zone (UTC{offset})")
     if ev.status != "active":
         return Verdict(False, "cancelled or postponed")
     ends = ev.ends_at or (ev.starts_at + timedelta(days=1) if ev.all_day else ev.starts_at)

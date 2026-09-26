@@ -7,7 +7,7 @@ from types import SimpleNamespace
 import httpx
 import pytest
 
-from pipeline.autosearch.agent import Budget, Limits, judge, singapore_evidence
+from pipeline.autosearch.agent import Budget, Limits, judge, repair_times, singapore_evidence
 from pipeline.autosearch.eventbrite import event_id_from_url, to_raw_event
 from pipeline.autosearch.extract import llm_events, page_text, structured_events
 from pipeline.autosearch.runner import QUERY_PHRASES, plan_queries
@@ -73,6 +73,40 @@ def test_judge_rejects_past_far_cancelled_restricted_and_foreign():
     ok = raw(**sg)
     verdict = judge(ok, normalize(ok), ok.source_url, now=NOW, limits=limits)
     assert verdict.accept and "Singapore postal code" in verdict.reason
+
+
+# Real cases from the first live run (2026-09-26).
+@pytest.mark.parametrize(
+    ("start", "end", "expected_start", "expected_end", "note"),
+    [
+        # TechWeek: Singapore times labelled "Z" -> the literal reading ends at 01:00 SGT
+        ("2026-09-29T09:00:00Z", "2026-09-30T17:00:00Z", "2026-09-29T09:00:00+08:00", "2026-09-30T17:00:00+08:00", "labelled Singapore times as UTC"),
+        # OTR Listens: UTC written without a zone -> the literal reading starts at 01:30 SGT
+        ("2026-10-10 01:30:00", None, "2026-10-10T09:30:00+08:00", None, "UTC times with no time zone"),
+        # correct UTC ("Z") meaning a morning start in Singapore: untouched
+        ("2026-10-10T23:30:00Z", None, "2026-10-10T23:30:00Z", None, None),
+        # explicit +08:00 is always trusted, even early (a sunrise run)
+        ("2026-10-10T05:30:00+08:00", None, "2026-10-10T05:30:00+08:00", None, None),
+        # all-day dates are left alone
+        ("2026-10-10", "2026-10-11", "2026-10-10", "2026-10-11", None),
+    ],
+)
+def test_repair_times(start, end, expected_start, expected_end, note):
+    fixed, got_note = repair_times(raw(start_raw=start, end_raw=end))
+    assert (fixed.start_raw, fixed.end_raw) == (expected_start, expected_end)
+    assert (got_note is None) == (note is None) and (note is None or note in got_note)
+
+
+def test_times_from_apis_are_never_repaired():
+    eb = raw(source_id="eventbrite", start_raw="2026-10-10T01:30:00Z")
+    assert repair_times(eb) == (eb, None)
+
+
+def test_foreign_time_zone_is_rejected_even_if_the_address_says_singapore():
+    # World Bank page: "address": "Singapore" but the event is in Washington (-05:00)
+    r = raw(start_raw="2026-12-14T21:18:00.000-05:00", venue_raw="World Bank Headquarters", address_raw="Singapore")
+    verdict = judge(r, normalize(r), r.source_url, now=NOW, limits=Limits())
+    assert (verdict.accept, verdict.reason) == (False, "published in another time zone (UTC-05:00)")
 
 
 def test_budget_stops_at_the_first_limit():

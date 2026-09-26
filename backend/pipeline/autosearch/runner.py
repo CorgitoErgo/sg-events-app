@@ -16,7 +16,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.clients import AppClients
 from app.config import get_settings
 from db.models import AutosearchDecision, CrawlRun
-from pipeline.autosearch.agent import Budget, Limits, judge
+from pipeline.autosearch.agent import Budget, Limits, judge, repair_times
 from pipeline.autosearch.eventbrite import EventbriteClient, EventbriteError, event_id_from_url
 from pipeline.autosearch.eventbrite import to_raw_event as eventbrite_raw
 from pipeline.autosearch.extract import llm_events, page_text, structured_events
@@ -267,13 +267,14 @@ async def _handle_hit(
     for raw in raws:
         if budget.stop_reason():
             return
+        raw, time_note = repair_times(raw)
         try:
             ev = normalize(raw)
         except NormalizationError:
             await record(query, raw.source_url, raw.title, "skipped", "no usable start date")
             continue
-        if raw.raw_payload.get("extracted_by") and not news:
-            ev.confidence = "medium"  # read from prose by an LLM, not structured data
+        if (raw.raw_payload.get("extracted_by") or time_note) and not news:
+            ev.confidence = "medium"  # read from prose by an LLM, or times repaired
         verdict = judge(raw, ev, url, now=now, limits=limits)
         if not verdict.accept:
             await record(query, raw.source_url, raw.title, "skipped", verdict.reason)
@@ -281,13 +282,14 @@ async def _handle_hit(
         if (known := await _known_event(session, raw.source_url, ev.fingerprint)) is not None:
             await record(query, raw.source_url, raw.title, "known", "already listed", known)
             continue
+        detail = f"{verdict.reason}; from {how}" + (f"; {time_note}" if time_note else "")
         if dry_run:
-            await record(query, raw.source_url, raw.title, "would_save", f"{verdict.reason}; from {how}")
+            await record(query, raw.source_url, raw.title, "would_save", detail)
             budget.events += 1
             continue
         saved = await ingest(session, raw, clients, news=news, normalized=ev)
         merged = saved.merged_into is not None or saved.action != "inserted"
-        reason = f"{verdict.reason}; from {how}" + ("; merged with an existing listing" if merged else "")
+        reason = detail + ("; merged with an existing listing" if merged else "")
         await record(query, raw.source_url, raw.title, "merged" if merged else "saved", reason, saved.event_id)
         budget.events += 1
 
