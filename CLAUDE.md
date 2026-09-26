@@ -25,7 +25,9 @@ Sengkang this weekend?").
 - Scraping: `httpx` (async), `selectolax` for HTML, `extruct` for JSON-LD/microdata,
   Playwright only for pages that need JS, `icalendar` for ICS feeds, `feedparser` for RSS
 - LLM: Anthropic SDK. `claude-haiku-4-5-20251001` for extraction/classification/query parsing
-  (cheap, high-volume); `claude-sonnet-5` for the user-facing Ask answers
+  (cheap, high-volume); `claude-sonnet-5` for the user-facing Ask answers.
+  Discovery agent page reading uses Google Gemini (`gemini-3.5-flash-lite`, REST) when
+  `GEMINI_API_KEY` is set, preferred over Claude (user's choice, 2026-09-26)
 - Embeddings: Voyage AI (Anthropic does not ship an embeddings model). Confirm the current
   model name and dimension in Voyage docs before creating the vector column
 - DB: Postgres 16 with PostGIS and pgvector (Supabase or local Docker)
@@ -55,7 +57,8 @@ mobile/           # Expo app
 - No personal data about attendees; organizer info only as published business contact.
 - Every event row keeps `source_url` and `last_seen_at` so stale events can be expired.
 - Secrets (`ANTHROPIC_API_KEY`, `VOYAGE_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD` or
-  `ONEMAP_TOKEN`, `EVENTBRITE_TOKEN`) come from `.env`, never committed.
+  `ONEMAP_TOKEN`, `EVENTBRITE_TOKEN`, `TAVILY_API_KEY`, `GEMINI_API_KEY`) come from `.env`,
+  never committed.
 
 ## Skills in this repo (`.claude/skills/`)
 

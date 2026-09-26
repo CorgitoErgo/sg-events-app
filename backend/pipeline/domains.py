@@ -25,6 +25,7 @@ BLOCKED_DOMAINS: dict[str, str] = {
     "whatsapp.com": "chat, not event listings",
     "quora.com": "prohibits automated access",
     "meetup.com": "API-only under its terms (needs Meetup Pro)",
+    "onepa.gov.sg": "terms of use forbid storing or republishing its content without PA's written permission",
     "luma.com": "covered by the Luma ICS adapter; Luma's terms allow only its public feeds",
     "lu.ma": "covered by the Luma ICS adapter; Luma's terms allow only its public feeds",
     "google.com": "search engine",

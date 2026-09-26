@@ -14,6 +14,8 @@ from app.main import app
 from db.models import AutosearchDecision, CrawlRun, Event, EventSource
 from db.session import get_session
 from pipeline.autosearch.agent import Limits
+from pipeline.autosearch.extract import to_raw_events
+from pipeline.autosearch.gemini import GeminiError
 from pipeline.autosearch.runner import run_autosearch
 from pipeline.autosearch.tavily import SearchHit, TavilyError
 from scrapers.http import PoliteClient
@@ -87,9 +89,23 @@ def fetcher(tmp_path):
     return lambda: PoliteClient(transport=httpx.MockTransport(handler), min_delay_s=0, sleep=no_sleep, cache_dir=tmp_path)
 
 
-async def run(db_session, tmp_path, *, limits=Limits(max_searches=2), dry_run=False, tavily=None, queries=("q1", "q2")):
+class FakeGemini:
+    """Stands in for GeminiClient: "reads" any page as one event at a CC, or fails."""
+
+    def __init__(self, error: Exception | None = None):
+        self.error, self.urls = error, []
+
+    async def extract_events(self, text, url, *, now, source_id):
+        self.urls.append(url)
+        if self.error:
+            raise self.error
+        event = {"title": "Autosearch CC Job Fair", "start": SOON, "venue": "Keat Hong CC", "postal_code": "689687", "online": False}
+        return to_raw_events({"events": [event]}, url, model="gemini-test", now=now, source_id=source_id)
+
+
+async def run(db_session, tmp_path, *, limits=Limits(max_searches=2), dry_run=False, tavily=None, queries=("q1", "q2"), clients=None):
     return await run_autosearch(
-        session_factory=lambda: nullcontext(db_session), clients=AppClients(), tavily=tavily or FakeTavily(),
+        session_factory=lambda: nullcontext(db_session), clients=clients or AppClients(), tavily=tavily or FakeTavily(),
         eventbrite=FakeEventbrite(), fetcher_factory=fetcher(tmp_path), limits=limits, queries=list(queries),
         dry_run=dry_run, now=NOW,
     )  # fmt: skip
@@ -107,7 +123,9 @@ async def test_every_result_gets_a_decision_and_a_reason(db_session, tmp_path):
     assert "Singapore postal code 528523" in got["https://events.example.sg/fair"][1]
     assert got["https://events.example.com/london"] == ("skipped", "no sign it's in Singapore")
     assert got["https://events.example.sg/old"] == ("skipped", "already over")
-    assert got["https://blog.example.sg/post"] == ("skipped", "no event details on the page (plain-text pages need ANTHROPIC_API_KEY)")
+    assert got["https://blog.example.sg/post"] == (
+        "skipped", "no event details on the page (plain-text pages need GEMINI_API_KEY or ANTHROPIC_API_KEY)"
+    )  # fmt: skip
     assert "listing page" in got["https://www.eventbrite.sg/d/singapore--singapore/career-fair/"][1]
     assert got["https://www.eventbrite.sg/e/fun-run-1234567890123"][0] == "saved"  # the API's canonical URL
     assert "official Eventbrite API" in got["https://www.eventbrite.sg/e/fun-run-1234567890123"][1]
@@ -129,6 +147,21 @@ async def test_every_result_gets_a_decision_and_a_reason(db_session, tmp_path):
     logged = await db_session.scalars(select(AutosearchDecision).where(AutosearchDecision.run_id == result.run_id))
     assert len(logged.all()) == 8
     assert result.stop_reason == "used 2 searches (limit 2)"
+
+
+async def test_gemini_reads_pages_without_event_data(db_session, tmp_path):
+    gemini = FakeGemini()
+    result = await run(db_session, tmp_path, clients=AppClients(gemini=gemini), dry_run=True)
+    assert gemini.urls == ["https://blog.example.sg/post"]  # only the page with no schema.org data
+    decision, reason = by_url(result)["https://blog.example.sg/post"]
+    assert decision == "would_save" and "read by Gemini" in reason
+
+
+async def test_a_gemini_failure_is_logged_as_an_error(db_session, tmp_path):
+    clients = AppClients(gemini=FakeGemini(error=GeminiError("Gemini rate or quota limit reached")))
+    result = await run(db_session, tmp_path, clients=clients, dry_run=True)
+    assert by_url(result)["https://blog.example.sg/post"] == ("error", "Gemini couldn't read it: Gemini rate or quota limit reached")
+    assert result.counts["would_save"] == 2  # the rest of the run carries on
 
 
 async def test_stops_at_the_event_limit(db_session, tmp_path):

@@ -16,7 +16,7 @@ from app.config import get_settings
 from app.admin.router import router as admin_router
 from app.routers import areas, ask, events
 from db.session import engine, get_session
-from pipeline.clients import make_eventbrite, make_llm, make_onemap, make_tavily, make_voyage
+from pipeline.clients import make_eventbrite, make_gemini, make_llm, make_onemap, make_tavily, make_voyage
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +33,7 @@ async def lifespan(app_: FastAPI) -> AsyncIterator[None]:
         onemap=make_onemap(settings),
         tavily=make_tavily(settings),
         eventbrite=make_eventbrite(settings),
+        gemini=make_gemini(settings),
     )
     app_.state.clients = clients
     try:
@@ -40,7 +41,7 @@ async def lifespan(app_: FastAPI) -> AsyncIterator[None]:
     finally:
         if clients.llm is not None:
             await clients.llm.close()
-        for client in (clients.voyage, clients.onemap, clients.tavily, clients.eventbrite):
+        for client in (clients.voyage, clients.onemap, clients.tavily, clients.eventbrite, clients.gemini):
             if client is not None:
                 await client.__aexit__(None, None, None)
         await engine.dispose()

@@ -105,6 +105,13 @@ from the user before scraping.
   Check for JSON-LD first.
 
 ### onePA (onepa.gov.sg)
+- ⚠ Checked 2026-09-26: **do not scrape without PA's written permission.** robots.txt allows
+  everything except /search and /cart, but the Terms of Use ("Restrictions on use of
+  Materials") say no part may be "reproduced, republished, ... or stored in an information
+  retrieval system, without the prior written permission of PA". The site also runs a
+  bot-protection script. Sitemap (/sitemap.xml) returned "Failed to fetch sitemap". Events
+  load client-side (Sitecore/Next.js; __NEXT_DATA__ holds layout only). Blocked in the
+  discovery agent (pipeline/domains.py). Route forward: ask PA for permission or a data feed.
 - People's Association: events and courses at community clubs across all
   constituencies. Very strong for community, seniors, family and neighbourhood proximity.
 - The site is a JS front-end; inspect the Network tab for the public JSON it loads and

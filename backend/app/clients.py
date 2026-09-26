@@ -7,6 +7,7 @@ import anthropic
 from fastapi import Depends, Request
 
 from pipeline.autosearch.eventbrite import EventbriteClient
+from pipeline.autosearch.gemini import GeminiClient
 from pipeline.autosearch.tavily import TavilyClient
 from pipeline.embed import VoyageClient
 from pipeline.geo.onemap import OneMapClient
@@ -19,6 +20,7 @@ class AppClients:
     onemap: OneMapClient | None = None
     tavily: TavilyClient | None = None
     eventbrite: EventbriteClient | None = None
+    gemini: GeminiClient | None = None  # the discovery agent's page reader
 
 
 def get_clients(request: Request) -> AppClients:

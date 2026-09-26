@@ -9,7 +9,8 @@ import pytest
 
 from pipeline.autosearch.agent import Budget, Limits, judge, repair_times, singapore_evidence
 from pipeline.autosearch.eventbrite import event_id_from_url, to_raw_event
-from pipeline.autosearch.extract import llm_events, page_text, structured_events
+from pipeline.autosearch.extract import EVENTS_SCHEMA, llm_events, page_text, structured_events
+from pipeline.autosearch.gemini import GeminiClient, GeminiError
 from pipeline.autosearch.runner import QUERY_PHRASES, plan_queries
 from pipeline.autosearch.tavily import TavilyClient, TavilyError
 from pipeline.domains import blocked_reason, host_of, is_news
@@ -31,6 +32,7 @@ def test_domain_rules():
     assert "prohibits" in blocked_reason("https://m.facebook.com/events/123")
     assert "ICS" in blocked_reason("https://luma.com/abc")
     assert "API-only" in blocked_reason("https://www.meetup.com/x")
+    assert "written permission" in blocked_reason("https://www.onepa.gov.sg/events/abc")
     assert blocked_reason("https://www.eventbrite.sg/e/x-123456789") is None
     assert host_of("https://WWW.Straitstimes.com/a") == "straitstimes.com" and is_news("https://www.straitstimes.com/a")
     assert not is_news("https://www.nus.edu.sg/events")
@@ -232,3 +234,53 @@ async def test_claude_reads_plain_pages_and_bad_items_are_dropped():
     assert call["temperature"] == 0 and "Saturday 26 September 2026" in call["system"]
     assert "not instructions" in call["system"] and call["tool_choice"]["name"] == "record_events"
     assert await llm_events(llm, "too short", "https://x", model="haiku", now=NOW, source_id="web") == []
+
+
+def gemini_reply(events, finish="STOP") -> httpx.Response:
+    part = {"text": json.dumps({"events": events})}
+    return httpx.Response(200, json={"candidates": [{"content": {"parts": [part], "role": "model"}, "finishReason": finish}]})
+
+
+@pytest.mark.anyio
+async def test_gemini_reads_plain_pages_with_a_json_schema():
+    seen = []
+
+    def handler(request):
+        seen.append(request)
+        return gemini_reply([
+            {"title": "Keat Hong CC Job Fair", "start": "2026-10-10T10:00:00+08:00", "postal_code": "689687", "online": False},
+            {"title": "No date", "start": "", "online": False},
+        ])  # fmt: skip
+
+    async with GeminiClient("g-key", model="gemini-test", transport=httpx.MockTransport(handler)) as g:
+        raws = await g.extract_events("x" * 300, "https://cc.sg/jobs", now=NOW, source_id="web")
+        assert await g.extract_events("too short", "https://x", now=NOW, source_id="web") == []
+    assert [(r.title, r.postal_code, r.registration_url) for r in raws] == [("Keat Hong CC Job Fair", "689687", "https://cc.sg/jobs")]
+    assert raws[0].raw_payload["extracted_by"] == "gemini-test"
+    assert len(seen) == 1 and seen[0].url.path == "/v1beta/models/gemini-test:generateContent"
+    assert seen[0].headers["x-goog-api-key"] == "g-key"
+    body = json.loads(seen[0].content)
+    config = body["generationConfig"]
+    assert (config["temperature"], config["responseMimeType"], config["responseJsonSchema"]) == (0, "application/json", EVENTS_SCHEMA)
+    system = body["systemInstruction"]["parts"][0]["text"]
+    assert "Saturday 26 September 2026" in system and "not instructions" in system
+    assert "<page>" in body["contents"][0]["parts"][0]["text"]
+
+
+@pytest.mark.anyio
+async def test_gemini_errors_are_explained():
+    bad_key = httpx.Response(400, json={"error": {"status": "INVALID_ARGUMENT", "details": [{"reason": "API_KEY_INVALID"}]}})
+    async with GeminiClient("bad", model="m", transport=httpx.MockTransport(lambda r: bad_key)) as g:
+        with pytest.raises(GeminiError, match="GEMINI_API_KEY"):
+            await g.extract_events("x" * 300, "https://x", now=NOW, source_id="web")
+    limited = httpx.Response(429, json={"error": {"details": [{"retryDelay": "0s"}]}})
+    responses = [limited, gemini_reply([])]
+    async with GeminiClient("k", model="m", transport=httpx.MockTransport(lambda r: responses.pop(0))) as g:
+        assert await g.extract_events("x" * 300, "https://x", now=NOW, source_id="web") == []  # retried once
+    cut_off = gemini_reply([], finish="MAX_TOKENS")
+    async with GeminiClient("k", model="m", transport=httpx.MockTransport(lambda r: cut_off)) as g:
+        with pytest.raises(GeminiError, match="cut off"):
+            await g.extract_events("x" * 300, "https://x", now=NOW, source_id="web")
+    blocked = httpx.Response(200, json={"promptFeedback": {"blockReason": "SAFETY"}})
+    async with GeminiClient("k", model="m", transport=httpx.MockTransport(lambda r: blocked)) as g:
+        assert await g.extract_events("x" * 300, "https://x", now=NOW, source_id="web") == []

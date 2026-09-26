@@ -322,6 +322,7 @@ async def status(session: SessionDep, clients: ClientsDep) -> dict:
             "onemap_can_renew": bool(clients.onemap and clients.onemap.can_renew),
             "eventbrite": settings.eventbrite_token is not None,
             "tavily": clients.tavily is not None,
+            "gemini": clients.gemini is not None,
         },
         "last_crawls": {source: started for source, started in last_runs},
     }

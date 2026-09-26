@@ -7,6 +7,7 @@ import anthropic
 
 from app.config import Settings
 from pipeline.autosearch.eventbrite import EventbriteClient
+from pipeline.autosearch.gemini import GeminiClient
 from pipeline.autosearch.tavily import TavilyClient
 from pipeline.embed import VoyageClient
 from pipeline.geo.onemap import OneMapClient
@@ -33,6 +34,12 @@ def make_voyage(settings: Settings) -> VoyageClient | None:
 def make_tavily(settings: Settings) -> TavilyClient | None:
     if settings.tavily_api_key is not None:
         return TavilyClient(settings.tavily_api_key.get_secret_value())
+    return None
+
+
+def make_gemini(settings: Settings) -> GeminiClient | None:
+    if settings.gemini_api_key is not None:
+        return GeminiClient(settings.gemini_api_key.get_secret_value(), model=settings.gemini_model)
     return None
 
 

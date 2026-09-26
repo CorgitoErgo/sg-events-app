@@ -36,6 +36,9 @@ class Settings(BaseSettings):
 
     # Discovery agent (auto-search). Tavily's free plan: 1,000 searches a month.
     tavily_api_key: SecretStr | None = None
+    # Reads plain-text pages (no schema.org data) for the agent; preferred over Claude when set.
+    gemini_api_key: SecretStr | None = None
+    gemini_model: str = "gemini-3.5-flash-lite"
     autosearch_max_searches: int = 10
     autosearch_max_pages: int = 40
     autosearch_max_events: int = 25

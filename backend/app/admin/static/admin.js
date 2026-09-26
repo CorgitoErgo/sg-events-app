@@ -62,7 +62,7 @@ async function loadStatus() {
     $('#status').textContent =
       `${s.upcoming_events} upcoming events · ${s.manual_events} added by hand · ` +
       `OneMap ${onemap} · Voyage ${mark(k.voyage)} · Eventbrite ${mark(k.eventbrite)} · ` +
-      `Tavily ${mark(k.tavily)} · Anthropic ${mark(k.anthropic)}`;
+      `Tavily ${mark(k.tavily)} · Gemini ${mark(k.gemini)} · Anthropic ${mark(k.anthropic)}`;
   } catch (err) {
     $('#status').textContent = `Can't reach the API: ${err.message}`;
   }

@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
 import anthropic
+import httpx
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -20,6 +21,7 @@ from pipeline.autosearch.agent import Budget, Limits, judge, repair_times
 from pipeline.autosearch.eventbrite import EventbriteClient, EventbriteError, event_id_from_url
 from pipeline.autosearch.eventbrite import to_raw_event as eventbrite_raw
 from pipeline.autosearch.extract import llm_events, page_text, structured_events
+from pipeline.autosearch.gemini import GeminiError
 from pipeline.autosearch.tavily import TavilyClient, TavilyError
 from pipeline.domains import BLOCKED_DOMAINS, blocked_reason, host_of, is_news
 from pipeline.ingest import ingest
@@ -83,7 +85,7 @@ async def run_with_configured_clients(
     from contextlib import AsyncExitStack
 
     from db.session import SessionLocal
-    from pipeline.clients import make_eventbrite, make_llm, make_onemap, make_tavily, make_voyage
+    from pipeline.clients import make_eventbrite, make_gemini, make_llm, make_onemap, make_tavily, make_voyage
 
     settings = get_settings()
     async with AsyncExitStack() as stack:
@@ -91,9 +93,9 @@ async def run_with_configured_clients(
         if tavily is None:
             raise RuntimeError("TAVILY_API_KEY isn't set: get a free key at tavily.com and add it to .env")
         await stack.enter_async_context(tavily)
-        eventbrite = make_eventbrite(settings)
+        eventbrite, gemini = make_eventbrite(settings), make_gemini(settings)
         onemap, voyage = make_onemap(settings), make_voyage(settings)
-        for c in (eventbrite, onemap, voyage):
+        for c in (eventbrite, gemini, onemap, voyage):
             if c is not None:
                 await stack.enter_async_context(c)
         llm = make_llm(settings)
@@ -101,7 +103,7 @@ async def run_with_configured_clients(
             stack.push_async_callback(llm.close)
         return await run_autosearch(
             session_factory=SessionLocal,
-            clients=AppClients(llm=llm, voyage=voyage, onemap=onemap),
+            clients=AppClients(llm=llm, voyage=voyage, onemap=onemap, gemini=gemini),
             tavily=tavily,
             eventbrite=eventbrite,
             limits=configured_limits(settings, **limit_overrides),
@@ -253,14 +255,25 @@ async def _handle_hit(
             return await record(query, url, title, "skipped", "not an ordinary web page")
         page_html = res.content.decode("utf-8", errors="replace")
         raws = await structured_events(page_html, url, source_id=WEB_SOURCE, fetched_at=now)
-        if not raws and clients.llm is not None:
+        reader_error = None
+        if not raws and clients.gemini is not None:  # Gemini first: the user's chosen page reader
+            try:
+                raws = await clients.gemini.extract_events(page_text(page_html), url, now=now, source_id=WEB_SOURCE)
+                how = "the page text, read by Gemini"
+            except (GeminiError, httpx.HTTPError) as exc:
+                logger.warning("Gemini extraction failed for %s: %r", url, exc)
+                reader_error = f"Gemini couldn't read it: {exc}"
+        elif not raws and clients.llm is not None:
             try:
                 raws = await llm_events(clients.llm, page_text(page_html), url, model=model, now=now, source_id=WEB_SOURCE)
                 how = "the page text, read by Claude"
             except anthropic.APIError as exc:
                 logger.warning("Claude extraction failed for %s: %r", url, exc)
+                reader_error = f"Claude couldn't read it ({type(exc).__name__})"
         if not raws:
-            hint = "" if clients.llm is not None else " (plain-text pages need ANTHROPIC_API_KEY)"
+            if reader_error:
+                return await record(query, url, title, "error", reader_error)
+            hint = "" if clients.gemini or clients.llm else " (plain-text pages need GEMINI_API_KEY or ANTHROPIC_API_KEY)"
             return await record(query, url, title, "skipped", f"no event details on the page{hint}")
 
     news = is_news(url)
