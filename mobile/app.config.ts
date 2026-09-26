@@ -12,6 +12,9 @@ const config: ExpoConfig = {
   icon: './assets/images/icon.png',
   scheme: 'sgevents',
   userInterfaceStyle: 'automatic',
+  // Phone app only: native modules like react-native-maps have no web build, and a browser
+  // opening the dev server URL would otherwise try (and fail) to render the app for web.
+  platforms: ['ios', 'android'],
   ios: {
     icon: './assets/expo.icon',
     bundleIdentifier: 'com.corgitoergo.sgevents',
@@ -25,10 +28,6 @@ const config: ExpoConfig = {
       monochromeImage: './assets/images/android-icon-monochrome.png',
     },
     predictiveBackGestureEnabled: false,
-  },
-  web: {
-    output: 'static',
-    favicon: './assets/images/favicon.png',
   },
   plugins: [
     'expo-router',

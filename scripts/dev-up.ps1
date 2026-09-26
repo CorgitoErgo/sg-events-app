@@ -101,7 +101,8 @@ Stop-ServiceWindow 'SG Events Expo'
 # give a stopped Metro a moment to release its port, so the QR address stays the same
 foreach ($i in 1..20) { if (Test-PortUsable $MetroPort) { break }; Start-Sleep -Milliseconds 500 }
 $MetroPort = Find-Port $MetroPort @(8300, 8400, 19000, 19006)
-Start-ServiceWindow 'SG Events Expo' "$root\mobile" "npx expo start --lan --port $MetroPort"
+# Pin the address in the QR code: Windows' WSL/Hyper-V adapters can otherwise be advertised.
+Start-ServiceWindow 'SG Events Expo' "$root\mobile" "`$env:REACT_NATIVE_PACKAGER_HOSTNAME = '$ip'; npx expo start --lan --port $MetroPort"
 
 Start-Process "$apiLocal/admin"
 
