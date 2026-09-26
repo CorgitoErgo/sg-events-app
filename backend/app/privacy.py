@@ -1,17 +1,20 @@
 """PDPA: never log a user's precise location (geo-proximity-sg skill).
 
-Coordinates arrive as query parameters, so the access log would record them. This filter
-rounds lat/lng in logged request paths to 2 decimal places (about 1 km).
+Coordinates and postal codes arrive as query parameters, so the access log would record
+them. This filter rounds lat/lng to 2 decimal places (about 1 km) and cuts postal codes
+to their 2-digit sector.
 """
 
 import logging
 import re
 
 _COORD = re.compile(r"(?<=[?&])(lat|lng)=(-?\d+(?:\.\d+)?)")
+_POSTAL = re.compile(r"(?<=[?&])postal=(\d{2})\d*")
 
 
 def round_coords(path: str) -> str:
-    return _COORD.sub(lambda m: f"{m.group(1)}={float(m.group(2)):.2f}", path)
+    path = _COORD.sub(lambda m: f"{m.group(1)}={float(m.group(2)):.2f}", path)
+    return _POSTAL.sub(r"postal=\1xxxx", path)
 
 
 class CoordinateRoundingFilter(logging.Filter):

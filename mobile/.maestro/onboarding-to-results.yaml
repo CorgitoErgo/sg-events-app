@@ -1,0 +1,20 @@
+# Smoke flow (mobile-app-expo skill): onboard -> pick career fairs -> see results.
+# Needs a development build (appId below) and the API running with events loaded.
+#   maestro test .maestro/onboarding-to-results.yaml
+appId: com.corgitoergo.sgevents
+---
+- launchApp:
+    clearState: true
+- assertVisible: "What are you into?"
+- tapOn: "Career fairs & job fairs"
+- tapOn: "Continue with 1"
+- assertVisible: "Find events near you"
+- tapOn: "Not now"
+- tapOn: "Skip for now"
+- assertVisible: "Discover"
+- tapOn: "Next 30 days"
+- tapOn: "Career fairs & job fairs"   # the categories chip: clear the filter in the sheet
+- tapOn: "Career fairs & job fairs"
+- tapOn: "Done"
+- assertVisible:
+    text: ".*events?"
