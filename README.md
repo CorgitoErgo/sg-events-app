@@ -14,6 +14,16 @@ proximity search + Expo mobile app) with Claude Code in VS Code.
    `ANTHROPIC_API_KEY, VOYAGE_API_KEY, ONEMAP_EMAIL, ONEMAP_PASSWORD,
    EVENTBRITE_TOKEN, DATABASE_URL` (see `.env.example`).
 
+## Test on your phone (one command)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\dev-up.ps1 -Crawl
+```
+
+Starts the database, the API (reachable on your Wi-Fi), the worker and Expo, each in its own
+window, and opens the admin console. Scan the QR code in the "SG Events Expo" window with
+Expo Go. Close a window to stop that service.
+
 ## Running it (from `backend/`)
 
 ```powershell
