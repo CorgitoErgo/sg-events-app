@@ -24,6 +24,7 @@ from app.categories import (
 logger = logging.getLogger(__name__)
 
 PROMPT_VERSION = "2026-09-26.1"  # bump to re-classify everything after prompt changes
+MANUAL_HASH = "manual"  # enrichment_hash of events whose categories a person chose (admin console)
 DESCRIPTION_CHARS = 1500
 SUMMARY_MAX_CHARS = 300
 AUDIENCES = ("public", "students_only", "members_only", "alumni")

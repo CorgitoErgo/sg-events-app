@@ -9,6 +9,7 @@ dependencies = [
     "apscheduler>=3.10,<4",
     "asyncpg>=0.31.0",
     "dateparser>=1.4.3",
+    "extruct>=0.18.0",
     "fastapi>=0.141.1",
     "geoalchemy2>=0.20.0",
     "httpx>=0.28.1",

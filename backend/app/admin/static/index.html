@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SG Events admin</title>
+    <link rel="stylesheet" href="/admin/static/admin.css" />
+  </head>
+  <body>
+    <header>
+      <h1>SG Events admin</h1>
+      <p id="status" class="status">Loading…</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2><span class="step">1</span> Search the web</h2>
+        <p class="hint">Opens searches in new tabs: your browser does the searching, nothing is scraped.</p>
+        <form id="search-form" class="row">
+          <input id="q" placeholder="What are you looking for? e.g. career fair" aria-label="Search terms" required />
+          <select id="when" aria-label="When">
+            <option value="">Any time</option>
+            <option value="this weekend">This weekend</option>
+            <option value="this week">This week</option>
+            <option value="this month">This month</option>
+            <option value="next month">Next month</option>
+          </select>
+          <button type="submit">Show searches</button>
+        </form>
+        <div id="quick" class="chips" aria-label="Quick searches"></div>
+        <ul id="search-links" class="links"></ul>
+      </section>
+
+      <section class="card">
+        <h2><span class="step">2</span> Add an event you found</h2>
+        <p>
+          Drag this to your bookmarks bar:
+          <a id="bookmarklet" class="bookmarklet" href="#" title="Drag me to the bookmarks bar">➕ Add to SG Events</a>
+        </p>
+        <p class="hint">
+          On any event page, click the bookmark. It reads the page's event details in your browser and opens them here
+          for you to check. Works on pages that block automated fetching, too.
+        </p>
+        <form id="url-form" class="row">
+          <input id="url" type="url" placeholder="…or paste an event link" aria-label="Event link" required />
+          <button type="submit">Fetch details</button>
+        </form>
+      </section>
+
+      <section class="card" id="drafts-card" hidden>
+        <h2><span class="step">3</span> Check and save</h2>
+        <p id="note" class="note" hidden></p>
+        <div id="drafts"></div>
+      </section>
+
+      <section class="card">
+        <h2>Added by hand</h2>
+        <div id="recent" class="recent"><p class="hint">Nothing yet.</p></div>
+      </section>
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="/admin/static/admin.js"></script>
+  </body>
+</html>

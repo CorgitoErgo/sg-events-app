@@ -29,7 +29,7 @@ RADIUS_M = 300
 
 # Lower wins when choosing which record to keep:
 # organiser site / official API > ticketing platform > aggregator > news.
-SOURCE_TIER: dict[str, int] = {"luma": 2}
+SOURCE_TIER: dict[str, int] = {"manual": 1, "luma": 2}  # manual = checked by a person in the admin console
 DEFAULT_TIER = 3
 
 _FILLABLE = (

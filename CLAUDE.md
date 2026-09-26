@@ -14,6 +14,7 @@ Sengkang this weekend?").
                                                Postgres + PostGIS + pgvector (single DB)
                                                                       │
                                          FastAPI  ──  /events  /ask  /categories  /me/*
+                                                      /admin (this PC only: add events by hand)
                                                                       │
                                          Expo (React Native) mobile app
 ```

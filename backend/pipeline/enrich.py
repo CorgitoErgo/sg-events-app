@@ -23,6 +23,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.config import get_settings
 from db.models import Event, Venue
 from pipeline.classify import (
+    MANUAL_HASH,
     Classification,
     ClassificationError,
     EventText,
@@ -232,8 +233,8 @@ async def classify_events(
             source_tags=tuple(row.source_tags),
         )
         digest = enrichment_hash(event, model)
-        if row.enrichment_hash == digest:
-            continue
+        if row.enrichment_hash in (digest, MANUAL_HASH):
+            continue  # unchanged, or categories chosen by a person
         if (by_rules := rule_classification(event)) is not None:
             await _apply(session, row, by_rules, digest)
             counts["classified_by_rules"] += 1

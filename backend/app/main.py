@@ -13,6 +13,7 @@ from app import privacy
 from app.categories import CATEGORIES
 from app.clients import AppClients
 from app.config import get_settings
+from app.admin.router import router as admin_router
 from app.routers import areas, ask, events
 from db.session import engine, get_session
 from pipeline.clients import make_llm, make_onemap, make_voyage
@@ -44,6 +45,7 @@ app = FastAPI(title="SG Events API", version="0.1.0", lifespan=lifespan)
 app.include_router(events.router)
 app.include_router(ask.router)
 app.include_router(areas.router)
+app.include_router(admin_router)
 
 
 @app.get("/health")

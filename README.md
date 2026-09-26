@@ -14,6 +14,21 @@ proximity search + Expo mobile app) with Claude Code in VS Code.
    `ANTHROPIC_API_KEY, VOYAGE_API_KEY, ONEMAP_EMAIL, ONEMAP_PASSWORD,
    EVENTBRITE_TOKEN, DATABASE_URL` (see `.env.example`).
 
+## Running it (from `backend/`)
+
+```powershell
+docker compose up -d --wait                       # (repo root) Postgres + PostGIS + pgvector
+uv run alembic upgrade head
+uv run python -m app.admin                        # API + admin console on this PC, opens your browser
+uv run python -m app.worker                       # scheduled crawls, enrichment, freshness jobs
+```
+
+The **admin console** (`http://127.0.0.1:9000/admin`, this PC only) is for finding events
+with your own browser and adding them by hand, no LLM key needed: one-click searches on
+Google/Eventbrite/Peatix/Meetup, an "Add to SG Events" bookmarklet that reads a page's
+schema.org event data in your browser, or paste a link. Saved events go through the same
+pipeline (dedup, OneMap, embeddings). For the phone app, see `mobile/README.md`.
+
 ## Accounts to register first
 
 - Anthropic API key (Claude)

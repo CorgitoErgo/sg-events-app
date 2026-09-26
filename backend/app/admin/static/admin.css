@@ -1,0 +1,100 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #16181d;
+  --muted: #5d6470;
+  --border: #d9dce2;
+  --primary: #0a5fb4;
+  --on-primary: #ffffff;
+  --warn-bg: #fff4d6;
+  --warn-text: #6b4e00;
+  --danger: #b42318;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111317;
+    --card: #1b1e24;
+    --text: #eceef2;
+    --muted: #a3aab5;
+    --border: #343944;
+    --primary: #7cc0ff;
+    --on-primary: #001a33;
+    --warn-bg: #3d3000;
+    --warn-text: #ffe08a;
+    --danger: #ff8a80;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 0 16px 48px;
+}
+header, main { max-width: 860px; margin: 0 auto; }
+header { padding: 24px 0 8px; }
+h1 { font-size: 24px; margin: 0; }
+h2 { font-size: 17px; margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+.step {
+  display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--primary); color: var(--on-primary); font-size: 13px;
+}
+.status, .hint { color: var(--muted); margin: 4px 0 12px; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px; margin: 16px 0;
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row > input { flex: 1 1 260px; }
+input, select, textarea, button {
+  font: inherit; color: inherit; background: var(--card);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px;
+}
+textarea { width: 100%; min-height: 90px; resize: vertical; }
+button, .button {
+  background: var(--primary); color: var(--on-primary); border-color: var(--primary);
+  cursor: pointer; font-weight: 600; text-decoration: none;
+}
+button.secondary { background: transparent; color: var(--text); border-color: var(--border); }
+button.danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+button:disabled { opacity: 0.6; cursor: wait; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
+.chip {
+  border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  background: transparent; color: var(--text); font-weight: 500; cursor: pointer;
+}
+.chip[aria-pressed="true"], .chip.on { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+.links { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.links a {
+  display: block; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); text-decoration: none;
+}
+.links a:hover { border-color: var(--primary); }
+.links small { display: block; color: var(--muted); }
+.bookmarklet {
+  display: inline-block; padding: 6px 12px; border-radius: 8px; background: var(--primary);
+  color: var(--on-primary); font-weight: 600; text-decoration: none; cursor: grab;
+}
+.note { background: var(--warn-bg); color: var(--warn-text); padding: 8px 12px; border-radius: 8px; }
+.draft { border-top: 1px solid var(--border); padding-top: 12px; margin-top: 12px; }
+.draft:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field.wide { grid-column: 1 / -1; }
+.field label, .check { font-size: 13px; color: var(--muted); }
+.check { display: flex; align-items: center; gap: 6px; }
+.actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.source { font-size: 13px; color: var(--muted); word-break: break-all; }
+.recent table { width: 100%; border-collapse: collapse; }
+.recent td { padding: 8px 6px; border-top: 1px solid var(--border); vertical-align: top; }
+.recent td.when { white-space: nowrap; color: var(--muted); }
+#toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 8px;
+  opacity: 0; transition: opacity 0.2s; pointer-events: none; max-width: 90vw;
+}
+#toast.show { opacity: 1; }
