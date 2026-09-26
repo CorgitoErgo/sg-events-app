@@ -92,6 +92,14 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .recent table { width: 100%; border-collapse: collapse; }
 .recent td { padding: 8px 6px; border-top: 1px solid var(--border); vertical-align: top; }
 .recent td.when { white-space: nowrap; color: var(--muted); }
+.badge {
+  display: inline-block; min-width: 72px; text-align: center; padding: 2px 8px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; border: 1px solid var(--border); color: var(--muted);
+}
+.badge.saved, .badge.would_save { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+.badge.merged { border-color: var(--primary); color: var(--primary); }
+.badge.error { border-color: var(--danger); color: var(--danger); }
+.reason { color: var(--muted); font-size: 13px; }
 #toast {
   position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
   background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 8px;

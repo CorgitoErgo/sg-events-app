@@ -13,6 +13,32 @@
     </header>
 
     <main>
+      <section class="card" id="auto-card">
+        <h2><span class="step">★</span> Auto-search (agent)</h2>
+        <p class="hint">
+          Searches the web, opens promising results, checks each event (date, Singapore, public, not already listed)
+          and saves the good ones, stopping at the limits below. Every decision is listed with its reason.
+        </p>
+        <p id="auto-disabled" class="note" hidden></p>
+        <form id="auto-form">
+          <div class="grid">
+            <div class="field wide">
+              <label for="auto-queries">Searches (optional, one per line; empty = rotate through all categories)</label>
+              <textarea id="auto-queries" placeholder="career fair Singapore October 2026&#10;free workshops Tampines"></textarea>
+            </div>
+            <div class="field"><label for="auto-events">Stop after saving</label><input id="auto-events" type="number" min="1" max="200" value="25" /></div>
+            <div class="field"><label for="auto-searches">Max searches (Tavily credits)</label><input id="auto-searches" type="number" min="1" max="50" value="10" /></div>
+            <div class="field"><label for="auto-pages">Max pages opened</label><input id="auto-pages" type="number" min="1" max="200" value="40" /></div>
+          </div>
+          <div class="actions">
+            <label class="check"><input id="auto-dry" type="checkbox" /> Dry run (decide, but save nothing)</label>
+            <button type="submit" id="auto-run">Run auto-search</button>
+          </div>
+        </form>
+        <p id="auto-status" class="status"></p>
+        <div id="auto-results" class="recent"></div>
+      </section>
+
       <section class="card">
         <h2><span class="step">1</span> Search the web</h2>
         <p class="hint">Opens searches in new tabs: your browser does the searching, nothing is scraped.</p>

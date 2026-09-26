@@ -6,6 +6,8 @@ from typing import Annotated
 import anthropic
 from fastapi import Depends, Request
 
+from pipeline.autosearch.eventbrite import EventbriteClient
+from pipeline.autosearch.tavily import TavilyClient
 from pipeline.embed import VoyageClient
 from pipeline.geo.onemap import OneMapClient
 
@@ -15,6 +17,8 @@ class AppClients:
     llm: anthropic.AsyncAnthropic | None = None
     voyage: VoyageClient | None = None
     onemap: OneMapClient | None = None
+    tavily: TavilyClient | None = None
+    eventbrite: EventbriteClient | None = None
 
 
 def get_clients(request: Request) -> AppClients:

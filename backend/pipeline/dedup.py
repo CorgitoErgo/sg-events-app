@@ -29,7 +29,8 @@ RADIUS_M = 300
 
 # Lower wins when choosing which record to keep:
 # organiser site / official API > ticketing platform > aggregator > news.
-SOURCE_TIER: dict[str, int] = {"manual": 1, "luma": 2}  # manual = checked by a person in the admin console
+# manual = checked by a person in the admin console; web = found by the discovery agent
+SOURCE_TIER: dict[str, int] = {"manual": 1, "luma": 2, "eventbrite": 2, "web": 3}
 DEFAULT_TIER = 3
 
 _FILLABLE = (

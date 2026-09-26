@@ -34,6 +34,14 @@ class Settings(BaseSettings):
     onemap_token: SecretStr | None = None
     eventbrite_token: SecretStr | None = None
 
+    # Discovery agent (auto-search). Tavily's free plan: 1,000 searches a month.
+    tavily_api_key: SecretStr | None = None
+    autosearch_max_searches: int = 10
+    autosearch_max_pages: int = 40
+    autosearch_max_events: int = 25
+    autosearch_max_per_domain: int = 5
+    autosearch_max_minutes: int = 10
+
     # Optional incoming webhook (Slack or Discord) for crawler alerts; always logged too.
     alert_webhook_url: SecretStr | None = None
 

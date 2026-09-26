@@ -39,6 +39,14 @@ Google/Eventbrite/Peatix/Meetup, an "Add to SG Events" bookmarklet that reads a 
 schema.org event data in your browser, or paste a link. Saved events go through the same
 pipeline (dedup, OneMap, embeddings). For the phone app, see `mobile/README.md`.
 
+The **discovery agent** does this automatically: it searches the web (Tavily), decides which
+results to open (official Eventbrite API for Eventbrite links; polite, robots-respecting
+fetches otherwise; blocked social sites and Luma skipped), checks each event (upcoming,
+in Singapore, public, not already listed) and saves the good ones, stopping at hard limits
+(`AUTOSEARCH_*` in `.env`). Run it from the admin console, `uv run python -m pipeline.autosearch`
+(`--dry-run` to preview), or daily at 07:30 SGT via the worker. Every decision is logged
+with its reason.
+
 ## Accounts to register first
 
 - Anthropic API key (Claude)

@@ -195,6 +195,30 @@ class CrawlRun(Base):
     error: Mapped[str | None] = mapped_column(Text)
 
 
+AUTOSEARCH_DECISIONS = ("saved", "merged", "known", "skipped", "error")
+
+
+class AutosearchDecision(Base):
+    """What the discovery agent did with one search result or event, and why."""
+
+    __tablename__ = "autosearch_decisions"
+    __table_args__ = (
+        CheckConstraint(_in("decision", AUTOSEARCH_DECISIONS), name="autosearch_decisions_decision_check"),
+        Index("autosearch_decisions_run_idx", "run_id", "id"),
+        Index("autosearch_decisions_query_idx", "query", text("created_at DESC")),
+    )
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    run_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("crawl_runs.id", ondelete="CASCADE"))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=text("now()"))
+    query: Mapped[str] = mapped_column(Text)
+    url: Mapped[str] = mapped_column(Text)
+    title: Mapped[str | None] = mapped_column(Text)
+    decision: Mapped[str] = mapped_column(Text)
+    reason: Mapped[str] = mapped_column(Text)
+    event_id: Mapped[int | None] = mapped_column(BigInteger, ForeignKey("events.id", ondelete="SET NULL"))
+
+
 class EventSession(Base):
     """Individual sessions of multi-session events (onePA courses, multi-day festivals)."""
 

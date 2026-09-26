@@ -26,6 +26,7 @@ logger = logging.getLogger("app.worker")
 
 EXPIRE_AT = {"hour": 3, "minute": 0}  # SGT, nightly
 RECHECK_AT = {"hour": 4, "minute": 0}
+AUTOSEARCH_AT = {"hour": 7, "minute": 30}  # daily; ~10 Tavily searches = ~300 of the free 1,000 a month
 
 
 async def crawl_job(source_id: str) -> None:
@@ -61,6 +62,17 @@ async def recheck_job() -> None:
         logger.info("re-check: %s", dict(counts))
 
 
+async def autosearch_job() -> None:
+    from pipeline.autosearch.runner import run_with_configured_clients
+
+    result = await run_with_configured_clients()
+    c = result.counts
+    logger.info(
+        "autosearch: %s, stopped because %s; saved=%d merged=%d known=%d skipped=%d",
+        result.status, result.stop_reason, c["saved"], c["merged"], c["known"], c["skipped"],
+    )  # fmt: skip
+
+
 def build_scheduler() -> AsyncIOScheduler:
     scheduler = AsyncIOScheduler(
         timezone=SGT,
@@ -76,6 +88,10 @@ def build_scheduler() -> AsyncIOScheduler:
         )
     scheduler.add_job(expire_job, CronTrigger(**EXPIRE_AT, timezone=SGT), id="expire", name="expire ended events")
     scheduler.add_job(recheck_job, CronTrigger(**RECHECK_AT, timezone=SGT), id="recheck", name="re-check missing events")
+    from app.config import get_settings
+
+    if get_settings().tavily_api_key is not None:
+        scheduler.add_job(autosearch_job, CronTrigger(**AUTOSEARCH_AT, timezone=SGT), id="autosearch", name="auto-search the web")
     return scheduler
 
 

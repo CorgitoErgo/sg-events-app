@@ -6,6 +6,8 @@ import os
 import anthropic
 
 from app.config import Settings
+from pipeline.autosearch.eventbrite import EventbriteClient
+from pipeline.autosearch.tavily import TavilyClient
 from pipeline.embed import VoyageClient
 from pipeline.geo.onemap import OneMapClient
 
@@ -25,6 +27,18 @@ def make_voyage(settings: Settings) -> VoyageClient | None:
     if settings.voyage_api_key is not None:
         return VoyageClient(settings.voyage_api_key.get_secret_value(), model=settings.voyage_model)
     logger.warning("VOYAGE_API_KEY not set: no embeddings (search falls back to full text)")
+    return None
+
+
+def make_tavily(settings: Settings) -> TavilyClient | None:
+    if settings.tavily_api_key is not None:
+        return TavilyClient(settings.tavily_api_key.get_secret_value())
+    return None
+
+
+def make_eventbrite(settings: Settings) -> EventbriteClient | None:
+    if settings.eventbrite_token is not None:
+        return EventbriteClient(settings.eventbrite_token.get_secret_value())
     return None
 
 

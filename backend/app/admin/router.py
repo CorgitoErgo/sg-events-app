@@ -11,14 +11,13 @@ from collections import Counter
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Annotated, Any
-from urllib.parse import urlsplit
 
 import anyio
 import extruct
 from fastapi import APIRouter, Depends, Header, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
-from sqlalchemy import delete, func, select, update
+from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.categories import CATEGORY_IDS
@@ -26,13 +25,10 @@ from app.clients import ClientsDep
 from app.config import get_settings
 from db.models import CrawlRun, Event, EventSource
 from db.session import get_session
-from pipeline.classify import MANUAL_HASH
-from pipeline.dedup import find_duplicate, merge_events
-from pipeline.embed import embed_events
-from pipeline.enrich import geocode_venues
-from pipeline.normalize import NormalizationError, normalize, parse_when
+from pipeline.domains import is_news
+from pipeline.ingest import ingest
+from pipeline.normalize import NormalizationError, parse_when
 from pipeline.sg import SGT
-from pipeline.store import upsert_event
 from scrapers.base import RawEvent, SourceBlocked
 from scrapers.http import PoliteClient
 from scrapers.jsonld import clean, find_events, to_raw_event
@@ -40,11 +36,6 @@ from scrapers.jsonld import clean, find_events, to_raw_event
 SOURCE_ID = "manual"
 STATIC = Path(__file__).parent / "static"
 LOOPBACK = {"127.0.0.1", "::1", "localhost"}
-# News pages: keep facts and a link only, never the article text (CLAUDE.md).
-NEWS_DOMAINS = (
-    "straitstimes.com", "channelnewsasia.com", "todayonline.com", "mothership.sg", "zaobao.com.sg",
-    "businesstimes.com.sg", "asiaone.com", "tnp.straitstimes.com", "beritaharian.sg", "tamilmurasu.com.sg",
-)  # fmt: skip
 
 
 def local_only(request: Request) -> None:
@@ -61,6 +52,13 @@ def admin_header(x_admin: Annotated[str | None, Header()] = None) -> None:
 def get_fetcher():
     """Factory for the PoliteClient used by "paste a URL" (overridden in tests)."""
     return PoliteClient
+
+
+def get_session_factory():
+    """Sessions for background work such as auto-search runs (overridden in tests)."""
+    from db.session import SessionLocal
+
+    return SessionLocal
 
 
 router = APIRouter(prefix="/admin", tags=["admin"], dependencies=[Depends(local_only)], include_in_schema=False)
@@ -163,7 +161,7 @@ async def extract_from_url(body: ExtractRequest, fetcher=Depends(get_fetcher)) -
 
 def make_drafts(page: PagePayload) -> dict:
     now = datetime.now(UTC)
-    news = _is_news(page.url)
+    news = is_news(page.url)
     drafts = []
     for obj in find_events(page.jsonld):
         raw = to_raw_event(obj, page_url=page.url, source_id=SOURCE_ID, fetched_at=now)
@@ -220,11 +218,6 @@ def _input_value(dt: datetime, all_day: bool) -> str:
     return local.strftime("%Y-%m-%d") if all_day else local.strftime("%Y-%m-%dT%H:%M")
 
 
-def _is_news(url: str) -> bool:
-    host = urlsplit(url).hostname or ""
-    return any(host == d or host.endswith("." + d) for d in NEWS_DOMAINS)
-
-
 def _html_title(page_html: str) -> str | None:
     m = re.search(r"<title[^>]*>(.*?)</title>", page_html, re.IGNORECASE | re.DOTALL)
     return clean(m.group(1)) if m else None
@@ -264,33 +257,15 @@ async def save_event(body: SaveRequest, session: SessionDep, clients: ClientsDep
         },
     )
     try:
-        ev = normalize(raw)
+        result = await ingest(session, raw, clients, categories=body.categories or None, news=d.news)
     except NormalizationError as exc:
         raise HTTPException(status_code=422, detail=f"Check the start date and time ({exc}).") from None
-    if d.news:
-        ev.confidence = "low"
-
-    event_id, action = await upsert_event(session, ev)
-    if body.categories:
-        await session.execute(
-            update(Event).where(Event.id == event_id).values(categories=body.categories[:3], enrichment_hash=MANUAL_HASH)
-        )
-    await session.commit()
-
-    counts: Counter[str] = Counter()
-    event = await session.get(Event, event_id)
-    if clients.onemap is not None and event.venue_id is not None:
-        await geocode_venues(session, clients.onemap, counts, only_ids=[event.venue_id])
-        await session.commit()
-    merged_into = None
-    if (other := await find_duplicate(session, event_id)) is not None:
-        merged_into = await merge_events(session, event_id, other)
-        event_id = merged_into
-        await session.commit()
-    if clients.voyage is not None:
-        await embed_events(session, clients.voyage, counts, only_ids=[event_id])
-        await session.commit()
-    return {"id": event_id, "action": action, "merged_into": merged_into, "enriched": dict(counts)}
+    return {
+        "id": result.event_id,
+        "action": result.action,
+        "merged_into": result.merged_into,
+        "enriched": dict(result.enriched),
+    }
 
 
 @api.get("/events")
@@ -346,9 +321,100 @@ async def status(session: SessionDep, clients: ClientsDep) -> dict:
             "onemap": clients.onemap is not None,
             "onemap_can_renew": bool(clients.onemap and clients.onemap.can_renew),
             "eventbrite": settings.eventbrite_token is not None,
+            "tavily": clients.tavily is not None,
         },
         "last_crawls": {source: started for source, started in last_runs},
     }
+
+
+# --- auto-search (discovery agent) ---------------------------------------------------------------
+
+class AutosearchRequest(BaseModel):
+    queries: list[str] = Field(default=[], max_length=20)
+    max_searches: int | None = Field(default=None, ge=1, le=50)
+    max_pages: int | None = Field(default=None, ge=1, le=200)
+    max_events: int | None = Field(default=None, ge=1, le=200)
+    dry_run: bool = False
+
+
+_autosearch: dict[str, Any] = {"task": None, "result": None, "dry_run": False}
+
+
+@api.post("/autosearch")
+async def start_autosearch(body: AutosearchRequest, clients: ClientsDep, factory=Depends(get_session_factory)) -> dict:
+    import asyncio
+
+    from pipeline.autosearch.runner import configured_limits, run_autosearch
+
+    if clients.tavily is None:
+        raise HTTPException(
+            status_code=503, detail="Auto-search needs TAVILY_API_KEY in .env (free at tavily.com); then restart the API."
+        )
+    task = _autosearch["task"]
+    if task is not None and not task.done():
+        raise HTTPException(status_code=409, detail="An auto-search is already running.")
+    limits = configured_limits(
+        get_settings(), max_searches=body.max_searches, max_pages=body.max_pages, max_events=body.max_events
+    )
+    _autosearch.update(result=None, dry_run=body.dry_run)
+    _autosearch["task"] = asyncio.create_task(
+        run_autosearch(
+            session_factory=factory,
+            clients=clients,
+            tavily=clients.tavily,
+            eventbrite=clients.eventbrite,
+            limits=limits,
+            queries=[q for q in body.queries if q.strip()] or None,
+            dry_run=body.dry_run,
+        )
+    )
+    return {"started": True, "limits": vars(limits)}
+
+
+@api.get("/autosearch")
+async def autosearch_status(session: SessionDep) -> dict:
+    from db.models import AutosearchDecision
+
+    task = _autosearch["task"]
+    running = task is not None and not task.done()
+    result = None
+    if task is not None and task.done():
+        try:
+            result = task.result()
+        except Exception as exc:  # noqa: BLE001
+            return {"running": False, "error": repr(exc), "decisions": [], "counts": {}}
+
+    if result is not None and result.run_id is None:  # dry run: nothing in the database
+        decisions = [vars(d) for d in result.decisions]
+        run = None
+    else:
+        run = await session.scalar(
+            select(CrawlRun).where(CrawlRun.source_id == "autosearch").order_by(CrawlRun.id.desc()).limit(1)
+        )
+        rows = []
+        if run is not None:
+            rows = (
+                await session.scalars(
+                    select(AutosearchDecision).where(AutosearchDecision.run_id == run.id).order_by(AutosearchDecision.id)
+                )
+            ).all()
+        decisions = [
+            {"query": r.query, "url": r.url, "title": r.title, "decision": r.decision, "reason": r.reason, "event_id": r.event_id}
+            for r in rows
+        ]
+    counts = Counter(d["decision"] for d in decisions)
+    return {
+        "running": running,
+        "dry_run": _autosearch["dry_run"],
+        "run": None if run is None else {
+            "id": run.id, "status": run.status, "started_at": run.started_at, "finished_at": run.finished_at, "error": run.error,
+        },
+        "stop_reason": result.stop_reason if result else None,
+        "error": result.error if result else None,
+        "searches": result.counts["searches"] if result else None,
+        "counts": counts,
+        "decisions": decisions[-300:],
+    }  # fmt: skip
 
 
 router.include_router(api)

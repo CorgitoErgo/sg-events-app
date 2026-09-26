@@ -47,15 +47,22 @@ function sgt(iso) {
 
 // --- status -------------------------------------------------------------------------------------
 
+let statusLoaded = false;
+
 async function loadStatus() {
   try {
     const s = await api('/status');
+    if (!statusLoaded) {
+      statusLoaded = true;
+      setupAutosearch(s.keys);
+    }
     const k = s.keys;
     const mark = (ok) => (ok ? '✓' : '✗');
     const onemap = k.onemap ? (k.onemap_can_renew ? '✓' : '✓ (token only, no auto-renew)') : '✗';
     $('#status').textContent =
       `${s.upcoming_events} upcoming events · ${s.manual_events} added by hand · ` +
-      `OneMap ${onemap} · Voyage ${mark(k.voyage)} · Anthropic ${mark(k.anthropic)}`;
+      `OneMap ${onemap} · Voyage ${mark(k.voyage)} · Eventbrite ${mark(k.eventbrite)} · ` +
+      `Tavily ${mark(k.tavily)} · Anthropic ${mark(k.anthropic)}`;
   } catch (err) {
     $('#status').textContent = `Can't reach the API: ${err.message}`;
   }
@@ -288,6 +295,83 @@ async function loadRecent() {
   } catch (err) {
     toast(err.message);
   }
+}
+
+// --- auto-search --------------------------------------------------------------------------------
+
+const DECISION_LABELS = {
+  saved: 'Saved', merged: 'Merged', known: 'Known', skipped: 'Skipped', error: 'Error', would_save: 'Would save',
+};
+
+function setupAutosearch(keys) {
+  const disabled = $('#auto-disabled');
+  if (!keys.tavily) {
+    disabled.hidden = false;
+    disabled.textContent = 'Auto-search needs a Tavily key: sign up free at tavily.com (1,000 searches a month), add TAVILY_API_KEY to .env, then restart the API.';
+    $('#auto-run').disabled = true;
+  }
+  $('#auto-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const num = (id) => Number($(id).value) || null;
+    const body = {
+      queries: $('#auto-queries').value.split('\n').map((q) => q.trim()).filter(Boolean),
+      max_events: num('#auto-events'),
+      max_searches: num('#auto-searches'),
+      max_pages: num('#auto-pages'),
+      dry_run: $('#auto-dry').checked,
+    };
+    try {
+      await api('/autosearch', { method: 'POST', body: JSON.stringify(body) });
+      $('#auto-run').disabled = true;
+      pollAutosearch();
+    } catch (err) {
+      toast(err.message);
+    }
+  });
+  pollAutosearch(true);
+}
+
+async function pollAutosearch(once = false) {
+  let s;
+  try {
+    s = await api('/autosearch');
+  } catch (err) {
+    return toast(err.message);
+  }
+  renderAutosearch(s);
+  if (s.running) setTimeout(() => pollAutosearch(), 2000);
+  else if (!once) {
+    $('#auto-run').disabled = false;
+    loadRecent();
+    loadStatus();
+  }
+}
+
+function renderAutosearch(s) {
+  const c = s.counts || {};
+  const n = (k) => c[k] || 0;
+  let line;
+  if (s.running) line = `Running… ${n('saved') + n('merged')} saved so far, ${n('skipped')} skipped.`;
+  else if (s.error) line = `Stopped with an error: ${s.error}`;
+  else if (s.stop_reason) {
+    const saved = s.dry_run ? `${n('would_save')} would be saved` : `${n('saved')} saved, ${n('merged')} merged`;
+    line = `Done: ${saved}, ${n('known')} already listed, ${n('skipped')} skipped. Stopped because ${s.stop_reason}.`;
+  } else if (s.run) line = `Last run: ${s.run.started_at ? sgt(s.run.started_at) : ''} (${s.run.status}).`;
+  else line = '';
+  $('#auto-status').textContent = line;
+
+  const rows = [...(s.decisions || [])].reverse();
+  $('#auto-results').replaceChildren(
+    rows.length
+      ? el('table', {}, el('tbody', {}, ...rows.map((d) =>
+          el('tr', {},
+            el('td', {}, el('span', { className: `badge ${d.decision}`, text: DECISION_LABELS[d.decision] || d.decision })),
+            el('td', {},
+              el('a', { href: d.url, target: '_blank', rel: 'noopener noreferrer', text: d.title || d.url }),
+              el('div', { className: 'reason', text: d.reason })),
+          ))))
+      : el('p', { className: 'hint', text: 'No runs yet.' }),
+  );
 }
 
 // --- start --------------------------------------------------------------------------------------
