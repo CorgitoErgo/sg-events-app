@@ -3,7 +3,8 @@
   Start everything for testing the app on your phone over Wi-Fi: database, API, worker, Expo.
 
 .DESCRIPTION
-  Safe to rerun: it restarts the windows it opened before (e.g. after editing .env).
+  Safe to rerun: it restarts the API and worker it opened before (e.g. after editing .env),
+  but keeps a healthy Expo running so phones stay connected (-RestartExpo forces a restart).
   Opens a window per service (close a window to stop that service):
     - "SG Events API"    FastAPI on 0.0.0.0 so the phone can reach it (admin console stays PC-only)
     - "SG Events worker" scheduled crawls + enrichment; crawls once at start with -Crawl
@@ -18,7 +19,8 @@ param(
   [int]$ApiPort = 9000,
   [int]$MetroPort = 8081,
   [switch]$Crawl,
-  [switch]$NoWorker
+  [switch]$NoWorker,
+  [switch]$RestartExpo
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
@@ -96,13 +98,32 @@ if (-not $NoWorker) {
 }
 
 # --- Expo ----------------------------------------------------------------------------------------
-Set-Content -Path "$root\mobile\.env.local" -Value "EXPO_PUBLIC_API_URL=$apiLan" -Encoding ascii
-Stop-ServiceWindow 'SG Events Expo'
-# give a stopped Metro a moment to release its port, so the QR address stays the same
-foreach ($i in 1..20) { if (Test-PortUsable $MetroPort) { break }; Start-Sleep -Milliseconds 500 }
-$MetroPort = Find-Port $MetroPort @(8300, 8400, 19000, 19006)
-# Pin the address in the QR code: Windows' WSL/Hyper-V adapters can otherwise be advertised.
-Start-ServiceWindow 'SG Events Expo' "$root\mobile" "`$env:REACT_NATIVE_PACKAGER_HOSTNAME = '$ip'; npx expo start --lan --port $MetroPort"
+# Restarting Expo disconnects every phone ("Cannot connect to Expo CLI"), so a healthy one is
+# kept unless the app's API address changed or -RestartExpo is given. Code edits reload on
+# their own; only app.config / .env.local changes need a restart.
+$envFile = "$root\mobile\.env.local"
+$envLine = "EXPO_PUBLIC_API_URL=$apiLan"
+$envChanged = -not (Test-Path $envFile) -or ((Get-Content $envFile -Raw).Trim() -ne $envLine)
+$expoWindow = Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" |
+  Where-Object { $_.CommandLine -like "*WindowTitle = 'SG Events Expo'*" } | Select-Object -First 1
+$runningPort = if ($expoWindow -and $expoWindow.CommandLine -match '--port (\d+)') { [int]$Matches[1] } else { $null }
+$expoHealthy = $false
+if ($runningPort) {
+  # RawContent: Metro's reply has no text content-type, so .Content would be a byte array
+  try { $expoHealthy = (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:$runningPort/status" -TimeoutSec 3).RawContent -match 'packager-status:running' } catch { }
+}
+if ($expoHealthy -and -not $envChanged -and -not $RestartExpo) {
+  $MetroPort = $runningPort
+  Write-Host "Expo is already running on port ${MetroPort}: left as is so phones stay connected (-RestartExpo to restart)." -ForegroundColor Yellow
+} else {
+  Set-Content -Path $envFile -Value $envLine -Encoding ascii
+  Stop-ServiceWindow 'SG Events Expo'
+  # give a stopped Metro a moment to release its port, so the QR address stays the same
+  foreach ($i in 1..20) { if (Test-PortUsable $MetroPort) { break }; Start-Sleep -Milliseconds 500 }
+  $MetroPort = Find-Port $MetroPort @(8300, 8400, 19000, 19006)
+  # Pin the address in the QR code: Windows' WSL/Hyper-V adapters can otherwise be advertised.
+  Start-ServiceWindow 'SG Events Expo' "$root\mobile" "`$env:REACT_NATIVE_PACKAGER_HOSTNAME = '$ip'; npx expo start --lan --port $MetroPort"
+}
 
 Start-Process "$apiLocal/admin"
 
